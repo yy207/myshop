@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.main.dao.address.AddressMapper">
+	 <select id="getAddress" resultType="Address">
+		SELECT * FROM address
+	 	<trim prefix="where" prefixOverrides="and | or6">
+	 		<if test="id != null">
+	 			and id=#{id}
+	 		</if>
+	 		<if test="uid != null">
+	 			and uid =#{uid}
+	 		</if> 
+	 	</trim>
+	 	order by id desc
+	 	<if test="from !=null and pageSize !=null">
+	 		limit  #{from},#{pageSize}
+	 	</if> 
+	 </select>
+		
+	<select id="getAddressByDefault" resultType="Address">
+		SELECT * FROM address where uid =#{uid} 
+	 								and isDefault =1  
+	 </select>
+	
+	<delete id="deleteAddress">
+		DELETE FROM address WHERE id=#{id} AND uid=#{uid}
+	</delete>
+	<insert id="addAddress"> 
+		INSERT INTO address(`uid`,name,`address`,`remark`,phone)
+		values(#{address.uid},#{address.name},#{address.address},#{address.remark},#{address.phone});
+	</insert>
+	<update id="updateDefaultAddress">
+	
+		UPDATE address SET isDefault = 0 WHERE uid =#{uid};
+		UPDATE address SET isDefault = 1 WHERE uid =#{uid}  AND id =#{id};
+
+	</update>
+	
+</mapper>

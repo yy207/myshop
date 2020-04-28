@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.main.dao.order.OrderMapper">
+	<select id="getOrderList" resultType="Order">
+		SELECT `id`,`uid`,`orderCode`,`createTime`,`price`
+			,`state`,`logidtics` FROM `order`
+			<trim prefix="where" prefixOverrides="and | or">
+				<if test="id!=null">
+					and id = #{id}
+				</if>
+				<if test="uid != null">
+					and uid = #{uid}
+				</if>
+				<if test="orderCode !=null and orderCode != ''">
+					and orderCode like concat('%',#{orderCode},'%')
+				</if>
+				<if test="createTime !=null and endTime !=null">
+					and createTime  BETWEEN #{createTime} AND #{endTime}
+				</if>
+				<if test="price != null">
+					and price BETWEEN  FLOOR(#{price})  AND CEIL(#{price})
+				</if>
+				<if test="state!=null">
+					and state = #{state}
+				</if>
+				<if test="logidtics!=null and logidtics!=''">
+					and logidtics = #{logidtics}
+				</if> 
+			</trim> 
+			order by id desc ,createTime desc
+				<if test="from != null and pageSize != null">
+					limit #{from},#{pageSize}
+				</if> 
+	</select>
+	<insert id="addOrder">
+		INSERT INTO `order` (`uid`,`orderCode`,
+			`price`,`logidtics`,address)
+		VALUES(#{order.uid},#{order.orderCode},#{order.price},#{order.logidtics},#{order.address});
+	</insert> 
+	<update id="updateOrder"> 
+		UPDATE 	`order` SET state =#{state} WHERE orderCode = #{orderCode}	 
+	</update>
+</mapper>
+
+
+
+
+

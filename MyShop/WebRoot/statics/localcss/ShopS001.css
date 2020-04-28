@@ -1,0 +1,111 @@
+	.shopS001{
+				width: 1300px;
+				margin: 0 auto;
+			}
+			.shopS001>p{
+				margin: 10px 0 20px;
+			}
+			.shopS001 .left,.shopS001 .center,.shopS001 .right{
+				width: 410px;
+				display: inline-block;
+				vertical-align: top;
+			}
+			
+			.shopS001 .center{
+				width: 600px;
+			}
+			.shopS001 .right{
+				width: 270px;
+			}
+			
+			.shopS001 .left>img{
+				width: 400px;
+				padding: 1px;
+				border: #778899 solid 0.5px;
+			}
+			.shopS001 .left p img.g{
+				width: 70px;padding: 2px;margin: 2px;
+				border: #778899 solid 0.5px;
+			}
+			
+			.shopS001  .goods p {
+				margin-left: 20px;
+			}
+			.shopS001  .goods .p1{
+				font-size: 25px;
+				font-weight: bolder;
+				margin-top: 30px;
+			}
+			.shopS001  .goods .p2{
+				color: #778899;
+				margin-bottom: 35px;
+			}
+			.shopS001  .goods .p3,.shopS001  .goods .p4{
+				padding: 8px;
+				position: relative;
+			}
+			.shopS001  .goods .p4{margin-bottom: 20px;}
+			.shopS001  .goods .p3 span{
+				color: #FF4E00;
+				font-size: 30px;
+				position: absolute;
+				top: -5px;
+				font-weight: bolder;
+			}
+			
+			
+			.shopS001  .goods .p5,.shopS001  .goods .p6{
+				padding: 10px;
+				line-height: 15px;
+				margin: 10px  20px;
+				
+			}
+			.shopS001  .goods .p5 span,.shopS001  .goods .p6 span{
+				padding: 8px 15px;
+				border: #778899 0.5px solid;
+			}
+			
+			.active{
+				border-color: #FF4E00 ; 
+				border-width:2px;
+				/* background: url(<%=request.getContextPath() %>/statics/localimg/ch.png) right bottom no-repeat;
+		 */	}
+			
+			.shopS001  .goods .p7{
+				margin: 5px;
+				margin-left:35px;
+			}
+			.shopS001  .goods .p7 span{
+				padding: 5px;
+			} 
+			.shopS001  .goods .p8 span,.num{ 
+				display:inline-block;
+				padding:5px ;
+				margin: 20px;
+				font-size:20px; 
+				border:  #778899 solid 1px;
+			}
+			
+			.shopS001  .goods .p9 span{ 
+				display:inline-block;
+				padding:5px ;
+				margin: 20px;
+				font-size:20px; 
+				border:  #778899 solid 1px;
+			}  
+			.shopS001 .right  img,.shopS001 .right  .s{
+				width: 260px;
+				height:178px;
+			} 
+			.shopS001 .right  a{
+				display: inline-block;
+				width: 260px;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				color: #000;
+				text-decoration: none;
+				background: #F6F6F6;
+			}
+			
+			

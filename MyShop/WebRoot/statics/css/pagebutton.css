@@ -1,0 +1,14 @@
+.dataTables_paginate a { 
+	background: #364B5F !important;
+	border-color: #364B5F !important;
+	color:#fff;
+}
+.dataTables_paginate a:HOVER{ 
+	background: #364B5F !important;  
+}
+.btn-dark { 
+    background-color: #364B5F;
+    border-color: #364B5F;
+    margin-left: 0px;
+    margin-right: 0px;
+}

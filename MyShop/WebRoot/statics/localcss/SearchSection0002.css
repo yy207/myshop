@@ -1,0 +1,34 @@
+		.section0002{
+			width: 1300px;
+			margin: 20px auto;
+			font-size: 13px;
+		}
+		.section0002 ul li{
+			border: #666666 0.5px solid;
+			list-style: none;
+		}
+		.section0002 span,.section0002 .a{
+			display: inline-block;
+			vertical-align: top;
+			margin: 10px;
+		}
+		.section0002 ul {
+			border: #666666 1px solid;
+			margin: 20px 0;
+		}
+		
+		.section0002 ul li span{
+			width: 80px;
+		}
+		.section0002 .a{
+			
+			width:1000px ;
+		} 
+		.section0002 .a a{
+			color: #666666;
+			display: inline-block;
+			margin: 3px 10px;
+			text-decoration: none;
+		}
+		
+		

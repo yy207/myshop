@@ -1,0 +1,42 @@
+.section006{
+				width: 1200px;
+				margin: 20px auto;
+			}
+			.section006 .left{
+				display: inline-block;
+				vertical-align: top;
+				width: 800px;
+			}
+			
+			.section006  dl{
+				display: inline-block;
+				vertical-align: top;
+				margin: 5px 0 5px 50px;
+			}
+			.section006  dl dt{
+				font-size: 22px;
+			}
+			.section006  dl dd{
+				margin: 5px;
+				font-size:14px ;
+			}
+			
+			.section006 .right{
+				display: inline-block;
+				vertical-align: top;
+				width: 350px;
+			}
+			.section006 .right ul {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			.section006 .right ul li{
+				list-style: none;
+				margin: 10px ;
+				color: #666666;
+				font-size: 14px;
+			}
+			.section006 .right ul li:nth-of-type(4){
+				color: #FF4E00;
+				font-size: 22px;
+			}

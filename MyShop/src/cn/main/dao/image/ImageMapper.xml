@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.main.dao.image.ImageMapper">
+	
+	<select id="getImageList" resultType="Image">
+		SELECT `id`,`path`,`type`,`sid`,`createTime` FROM image
+		<trim prefix="where" prefixOverrides="and | or">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="type!=null">
+				and type =#{type}
+			</if> 
+			<if test="sid!=null">
+				and sid = #{sid}
+			</if>
+			
+			<if test="createTime !=null and createTime != ''">
+				and createTime > #{createTime}<!-- 查询在固定时间之后的记录信息 -->
+			</if>
+		</trim>
+		order by createTime desc, type, sid  limit #{from},#{pageSize}		
+	</select>
+	<select id="getListCount" resultType="int">
+		SELECT count(1) FROM image
+		<trim prefix="where" prefixOverrides="and | or">
+			<if test="id != null">
+				and id = #{id}
+			</if>
+			<if test="type!=null">
+				and type =#{type}
+			</if> 
+			<if test="sid!=null">
+				and sid = #{sid}
+			</if>
+			
+			<if test="createTime !=null and createTime != ''">
+				and createTime > #{createTime}<!-- 查询在固定时间之后的记录信息 -->
+			</if>
+		</trim>
+	</select>
+	
+	
+	
+</mapper>

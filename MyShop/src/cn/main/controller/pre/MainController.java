@@ -1,0 +1,180 @@
+package cn.main.controller.pre;
+
+import java.util.List;
+
+import javax.annotation.Resource;
+
+import org.apache.log4j.Logger;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import cn.main.pojo.Category;
+import cn.main.pojo.Good;
+import cn.main.pojo.Image;
+import cn.main.pojo.News;
+import cn.main.pojo.Shop;
+import cn.main.service.CategoryService;
+import cn.main.service.GoodService;
+import cn.main.service.ImageService;
+import cn.main.service.NewsService;
+import cn.main.service.ShopService;
+import cn.main.utils.Page;
+
+@Controller
+@RequestMapping("/main")
+public class MainController {
+
+	@Resource
+	private GoodService goodService;// 商品
+	@Resource
+	private ShopService shopService;// 商店
+	@Resource
+	private CategoryService categoryService;// 分类
+	@Resource
+	private NewsService newsService;// 新闻分类
+	@Resource
+	private ImageService imageService;// 图片集合
+
+	private Logger logger = Logger.getLogger(getClass());
+
+	@RequestMapping("index")
+	public String index(Model model,
+			@RequestParam(value="cate",required=false)Integer cate,
+			@RequestParam(value="name",required=false)String name, 
+			@RequestParam(value="currentIndex",required=false)Integer currentIndex) {
+		
+		Page pages = new Page(8);// 分页 8 条
+		logger.debug(">========cate========" + cate);
+		logger.debug(">========name========" + name);
+		logger.debug(">========currentIndex========" + currentIndex);
+		// 前台请求页面信息，包含 标题分类信息 ，
+		// title 获取所有一级分类、二级分类
+		List<Category> cateList1 = categoryService.getCategory(null,null, null, 1);
+		List<Category> cateList2 = categoryService.getCategory(null,null, null, 2);
+		// 新闻集合
+		List<News> newsList = newsService.getNewsList(null, null, null, null,
+				0, 20);
+		// 图片集合
+		List<Image> imageList = imageService.getImageList(null, 1, null, null,
+				0, 6);
+		// 热销商品
+		List<Good> goodList = goodService.getGoodList(null, null, name, cate,null,
+					null, 4, 0, 5);//state 4 已上架
+		if (goodList.size() <= 5) {// 长度小于5,集合再次查询补充
+			goodList.addAll(goodService.getGoodList(null, null, null, null,
+					cate, null, null, 0, 5 - goodList.size()));
+		}
+		if (goodList.size() <= 5) {// 长度小于5,集合再次查询补充
+			goodList.addAll(goodService.getGoodList(null, null, null, null,
+					null, null, null, 0, 5 - goodList.size()));
+		}
+		
+		//进口生鲜
+		List<Good> goodList1 = goodService.getGoodList(null, null, null, 660, null, null,4, 0, 11);
+		//化妆品
+		List<Good> goodList2 = goodService.getGoodList(null, null, null, 548, null, null,4, 0, 11);
+		//家用商品
+		List<Good> goodList3 = goodService.getGoodList(null, null, null, 628, null, null,4, 0, 11); 
+		//商品6数码
+		List<Good> goodList4 = goodService.getGoodList(null, null, null, 670, null, null,4, 0, 11);
+		
+		
+		
+
+		model.addAttribute("cateList1", cateList1);
+		model.addAttribute("cateList2", cateList2);
+		model.addAttribute("newsList", newsList);
+		model.addAttribute("imageList", imageList);
+		model.addAttribute("goodList", goodList);
+		
+		System.out.println(">>>>>>>>>"+goodList3.size());
+		model.addAttribute("goodList1", goodList1); 
+		model.addAttribute("goodList2", goodList2); 
+		model.addAttribute("goodList3", goodList3); 
+		model.addAttribute("goodList4", goodList4);
+		
+		
+		model.addAttribute("name", name);
+
+		return "pre/main";
+	}
+
+	// 前端ajax响应图片加载
+	@RequestMapping(value = "imagelist")
+	@ResponseBody
+	public Object getInameList(Integer type, Integer sid) {
+		logger.debug("" + type);
+		logger.debug("" + sid);
+		List<Image> imageList = imageService.getImageList(null, type, sid,
+				null, 0, 5);
+		return imageList;
+	}
+
+	@RequestMapping("goodinfo/{gid}/{sid}")
+	public String good(@PathVariable(value = "gid") Integer gid,
+			@PathVariable(value = "sid") Integer sid, Model model) {
+
+		logger.debug(">>>>>>>>>>>" + gid);
+		logger.debug(">>>>>>>>>>>" + sid);
+		// 前台请求页面信息，包含 标题分类信息 ，
+		// title 获取所有一级分类、二级分类
+		List<Category> cateList1 = categoryService.getCategory(null,null, null, 1);
+		List<Category> cateList2 = categoryService.getCategory(null,null, null, 2);
+		
+		
+		Good good = goodService.getGoodList(gid, sid, null, null, null, null,null, 0, 2).get(0);// 获取单个对象
+		good.setImages(imageService.getImageList(null, 3, sid, null, 0, 5));// 获取商品图片集合
+		good.setImagesDetail(imageService.getImageList(null, 4, sid, null, 0, 5));// 获取详情图片集合
+		
+		//当前分类名称
+		Category c1 = categoryService.getCategory(good.getType1(), null, null, null).get(0);
+		Category c2 = categoryService.getCategory(good.getType2(), null, null, null).get(0);
+		//找相似
+		List<Good> list= goodService.getGoodList(null, sid, null, c1.getId(), c2.getId(), null, null, 0, 5);
+		
+		List<Image> imageList = imageService.getImageList(null, 3, good.getSid(), null, 0, 5);
+		
+		//所属商店
+		Shop shop = shopService.getShopById(sid,null, null);
+		
+		
+		model.addAttribute("cateList1", cateList1);
+		model.addAttribute("cateList2", cateList2);
+		model.addAttribute("good", good);
+		model.addAttribute("c1", c1);
+		model.addAttribute("c2", c2);
+		model.addAttribute("goods", list);
+		model.addAttribute("shop", shop);
+		model.addAttribute("imageList", imageList);
+		
+		return "pre/goodinfo";
+	}
+	/**
+	 * ajax实现分类三级联动
+	 * @param parentId
+	 * @param type
+	 * @return
+	 */
+	@RequestMapping("/cate")
+	@ResponseBody
+	public Object getCateList(Integer parentId,Integer type){
+		//二级分类
+		List<Category> cList = categoryService.getCategory(null,null, parentId, type); 
+		
+		return cList;
+	}
+	@RequestMapping("login")
+	public String login(){
+		return "pre/login";
+	}
+	@RequestMapping("register")
+	public String register(){
+		return "pre/register";
+	}
+	
+
+}

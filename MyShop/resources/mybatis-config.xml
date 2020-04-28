@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration   
+ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   
+ "http://mybatis.org/dtd/mybatis-3-config.dtd">  
+<configuration>
+	<!-- 配置数据库文件 -->
+	<!-- <properties resource="database.properties"></properties> -->
+	
+	<settings>
+		<!-- 日志文件 -->
+		<setting name="logImpl" value="LOG4J"/>
+		<!-- 自动匹配 -->
+		<setting name="autoMappingBehavior" value="FULL"/>
+		<!-- 二级缓存 -->
+		<setting name="cacheEnabled" value="true"/>
+	</settings>
+	<!-- 类别名 -->
+	<typeAliases>
+		<package name="cn.main.pojo"/>
+	</typeAliases>
+	<!-- 数据库环境配置  --> 
+	<!--  <environments default="developer">
+	 	<environment id="developer">
+	 		<transactionManager type="JDBC"></transactionManager>
+	 		<dataSource type="POOLED">
+	 			<property name="driver" value="${driver}"/>
+	 			<property name="url" value="${url}"/>
+	 			<property name="username" value="${user}"/>
+	 			<property name="password" value="${password}"/>
+	 		</dataSource>
+	 	</environment>
+	 </environments> 
+	映射文件集合
+	<mappers>
+		<mapper resource="cn/main/dao/user/UserMapper.xml"/>
+		<mapper resource="cn/main/dao/shop/ShopMapper.xml"/>
+	</mappers>  -->
+</configuration>

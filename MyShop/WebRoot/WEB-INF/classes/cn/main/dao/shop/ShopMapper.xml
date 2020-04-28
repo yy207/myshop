@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.main.dao.shop.ShopMapper">
+	 <select id="getShopById" resultType="Shop">
+		 SELECT  
+		 	`id`,`uid`,`name`,`describe`,`address`,`picPath`,`liker`,`level`,`type1`
+		 	,`type2`,`type3`,`state`,`createTime`
+		  FROM `shop`  
+		  <trim prefix="where" prefixOverrides="and | or">
+		  	<if test="id!=null">
+		  		and `id` =#{id} 
+		  	</if>
+		  	<if test="uid!=null">
+		  		and `uid` =#{uid} 
+		  	</if>
+		  	<if test="name!= null and name != '' ">
+		  		and name like  CONCAT('%',#{name},'%')
+		  	</if>
+		  </trim> 
+	 </select>
+	 <select id="getShopCount" resultType="int">
+	 	select count(1) from shop 
+	 	<trim prefix="where" prefixOverrides="and | or">	
+	 		<if test="name!= null and name !=''">
+	 			and name like CONCAT('%',#{name},'%')
+	 		</if>
+	 	</trim>
+	 </select>
+	 <select id="getShopByName" resultType="Shop">
+	 	SELECT  
+		 	`id`,`uid`,`name`,`describe`,`address`,`picPath`,`liker`,`level`,`type1`
+		 	,`type2`,`type3`,`state`,`createTime`
+		  FROM `shop` where name = #{name}  
+	 </select>
+	 <select id="getShopList" resultType="Shop">
+	 	SELECT  
+		 	s.`id`,s.`uid`,s.`name`,s.`describe`,s.`address`,
+		 	s.`picPath`,s.`liker`,s.`level`,s.`type1`
+		 	,s.`type2`,s.`type3`,s.`state`,s.`createTime`
+		  FROM `shop` as s
+		  <trim prefix="where" prefixOverrides="and | or">
+		  		<if test="id != null">
+		  			and s.`id` = #{id}
+		  		</if>
+		  		<if test="uid != null">
+		  			and s.`uid` = #{uid}
+		  		</if>
+		  		<if test="name != null and name != ''">
+		  			and s.`name` like CONCAT('%',#{name},'%')
+		  		</if>
+		  		<if test="describe != null and describe != ''">
+		  			and s.`describe` like  CONCAT('%',#{describe},'%')
+		  		</if>
+		  		<if test="address != null and address != ''">
+		  			and s.`address` like  CONCAT('%',#{address},'%')
+		  		</if>
+		  		<if test="picPath != null and picPath != ''">
+		  			and s.`picPath` like  CONCAT('%',#{picPath},'%')
+		  		</if>
+		  		<if test="liker != null">
+		  			and s.`liker` = #{liker}
+		  		</if>
+		  		<if test="level != null">
+		  			and s.`level` = #{level}
+		  		</if>
+		  		<if test="type1 != null">
+		  			and s.`type1` = #{type1}
+		  		</if>
+		  		<if test="type2 != null">
+		  			and s.`type2` = #{type2}
+		  		</if>
+		  		<if test="type3 != null">
+		  			and s.`type3` = #{type3}
+		  		</if>
+		  		<if test="state != null">
+		  			and s.`state` = #{state}
+		  		</if>
+		  		<if test="createTime != null and createTime !=''">
+		  			and s.`createTime` = #{createTime}
+		  		</if> 
+		  </trim> 
+	 		order by s.`createTime` desc limit #{from},#{pageSize}
+	 </select>
+	 
+	 <insert id="addByShop" parameterType="Shop">
+	 	
+	 	INSERT INTO shop (`uid`,`name`,`describe`,`address`,
+					`picPath`,`liker`,`level`,`type1`,`type2`,
+					`type3`,`state`,`createTime`)
+ 		VALUES(#{shop.uid},#{shop.name},#{shop.describe},#{shop.address},#{shop.picPath},
+ 			0,0,#{shop.type1},#{shop.type2},#{shop.type3},1,#{shop.createTime});
+	 	
+	 </insert>
+	 
+	 
+	 
+</mapper>

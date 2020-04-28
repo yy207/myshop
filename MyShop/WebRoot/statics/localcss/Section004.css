@@ -1,0 +1,104 @@
+	
+			.section004{
+				width: 1300px;
+				height: 520px;
+				margin: 30px auto;
+			}
+			.section004 .top{
+				border-bottom: 2px solid #FF3C3C;
+			}
+			.section004 .no ,.section004 p,.section004 ul{
+				display: inline-block;
+				vertical-align: center;
+			}
+			.section004 .no{				
+				width: 50px;
+				height: 50px;
+				margin: 5px;
+				background: #FF4E00 ;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 50px;
+				color: #FFFFFF;
+				font-size: 25px;
+
+			}
+			.section004 p {
+				font-size: 22px;
+				color:#FF4E00 ;
+			}
+			.section004 .top>ul{
+				height: 60px;
+				line-height: 60px;
+				float: right;
+				margin-right:50px ;
+			}
+			.section004 ul li{
+				display: inline-block;
+				margin: 0 5px;
+			}
+			.section004 .bottom .left,.section004 .bottom .center,.section004 .bottom .right{
+				display: inline-block;
+				vertical-align: top;
+				height: 450px;
+			}
+			
+			.section004 .bottom .left{
+				text-align: center;
+				width: 225px;
+				position: relative;
+			}
+			.section004 .bottom .left dl dt img{
+				width: 211px;
+				height: 286px;
+			}
+			.section004 .bottom .left dl dd img:nth-of-type(1){
+				position: absolute;
+				top: 150px;
+				left: 5px;
+			}
+			.section004 .bottom .left dl dd img:nth-of-type(2){
+				position: absolute;
+				top: 150px;
+				right: 5px;
+			}
+			.section004 .bottom .left dl dd{
+				background-color: #E4F7EC;
+				font-size: 14px;
+				height: 30px;
+				line-height: 30px;
+				border-top:0.8px dashed  #666 ;
+			}
+			
+			
+			.section004 .bottom .center{
+				width: 770px;
+				
+			}
+			.section004 .bottom .center  .pad{
+				width: 250px;
+				height: 215px;
+				padding-top:20px ;
+				display: inline-block;
+				text-align: center;
+				vertical-align: middle;
+			}
+			.section004 .bottom .center  .pad dd:nth-of-type(2){
+				color: #FF4E00;
+				font-size: 24px;
+			}
+			.section004 .bottom .center  .pad  img{
+				width: 190px;
+				height: 135px;
+			}
+			
+			
+			
+			.section004 .bottom .right{
+				width: 280px;
+			}
+			.section004 .bottom .right img{
+				width: 250px;
+				height: 215px;
+				
+			}

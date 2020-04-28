@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.main.dao.user.UserMapper">
+	<select id="getUserByUserCode" resultType="User" parameterType="string">
+		SELECT * FROM `user` where `userCode` = #{userCode}
+	</select>
+	<select id="getUserByUserId" resultType="User" parameterType="Integer">
+		SELECT * FROM `user` where `id` = #{id}
+	</select>
+	<select id="getAllUserCount" resultType="int">
+		SELECT
+		count(0)
+		FROM `user` AS u
+		<trim prefix="where" prefixOverrides="and | or">
+			<!-- userCode -->
+			<if test="userCode !=null and userCode != '' ">
+				and u.userCode like CONCAT('%',#{userCode},'%')
+			</if> 
+			<!-- userName -->
+			<if test="userName !=null and userName != ''">
+				and u.userName like CONCAT('%',#{userName},'%')
+			</if> 
+			<!-- userRole -->
+			<if test="userRole != null">
+				and u.userRole = #{userRole}
+			</if>
+			<if test="idCard != null and idCard != ''">
+				and u.idCard like CONCAT('%',#{idCard},'%')
+			</if>
+			<if test="address != null and address != ''">
+				and u.address like CONCAT('%',#{address},'%')
+			</if>
+			<if test="realName != null and realName != ''">
+				and u.realName like CONCAT('%',#{realName},'%')
+			</if>
+			<if test="sex != null and sex != ''">
+				and u.sex like CONCAT('%',#{sex},'%')
+			</if>
+			<if test="email != null and email != ''">
+				and u.email like CONCAT('%',#{email},'%')
+			</if>
+			<if test="phone != null and phone != ''">
+				and u.phone like CONCAT('%',#{phone},'%')
+			</if>
+			<if test="birthday != null and birthday != ''">
+				and u.birthday like CONCAT('%',#{birthday},'%')
+			</if>
+			<if test="loginState != null">
+				and u.loginState = #{loginState}
+			</if>
+		</trim>
+	</select>
+	<select id="getAllUser" resultType="User">
+		SELECT
+		u.id,u.userCode,u.userName, u.userRole,
+		(YEAR(NOW())-
+		YEAR(`birthday`))AS age,
+		(SELECT `valueName` FROM `data_dictionary`
+		WHERE `keyCode` ='userRole' AND `valueId` = u.userRole)
+		AS
+		userRoleName,
+		u.userPassword,u.idCard,u.realName,u.sex,u.phone,u.address,
+		u.email,u.userPic,u.createTime,u.loginState,u.birthday
+		FROM `user` AS u
+		<trim prefix="where" prefixOverrides="and | or">
+			<!-- userCode -->
+			<if test="userCode !=null and userCode != '' ">
+				and u.userCode like CONCAT('%',#{userCode},'%')
+			</if>
+			<if test="userCode !=null and userCode != '' ">
+				or u.idCard like CONCAT('%',#{userCode},'%')
+			</if>
+			<!-- userName -->
+			<if test="userName !=null and userName != ''">
+				and u.userName like CONCAT('%',#{userName},'%')
+			</if>
+			<if test="userName !=null and userName != ''">
+				or u.realName like CONCAT('%',#{userName},'%')
+			</if>
+			<!-- userRole -->
+			<if test="userRole != null">
+				and u.userRole = #{userRole}
+			</if>
+			<if test="idCard != null and idCard != ''">
+				and u.idCard like CONCAT('%',#{idCard},'%')
+			</if>
+			<if test="address != null and address != ''">
+				and u.address like CONCAT('%',#{address},'%')
+			</if>
+			<if test="realName != null and realName != ''">
+				and u.realName like CONCAT('%',#{realName},'%')
+			</if>
+			<if test="sex != null and sex != ''">
+				and u.sex like CONCAT('%',#{sex},'%')
+			</if>
+			<if test="email != null and email != ''">
+				and u.email like CONCAT('%',#{email},'%')
+			</if>
+			<if test="phone != null and phone != ''">
+				and u.phone like CONCAT('%',#{phone},'%')
+			</if>
+			<if test="birthday != null and birthday != ''">
+				and u.birthday like CONCAT('%',#{birthday},'%')
+			</if>
+			<if test="loginState != null">
+				and u.loginState = #{loginState}
+			</if>
+		</trim>
+		order by u.createTime DESC limit #{from},#{pageSize}
+	</select>
+
+	<update id="updateUserLastLoginTime">
+		UPDATE `user`   
+		<trim prefix="SET" suffixOverrides="," suffix="WHERE `id`=#{id}" >
+			<if test="date != null and date !=''">
+				`lastLoginTime`=#{date},
+			</if>
+			<if test="state !=null">
+				`loginState` = #{state},
+			</if>
+		</trim> 
+	</update>
+
+
+	<insert id="addUser" parameterType="User">
+		INSERT INTO `myshop`.`user`
+		(`userCode`, `userName`, `userPassword`,
+		`userRole`, `idCard`, `realName`, `phone`,
+		`address`,`birthday`,`createBy`,`createTime`,`userPic`)
+		VALUES
+		(#{user.userCode},#{user.userName}, #{user.userPassword},
+		#{user.userRole}, #{user.idCard}, #{user.realName}, #{user.phone},
+		#{user.address},#{user.birthday},#{user.createBy},#{user.createTime},#{user.userPic})
+	</insert>
+</mapper>

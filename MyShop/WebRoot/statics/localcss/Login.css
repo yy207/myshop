@@ -1,0 +1,135 @@
+.login *{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;/*
+				border: 1px dashed red;*/
+				color: #666666;
+				text-decoration:none ;
+			}
+			.login{
+				width: 1500px;
+				margin: 60px auto;
+			}
+			.login .header .left{
+				float: left;
+				padding: 5px 30px;
+			}
+			.login .header .right{
+				float: right;
+				padding: 5px 30px;
+			}
+			.login .header .right p{
+				display:inline-block;
+				vertical-align: middle;
+				border: solid 0.3px #666;
+				padding: 3px;
+				margin-left:10px ;
+			}
+			.login .header .right img{
+				vertical-align: middle;
+			}
+			.header:after{
+				content: " ";
+				display: block;
+				clear: both;
+			}
+			
+			hr{
+				border: 1px solid #000;
+				box-shadow: 0 2px 6px #666666;
+			}
+			
+			.section{
+				height: 500px;
+				margin:20px 0;
+			}
+			.section .left ,.section .right{
+				display: inline-block;
+				width: 730px;
+				margin: 6px;
+				vertical-align: middle;
+			}
+			.section .left img{
+				width: 600px;
+				margin: 60px;
+			}			
+			.section .right form{
+				width: 500px;
+				margin:0 80px ;
+			}
+			.section .right form p{
+				margin :10px 0;
+			}
+			
+			.section .right form .p7 a{
+				vertical-align: middle;
+			}
+			.section .right form .p7 .a1{background: url(../img/l_1.png)  ; }
+			.section .right form .p7 .a1:hover{background: url(../img/l_1_h.png) ; }
+			.section .right form .p7 .a2{background: url(../img/l_2.png)    ; }
+			.section .right form .p7 .a2:hover{background: url(../img/l_2_h.png)    ; }
+			.section .right form .p7 .a3{background: url(../img/l_3.png)  ; }
+			.section .right form .p7 .a3:hover{background: url(../img/l_3_h.png)   ; }
+			.section .right form .p7 .a4{background: url(../img/l_4.png)   ; }
+			.section .right form .p7 .a4:hover{background: url(../img/l_4_h.png)   ; }
+			.section .right form .p7 .aimg,
+			.section .right form .p7 .aimg:hover{
+				display: inline-block;
+				width: 45px;
+				height: 45px; 
+				margin: 3px 6px;
+				background-repeat:no-repeat ;
+				background-size:36px;
+				background-position: center;
+			}
+			
+			
+			.section .right form .p1 a,.section .right form .p4 a{
+				float: right;
+				
+			}
+			.section .right form .p2 input{
+				background:url(../img/userHead.png) ;
+			}
+			.section .right form .p3 input{
+				background: url(../img/lock.png);
+			}
+			
+			.section .right form .p2 input,.section .right form .p3 input,.section .right form .p5 input {
+				width: 490px;
+				height: 60px;
+				margin: 3px;
+				text-indent: 4em;
+				font-size: 20px;
+				background-repeat: no-repeat  ;
+				background-position:25px center   ;
+				background-size:35px;
+			}
+			.section .right form .p5 input{
+				background: #FF0000;
+				color: #Fff;
+				text-indent: 0;
+				text-align: center;
+				
+			}
+			
+	
+			.section .right form .p7 .a5{
+				display: inline-block;
+				width: 150px;
+				padding-right:30px ;
+				text-align: right;
+				background:url(../img/loadMore.png) no-repeat right  ;
+				margin: 18px;
+				float: right;
+				}
+			
+			
+			
+			
+			
+			
+			.footer p{
+				text-align:center ;
+				font-size: 10px;
+			}

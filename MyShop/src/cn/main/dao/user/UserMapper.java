@@ -3,8 +3,7 @@ package cn.main.dao.user;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
-
-import com.beust.jcommander.Parameter;
+ 
 
 import cn.main.pojo.User;
 

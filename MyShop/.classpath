@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="resources"/>
-	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JDK 1.7.0.8"/>
 	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_6_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
@@ -45,6 +44,5 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/httpasyncclient-4.1.4.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/httpasyncclient-cache-4.1.4.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/org.dom4j.dom4j-1.6.1.jar"/>
-	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
 </classpath>

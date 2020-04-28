@@ -13,8 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.sun.org.apache.xerces.internal.dom.RangeExceptionImpl;
+ 
 
 import cn.main.pojo.Category;
 import cn.main.pojo.Shop;
@@ -37,7 +36,7 @@ public class ShopListController {
 	
 	@RequestMapping("/shoplist")
 	public String shopList(Model model,String shopName,String currentIndex,Integer pageSize){
-		//条件转化 
+		//鏉′欢杞寲 
 		
 		Integer index = 1;
 		if(currentIndex!=null&&currentIndex!=""){
@@ -45,10 +44,10 @@ public class ShopListController {
 		}
 		logger.debug(">>>>>>currentIndex"+currentIndex);
 		logger.debug(">>>>>>index"+index);
-		//封装到页
+		//灏佽鍒伴〉
 				Page pages = new Page();
 				pages.setPageSize(pageSize==null?10:pageSize);
-		//获取到集合对象
+		//鑾峰彇鍒伴泦鍚堝璞�
 		List<Shop> shopList = shopService.getShopList(null, null, shopName, null, 
 					null, null, null, null, null, null, null, null, null, (index-1)* pages.getPageSize(), pages.getPageSize())	;
 		
@@ -58,12 +57,12 @@ public class ShopListController {
 		
 		pages.setCurrentIndex(index);
 		pages.setTotalCount(shopService.getShopCount(shopName));
-		//将数据存到model 
-		model.addAttribute("shopName",shopName);//查询条件名称
-		model.addAttribute("shopList", shopList);//结果集 
+		//灏嗘暟鎹瓨鍒癿odel 
+		model.addAttribute("shopName",shopName);//鏌ヨ鏉′欢鍚嶇О
+		model.addAttribute("shopList", shopList);//缁撴灉闆� 
 		model.addAttribute("pages", pages);
 		if(shopList.size()<=0){
-			model.addAttribute("msg", "当前条件下暂无记录！");
+			model.addAttribute("msg", "褰撳墠鏉′欢涓嬫殏鏃犺褰曪紒");
 		}
 		return "list/shopList";
 	}
@@ -80,9 +79,9 @@ public class ShopListController {
 			if(shopService.addByShop(shop)>0){
 				return "redirect:/shop/shoplist";
 			}else{
-				model.addAttribute("msg", "* 商店信息註冊失敗！");}
+				model.addAttribute("msg", "* 鍟嗗簵淇℃伅瑷诲唺澶辨晽锛�");}
 		} else{
-			model.addAttribute("msg", "* 您已有店鋪，不可以重複註冊！");
+			model.addAttribute("msg", "* 鎮ㄥ凡鏈夊簵閶紝涓嶅彲浠ラ噸瑜囪ɑ鍐婏紒");
 		}
 		
 		model.addAttribute("shop", shop);
@@ -93,11 +92,11 @@ public class ShopListController {
 	}
 	@RequestMapping(value="/add",method = RequestMethod.GET)
 	public String shopAdd(Model model){
-		//一级分类
+		//涓�绾у垎绫�
 		List<Category> cList1 = categoryService.getCategory(null,null, 0, 1);
-		//二级分类
+		//浜岀骇鍒嗙被
 		List<Category> cList2 = categoryService.getCategory(null,null, null, 2);
-		//三级分类
+		//涓夌骇鍒嗙被
 		List<Category> cList3 = categoryService.getCategory(null,null, null, 3);
 		
 		
@@ -107,7 +106,7 @@ public class ShopListController {
 		return "add/shopadd";
 	}
 	/**
-	 * ajax实现分类三级联动
+	 * ajax瀹炵幇鍒嗙被涓夌骇鑱斿姩
 	 * @param parentId
 	 * @param type
 	 * @return
@@ -115,13 +114,13 @@ public class ShopListController {
 	@RequestMapping("/cate")
 	@ResponseBody
 	public Object getCateList(Integer parentId,Integer type){
-		//二级分类
+		//浜岀骇鍒嗙被
 		List<Category> cList = categoryService.getCategory(null,null, parentId, type); 
 		
 		return cList;
 	}
 	/**
-	 * 动态验证存在
+	 * 鍔ㄦ�侀獙璇佸瓨鍦�
 	 * @param name
 	 * @return
 	 */

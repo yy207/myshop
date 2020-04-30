@@ -1,4 +1,4 @@
-img,*{padding: 0; margin: 0; border: 0px dashed red; font-size: 15px;box-sizing: border-box;}
+img,*{padding: 0; margin: 0; /* border: 0px dashed red; */ font-size: 15px;box-sizing: border-box;}
 			.footer,.hot,.shopping,.main_body,.nav,.head,.top_nav{width: 100%; min-width: 1200px;text-align: center; }
 			.top_nav{background: #F1F7EB;height: 24px;} 
 			.cate_list{text-align: left;}
@@ -15,7 +15,7 @@ img,*{padding: 0; margin: 0; border: 0px dashed red; font-size: 15px;box-sizing:
 			.orangle{color: #FF5000;}
 			.s20{font-size: 20px;}
 			
-			.li{float: left;background:  #F1F7EB;}
+			.li{display:inline-block; background:  #F1F7EB;margin:0 15px;}
 			.li_menu_li{display: none;}		
 			.li:hover .li_menu_li{display: block;}	
 			

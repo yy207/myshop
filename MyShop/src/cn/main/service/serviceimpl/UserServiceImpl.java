@@ -23,7 +23,9 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getUserByUserCode(String userCode) {
 		User user =mapper.getUserByUserCode(userCode);
-		user.setShop( shopMapper.getShopById(null,user.getId(), null));
+		if(user!=null) {
+			user.setShop( shopMapper.getShopById(null,user.getId(), null));
+		}
 		return user;
 	}
 	@Override

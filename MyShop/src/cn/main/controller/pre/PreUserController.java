@@ -5,11 +5,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.annotation.Resource; 
+import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FilenameUtils;
+import org.apache.ibatis.annotations.Param;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,17 +33,11 @@ public class PreUserController {
 	
 	@Resource
 	private UserService service;
-	//跳转登录页面
-		@RequestMapping(value="login",method=RequestMethod.GET)
-		public String login(HttpServletRequest req){
-			
-			log.debug("===================login"+req.getRemoteUser()+":"+req.getRemoteHost()+":"+req.getRemotePort());
-			return "pre/login";
-		}
 		//登录
 		@RequestMapping(value="dologin",method=RequestMethod.POST)
 		public String doLogin(@RequestParam String userCode,@RequestParam String userPassword,
-								HttpServletRequest request,HttpSession session){
+								@RequestParam(required=false,value="suto") Boolean auto,
+								HttpServletRequest request,HttpServletResponse response,HttpSession session){
 			log.debug("===================dologin");
 			log.debug(userCode);
 			log.debug(userPassword); 
@@ -49,6 +46,15 @@ public class PreUserController {
 				if(user.getUserPassword().equals(userPassword)){ 
 					session.setAttribute(Contains.SESSION_USER, user);
 					service.updateUserLastLoginTime(user.getId(),Contains.getDate(), 1);
+					if(auto!=null && auto) {
+						log.debug(">>>>>>>>auto  "+auto);
+						Cookie code = new Cookie("userCode", userCode);
+						Cookie pwd = new Cookie("userPassword", userPassword);
+						code.setMaxAge(24*60);
+						pwd.setMaxAge(24*60);
+						response.addCookie(code);
+						response.addCookie(pwd);
+					}
 					return "redirect:/main/index";
 				}else{
 					request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERPWD);
@@ -56,7 +62,7 @@ public class PreUserController {
 			}else{
 				request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERCODE);
 			} 
-			return "pre/login";
+			return "login";
 		}
 		@RequestMapping(value = "registe", method = RequestMethod.POST)
 		public String registe(
@@ -72,7 +78,7 @@ public class PreUserController {
 			log.debug(user.getRealName());  
 			if(user.getUserCode()==null||user.getRealName()==null||user.getUserPassword()==null||
 					user.getUserPassword().length()<6 	){
-				return "pre/register";
+				return "register";
 			}
 			
 			

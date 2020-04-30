@@ -3,6 +3,8 @@ package cn.main.controller.pre;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
+import javax.servlet.jsp.PageContext;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
@@ -46,6 +48,9 @@ public class MainController {
 			@RequestParam(value="cate",required=false)Integer cate,
 			@RequestParam(value="name",required=false)String name, 
 			@RequestParam(value="currentIndex",required=false)Integer currentIndex) {
+		
+		
+		
 		
 		Page pages = new Page(8);// 分页 8 条
 		logger.debug(">========cate========" + cate);
@@ -175,11 +180,11 @@ public class MainController {
 	}
 	@RequestMapping("login")
 	public String login(){
-		return "pre/login";
+		return "login";
 	}
 	@RequestMapping("register")
 	public String register(){
-		return "pre/register";
+		return "register";
 	}
 	
 

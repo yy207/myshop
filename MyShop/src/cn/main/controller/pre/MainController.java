@@ -62,16 +62,22 @@ public class MainController {
 		List<Image> imageList = imageService.getImageList(null, 1, null, null,
 				0, 6);
 		// 热销商品
-		List<Good> goodList = goodService.getGoodList(null, null, name, cate,null,
-					null, 4, 0, 5);//state 4 已上架
-		if (goodList.size() <= 5) {// 长度小于5,集合再次查询补充
-			goodList.addAll(goodService.getGoodList(null, null, null, null,
-					cate, null, null, 0, 5 - goodList.size()));
+		List<Good> goodList = goodService.getGoodList(null, null, null, null,null,
+					null, 4, 0, 20);//state 4 已上架
+		
+		
+		//猜你喜欢
+		List<Good> likeList = goodService.getGoodList(null, null, name, cate,null,
+				null, 4, 0, 20);//state 4 已上架 
+		if (likeList.size() <= 20) {// 长度小于5,集合再次查询补充
+			likeList.addAll(goodService.getGoodList(null, null, null, null,
+					null, cate, null, 0, 20 - goodList.size()));
 		}
-		if (goodList.size() <= 5) {// 长度小于5,集合再次查询补充
-			goodList.addAll(goodService.getGoodList(null, null, null, null,
-					null, null, null, 0, 5 - goodList.size()));
+		if (likeList.size() <= 20) {// 长度小于5,集合再次查询补充
+			likeList.addAll(goodService.getGoodList(null, null, null, null,
+					null, null, null, 0, 20 - goodList.size()));
 		}
+		
 		
 		//进口生鲜
 		List<Good> goodList1 = goodService.getGoodList(null, null, null, 660, null, null,4, 0, 11);
@@ -96,11 +102,11 @@ public class MainController {
 		model.addAttribute("goodList2", goodList2); 
 		model.addAttribute("goodList3", goodList3); 
 		model.addAttribute("goodList4", goodList4);
-		
+		model.addAttribute("likeList", likeList);
 		
 		model.addAttribute("name", name);
 
-		return "pre/main";
+		return "index";
 	}
 
 	// 前端ajax响应图片加载
@@ -151,7 +157,7 @@ public class MainController {
 		model.addAttribute("shop", shop);
 		model.addAttribute("imageList", imageList);
 		
-		return "pre/goodinfo";
+		return "goodinfo";
 	}
 	/**
 	 * ajax实现分类三级联动

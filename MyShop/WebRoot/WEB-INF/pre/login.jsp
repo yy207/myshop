@@ -1,15 +1,13 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ include file="common/nav.jsp" %>
 		<div class="login">
-			<div class="header">
+			<%-- <div class="header">
 				<div class="left">
-					<a href="First.html">
+					<a href="${pageContext.request.contextPath }/main/index">
 						<img src="${pageContext.request.contextPath }/static/img/logo.png" />
 					</a> 
 				</div>
-			 
-			</div>
-			<hr />
+			</div> --%> 
 			<div class="section">
 				<div class="left">
 					<img src="${pageContext.request.contextPath }/static/img/loadimg.jpg" />
@@ -18,19 +16,19 @@
 					<!--表单-->
 					<form action="${pageContext.request.contextPath}/pre/dologin" method="post">
 						<p class="p1">
-							<strong>用户登录</strong>
+							<strong style="font-size: 20px;">用户登录</strong>
 							<a href="${pageContext.request.contextPath }/main/register"style="color: blue;" >注册账号</a>
 						</p>
 						<p class="p2">
-							<input name="userCode" id="userCode" value="${userCode }" required type="text"placeholder="Username"/> 
+							<input name="userCode" id="userCode" value="${userCode }" required type="text"placeholder="请输入用户名"/> 
 						</p>
 						<p class="p3">
-							<input name="userPassword" id="userPassword" value="${userPassword }" required type="password" placeholder="Password"/> 
+							<input name="userPassword" id="userPassword" value="${userPassword }" required type="password" placeholder="请输入密码"/> 
 						</p> 
 						<p style="color:red; text-align: left;">&nbsp;${error}</p>
 						<p class="p4">
 							<input type="checkbox" name="auto" id="auto" />
-							<label for="auto">保存用户名和密码</label>
+							<label for="auto">下次自动登录</label>
 							<a href="">忘记密码？</a>
 						</p>
 						<p class="p5">

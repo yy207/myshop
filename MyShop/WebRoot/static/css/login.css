@@ -106,7 +106,7 @@
 				background-size:35px; 
 			}
 			.section .right form .p5 input{
-				background: #FF5000;
+				background:/*  #FF5000 */linear-gradient(to right ,#ff6,#ff5000,#ff6);
 				color: #Fff;
 				text-indent: 0;
 				text-align: center;

@@ -1,0 +1,24 @@
+			.register{width:1200px; min-width: 1200px;max-width:1200px; margin: 0 auto;}
+			.img{position: fixed;}
+			.img,.register X.form{display: inline-block; vertical-align: middle;}
+			.img{width: 400px; height: 700px;left:0;top:20px; z-index: -50;}
+			*{margin: 0;padding: 0; /*  border: 1px solid red; */  box-sizing: border-box;
+			}
+			 
+			.register input[type*='te'],.register input[type*='pass'],.register input[type*='submit']{
+				display: block; width: 300px; height: 30px;border-radius: 0px; border: 1px #000 solid;text-indent: 1em;}
+			.register .input{width: 300px;}
+			.register .msg{width:200px;color: red; float: left;vertical-align: middle; }
+			.register .label{width:120px ;vertical-align: middle; }
+			.register td{vertical-align: center;}
+			.register span[id*='id']{font-size:9px;}
+			.register input[type*='submit']{background:/*#0071C6*/ linear-gradient(to right ,#ff6,#ff5000,#ff6);height: 50px; color: #fff;font-size: 22px;text-align: center;text-indent: 0;padding: 5px;}
+			
+			
+			
+			.title h2{color: #FF5000;text-indent: 3em;}
+			.title span{text-align: right;padding-right: 200px;display: block;}
+			
+			.register .form{margin: 50px 0 0 500px;}
+			a{color: #000; text-decoration: none;}
+			a:hover{color: #FF5000;}

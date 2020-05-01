@@ -9,6 +9,8 @@
 		<title></title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/login.css" />
+		
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/register.css" />
 	</head>
 	<body>
 		<!--导航栏开始-->

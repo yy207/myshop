@@ -1,5 +1,16 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-<%@ include file="common/nav.jsp" %>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/login.css" /> 
+	</head>
+	<body>
+	
+		<%@ include file="common/nav.jsp" %>
 		<div class="login">
 			<%-- <div class="header">
 				<div class="left">

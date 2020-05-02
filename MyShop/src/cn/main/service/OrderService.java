@@ -10,6 +10,9 @@ public interface OrderService {
 	//按条件获取
 		List<Order> getOrderList(@Param(value="id") Integer id,
 							@Param(value="uid") Integer uid,
+							@Param(value="sid") Integer sid,
+							@Param(value="gid") Integer gid,
+							@Param(value="number") Integer number,
 							@Param(value="orderCode") String orderCode,
 							@Param(value="createTime") String createTime,
 							@Param(value="end") String endTime,

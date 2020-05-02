@@ -29,7 +29,7 @@ public class PreNavController {
 	private  AddressService addressService;
 	
 	/**
-	 * 请求订单页
+	 * 请求地址页
 	 * @return
 	 */
 	@RequestMapping("addresspage")
@@ -39,19 +39,23 @@ public class PreNavController {
 		List<Address> addressList = addressService.getAddress(null, user.getId(), null, null);
 		
 		request.setAttribute("addressList", addressList);
-		return "pre/lock/nav_address";
+		return "address";
 	}
 	/**
-	 * 请求地址页
+	 * 请求订单页
 	 * @return
 	 */
 	@RequestMapping("orderpage")
 	public String orderPage(HttpSession session,HttpServletRequest request){
 		User user  = (User) session.getAttribute(Contains.SESSION_USER);
-		List<Order> orderList = orderService.getOrderList(null,user.getId(), null, null, null, null, null, null, null, null);		
+		//所有
+		List<Order> orderList = orderService.getOrderList(null,user.getId(),null, null, null, null, null, null, null, null, null, null, null);		
+		//待付款 1
+		//待发货 2
+		//待收获 3
+		//评价  4
 		request.setAttribute("orderList", orderList);//将订单的信息存储在请求 
-		
-		return "pre/lock/nav_order";
+		return "order";
 	}
 	
 	

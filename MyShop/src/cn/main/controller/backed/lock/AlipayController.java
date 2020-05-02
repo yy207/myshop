@@ -101,9 +101,11 @@ public class AlipayController {
 		order.setPrice(good.getPrice() * number);
 		if (orderService.addOrder(order) > 0) {// 添加到数据库一条记录
 			// 刚刚添加进去的订单外键，匹配code,
+//			Integer oid = orderService
+//					.getOrderList(null, null, code, null, null, null, null,
+//							null, null, null).get(0).getId();
 			Integer oid = orderService
-					.getOrderList(null, null, code, null, null, null, null,
-							null, null, null).get(0).getId();
+					.getOrderList(null, null, null, null, null, code, null, null, null, null, null, null, null).get(0).getId();
 			OrderDetails details = new OrderDetails();
 			details.setGid(gid);
 			details.setSid(sid);

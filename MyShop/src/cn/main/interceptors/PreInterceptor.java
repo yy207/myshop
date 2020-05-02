@@ -25,7 +25,9 @@ public class PreInterceptor extends HandlerInterceptorAdapter {
 			logger.debug("当前登录用户信息  "+user.getUserCode()+"    "+user.getUserName());
 			return true;
 		} else {
-			response.sendRedirect(request.getContextPath() + "/pre403.jsp");
+			//response.sendRedirect(request.getContextPath() + "/pre403.jsp");
+
+			response.sendRedirect(request.getContextPath() + "/main/login");
 			return false;
 		} 
 	}

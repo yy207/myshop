@@ -3,13 +3,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>MyShop 用户注册</title>
+	<title>MyShop 用户注册</title>
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" /> 
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/register.css" /> 
 </head> 
 <body>  
-<!--Begin Header Begin-->
-<%@ include file="common/nav.jsp" %>
-<!--End Header End-->  
-<!--Begin Login Begin-->
+		<!--Begin Header Begin-->
+		<%@ include file="common/nav.jsp" %>
+		<!--End Header End-->  
+		<!--Begin Login Begin-->
 		<div class="register">	
 			<div class="img">
 				<img class="img" src="${pageContext.request.contextPath }/static/img/bb_ban.jpg" />

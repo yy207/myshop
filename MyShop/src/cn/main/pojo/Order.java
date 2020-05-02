@@ -12,8 +12,10 @@ import java.util.List;
 public class Order {
 	private Integer id;//id
 	private Integer uid;//外键用户id
-	private String orderCode;//订单码
-	private String createTime;//创建时间
+
+	private Integer sid;//外键 订单id
+	private Integer gid;//外键 商品id
+	private Integer number;//商品的数量
 	
 
 	private String endTime;//创建时间
@@ -22,6 +24,54 @@ public class Order {
 	private String logidtics;//物流编码
 	private Integer address;//收货地址外键
 	
+	private Shop shop;
+	private Good good;
+	
+	
+	public Shop getShop() { 
+		return shop;
+	}
+
+	public void setShop(Shop shop) {
+		this.shop = shop;
+	}
+
+	public Good getGood() {
+		return good;
+	}
+
+	public void setGood(Good good) {
+		this.good = good;
+	}
+
+	public Integer getSid() {
+		return sid;
+	}
+
+	public void setSid(Integer sid) {
+		this.sid = sid;
+	}
+
+	public Integer getGid() {
+		return gid;
+	}
+
+	public void setGid(Integer gid) {
+		this.gid = gid;
+	}
+
+	public Integer getNumber() {
+		return number;
+	}
+
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+
+	private String orderCode;//订单码
+	private String createTime;//创建时间
+	
+
 	
 	private List<OrderDetails> orderDetails = new ArrayList<OrderDetails>();
 

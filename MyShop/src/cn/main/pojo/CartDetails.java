@@ -6,7 +6,7 @@ package cn.main.pojo;
  */
 public class CartDetails {
 	private int id;//id
-	private int cid;//用户，购物车外键
+	private int uid;//用户，购物车外键
 	private int gid;//商品外键
 	private int number;//商品数量
 	private double price;//价格

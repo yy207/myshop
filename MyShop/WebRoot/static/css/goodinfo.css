@@ -1,0 +1,53 @@
+*{padding: 0 ; margin: 0; /* border: 1px solid red; */ box-sizing: border-box;}
+			li{list-style: none;}
+			.property{border: 1px solid #E9E9E9;}
+			
+			.owner{width: 1200px; margin: 0 auto; border-bottom: 1px #FF4E00 solid; } 
+			.owner a{color: #000000;text-decoration: none;}
+			.action{text-align: right; padding-right: 200px;}
+			.good{font-size: 13px;}
+			
+			.num{text-align: center;}				
+			.num input{display: inline-block;}
+			.num input[type*='button']{width: 20px; height: 20px;}
+			.num input[type*='num']{width:40px;height: 20px;margin: 0 -5px;} 
+			
+			
+			.s25{font-size: 25px; color: #FF5000;font-weight: bolder;}
+			.good{width:1000px ; margin: 0 auto;border: 1px solid #E9E9E9;}
+			.image ,.good_info,.else{display: inline-block;vertical-align: top;}
+			.image {width: 350px;text-align: center;}
+			.good_info{width:500; margin-top: 20px;text-indent: 1em;}
+			.else{width: 130px;border: 1px solid #E9E9E9;padding:15px;margin-top: 20px;}
+			
+			.good_info tr{height: 50px;}
+			.good_info td a{color: #000;text-decoration: none;}
+			.good_info td a:hover{color: #FF5000;}
+			.else ul li{ position: relative;}
+			.else ul li span{position: absolute; bottom: 0;display: block;width:100px;text-align: center;padding: 3px; background: rgba(255,255,255,0.6);} 
+			
+			
+			/*图片信息CSS*/
+			.image .img_small{position: relative;}
+			div.image{border: 1px solid #E9E9E9;margin-top: 20px;}
+			.image .control .img_left{position: absolute;top: 0; left:30px;}
+			.image .control .img_right{position: absolute;top: 0; right:30px;}
+			
+			.share_img{position: relative;}
+			.share_img .share{display: none; background: #EFEFEF; border: 1px solid #E9E9E9; padding: 5px;position: absolute;top:30px;left: 60px; width: 120px;}
+			.share_img:hover .share{display: block;}
+			
+			
+			/*推荐开始*/
+			.like{width: 1000px; margin: 10px auto;}
+			.like .like_left,.good_detail{display: inline-block;vertical-align: top;}
+			.like_left{width: 210px;}
+			
+		    .like_li{border: 1px solid #E6EEF8;}
+			.like_left .like_li a{color: #000000;text-decoration:none ;}
+			.like_left .like_li a:hover{color: #FF5000;}
+			.good_detail{width: 750px;}
+			
+			.property{padding: 15px;margin: 5px;}
+			.property .key{display: inline-block; width: 200px; text-align: left; text-indent: 2em; line-height: 30px;font: 20px;}
+			

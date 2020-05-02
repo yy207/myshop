@@ -147,8 +147,15 @@ public class MainController {
 		//找相似
 		List<Good> list= goodService.getGoodList(null, sid, null, c1.getId(), c2.getId(), null, null, 0, 5);
 		
-		List<Image> imageList = imageService.getImageList(null, 3, good.getSid(), null, 0, 5);
+		//本店
+		List<Good> goodList = goodService.getGoodList(null, sid, null, null, null, null, 4, 0, 5);
+				
+		//对应图片
+		List<Image> imageList3 = imageService.getImageList(null, 3, good.getSid(), null, 0, 5);
 		
+		
+		//对应图片详情
+		List<Image> imageList4 = imageService.getImageList(null, 4, good.getSid(), null, 0, 5);
 		//所属商店
 		Shop shop = shopService.getShopById(sid,null, null);
 		
@@ -159,11 +166,20 @@ public class MainController {
 		model.addAttribute("c1", c1);
 		model.addAttribute("c2", c2);
 		model.addAttribute("goods", list);
+		model.addAttribute("goodList", goodList);
 		model.addAttribute("shop", shop);
-		model.addAttribute("imageList", imageList);
+		model.addAttribute("imageList3", imageList3);
+
+		model.addAttribute("imageList4", imageList4);
 		
 		return "goodinfo";
 	}
+	
+	@RequestMapping("mytb")
+	public String mytb(){ 
+		return "order";
+	}
+	
 	/**
 	 * ajax实现分类三级联动
 	 * @param parentId
@@ -186,6 +202,7 @@ public class MainController {
 	public String register(){
 		return "register";
 	}
+	
 	
 
 }

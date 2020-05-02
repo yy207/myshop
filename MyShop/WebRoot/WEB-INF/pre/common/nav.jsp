@@ -2,17 +2,6 @@
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-<!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<title></title>
-		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />
-		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/login.css" />
-		
-		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/register.css" />
-	</head>
-	<body>
 		<!--导航栏开始-->
 		<div class="top_nav ">
 			<ul class="top_nav_list_left">
@@ -33,7 +22,7 @@
 					
 					
 				</li> 
-				<li class="li"><a href="#">我的淘宝</a></li> 
+				<li class="li"><a href="${pageContext.request.contextPath }/pre/nav/orderpage">我的淘宝</a></li> 
 				<li class="li">
 					<div class="li_menu ">
 						<a href="#">购物车<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>

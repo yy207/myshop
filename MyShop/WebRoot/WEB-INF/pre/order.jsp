@@ -225,5 +225,7 @@
 				</div>
 			</div>
 		</div>
+		<!-- footer -->
+		<%@ include file="common/btm.jsp" %>
 	</body>
 </html>

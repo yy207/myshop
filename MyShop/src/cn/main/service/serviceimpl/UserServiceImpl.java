@@ -54,6 +54,12 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return mapper.updateUserLastLoginTime(id, date, loginState)>0;
 	}
+	
+	@Override
+	public int upateUserInfo(int id, String userName, String email, String phone, String userPassword, String userPic) {
+		// TODO Auto-generated method stub
+		return mapper.upateUserInfo(id, userName, email, phone, userPassword, userPic);
+	}
 
 	
 	

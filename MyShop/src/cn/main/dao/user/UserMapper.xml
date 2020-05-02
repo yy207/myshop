@@ -134,4 +134,31 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{user.userRole}, #{user.idCard}, #{user.realName}, #{user.phone},
 		#{user.address},#{user.birthday},#{user.createBy},#{user.createTime},#{user.userPic})
 	</insert>
+	
+	<update id="upateUserInfo">
+		UPDATE `user`   
+		<trim prefix="SET" suffixOverrides="," suffix="WHERE `id`=#{id}" >
+			<if test="email != null and email !=''">
+				`email`=#{email},
+			</if>
+			<if test="userName != null and userName !=''">
+				`userName`=#{userName},
+			</if>
+			<if test="phone != null and phone !=''">
+				`phone`=#{phone},
+			</if>
+			<if test="userPassword != null and userPassword !=''">
+				`userPassword`=#{userPassword},
+			</if>
+			<if test="userPic != null and userPic !=''">
+				`userPic`=#{userPic},
+			</if>
+		</trim> 	
+	</update>
+	
+	
+	
+	
+	
+	
 </mapper>

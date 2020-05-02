@@ -21,3 +21,10 @@ h2 {
     line-height: 22px;
     vertical-align: middle;
 }
+.easyui-tabs:after{
+	content: "";
+	display: block;
+	clear: both;
+	
+}
+..easyui-tabs{overflow: hidden;}

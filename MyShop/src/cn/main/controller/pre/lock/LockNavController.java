@@ -21,7 +21,7 @@ import cn.main.utils.Page;
 
 @Controller
 @RequestMapping("pre/nav")
-public class PreNavController {
+public class LockNavController {
 	@Resource
 	private  OrderService orderService;
 	
@@ -56,6 +56,17 @@ public class PreNavController {
 		//评价  4
 		request.setAttribute("orderList", orderList);//将订单的信息存储在请求 
 		return "order";
+	}
+	
+	/**
+	 * 请求订单页
+	 * @return
+	 */
+	@RequestMapping("accountpage")
+	public String accountPage(HttpSession session,HttpServletRequest request){
+		User user  = (User) session.getAttribute(Contains.SESSION_USER);
+	 
+		return "account";
 	}
 	
 	

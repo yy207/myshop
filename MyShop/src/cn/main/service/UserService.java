@@ -28,5 +28,23 @@ public interface UserService {
 	public boolean updateUserLastLoginTime(int id, String date, Integer loginState);
 	//新增用户
 	public boolean addUser(User user);
-
+ 
+	//更新 邮箱 电话  密码
+	/**
+	 * 
+	 * @param id
+	 * @param userName 用户名
+	 * @param email 邮箱
+	 * @param phone 手机
+	 * @param userPassword 密码 
+	 * @param userPic 头像
+	 * @return
+	 */
+	public int upateUserInfo(@Param(value="id")int id,
+								@Param(value="userName")String userName,
+								@Param(value="email")String email,
+								@Param(value="phone")String phone,
+								@Param(value="userPassword")String userPassword,
+								@Param(value="userPic")String userPic);
+	
 }

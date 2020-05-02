@@ -7,7 +7,9 @@
 			<ul class="top_nav_list_left">
 				
 					<c:if test="${sessionUser!=null }">
-						<li class="li">欢迎! ${sessionUser.userName }</li>
+						<li class="li"> 	
+						欢迎! 	<a href="${pageContext.request.contextPath }/pre/nav/accountpage">${sessionUser.userName }</a> 
+						</li>
 						<li class="li"><a href="${pageContext.request.contextPath }/pre/loginout ">退出</a></li>
 					</c:if>
 					<c:if test="${sessionUser ==null }">

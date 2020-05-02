@@ -57,4 +57,20 @@ public interface UserMapper {
 	
 	//插入用户
 	public int addUser(@Param(value="user")User user);
+	
+	//更新 邮箱 电话  密码
+	public int upateUserInfo(@Param(value="id")int id,
+								@Param(value="userName")String userName,
+								@Param(value="email")String email,
+								@Param(value="phone")String phone,
+								@Param(value="userPassword")String userPassword,
+								@Param(value="userPic")String userPic);
+	
+	
+	
+	
+	
+	
+	
+	
 }

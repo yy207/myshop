@@ -8,12 +8,12 @@
 			</div>	
 			<div class="p1"> 
 				<div class="my white">
-					我的信息
+					<a href="${pageContext.request.contextPath }/main/index" style="color:#fff;font-size: 20px;">首页</a>
 				</div>
 			</div>
 			<div class="p1">
 				<div class="count white">
-					账户设置
+					<a href="${pageContext.request.contextPath }/pre/nav/accountpage" style="color:#fff;font-size: 20px;">账户设置</a>
 				</div>
 			</div> 
 		</div>
@@ -22,7 +22,12 @@
 		<div class="nav_left">
 			<h3>全部功能</h3>
 			<ul class="nav_left_ul">
-					<li class="nav_left_li">
+				<li class="nav_left_li">
+					<div class="li_a">
+						<a href="${pageContext.request.contextPath }/pre/nav/accountpage">收货地址</a> 
+					</div>  
+				</li>
+				<li class="nav_left_li">
 					<div class="li_a">
 						<a href="#">我的购物车</a> 
 					</div> 

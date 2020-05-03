@@ -59,7 +59,7 @@ public class LockNavController {
 	}
 	
 	/**
-	 * 请求订单页
+	 * 请求账户信息
 	 * @return
 	 */
 	@RequestMapping("accountpage")

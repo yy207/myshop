@@ -29,7 +29,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT `id`,`sid`,`name`,`price`,`picPath`,
 			`videoPath`,`buyCount`,`repertory`,
 			`type1`,`type2`,`type3`,`describe`,
-			`state`,`createTime` 
+			`state`,`createTime` ,score
 		FROM `good` 
 		<trim prefix="where" prefixOverrides="and | or">
 			<if test="id !=null">

@@ -25,6 +25,21 @@ public class User {
 	private int createBy;
 	private String phone;
 	
+	private Integer superUser; 
+	private Integer score;
+	
+	public Integer getSuperUser() {
+		return superUser;
+	}
+	public void setSuperUser(Integer superUser) {
+		this.superUser = superUser;
+	}
+	public Integer getScore() {
+		return score;
+	}
+	public void setScore(Integer score) {
+		this.score = score;
+	}
 	private Shop shop;//用户对应的商店
 	
 	

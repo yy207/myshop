@@ -24,7 +24,7 @@
 			<ul class="nav_left_ul">
 				<li class="nav_left_li">
 					<div class="li_a">
-						<a href="${pageContext.request.contextPath }/pre/nav/accountpage">收货地址</a> 
+						<a href="${pageContext.request.contextPath }/pre/nav/addresspage">收货地址</a> 
 					</div>  
 				</li>
 				<li class="nav_left_li">

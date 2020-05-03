@@ -8,32 +8,28 @@ import java.util.Date;
  *
  */
 public class Address {
-	private int id;//id
-	private int uid;//用户id
+	private Integer id;//id
+	private Integer uid;//用户id
 	private String address;//地址
 	private String createTime;//创建时间
-	private int isDefault;//是否默认
+	private Integer isDefault;//是否默认
 	private String remark;//备注说明
 	private String phone;//电话
 	private String name;//
 	
-	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getId() {
+	private Integer city1;
+	private Integer city2;
+	private Integer city3;
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
-	public int getUid() {
+	public Integer getUid() {
 		return uid;
 	}
-	public void setUid(int uid) {
+	public void setUid(Integer uid) {
 		this.uid = uid;
 	}
 	public String getAddress() {
@@ -48,10 +44,10 @@ public class Address {
 	public void setCreateTime(String createTime) {
 		this.createTime = createTime;
 	}
-	public int getIsDefault() {
+	public Integer getIsDefault() {
 		return isDefault;
 	}
-	public void setIsDefault(int isDefault) {
+	public void setIsDefault(Integer isDefault) {
 		this.isDefault = isDefault;
 	}
 	public String getRemark() {
@@ -65,5 +61,29 @@ public class Address {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	} 
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Integer getCity1() {
+		return city1;
+	}
+	public void setCity1(Integer city1) {
+		this.city1 = city1;
+	}
+	public Integer getCity2() {
+		return city2;
+	}
+	public void setCity2(Integer city2) {
+		this.city2 = city2;
+	}
+	public Integer getCity3() {
+		return city3;
+	}
+	public void setCity3(Integer city3) {
+		this.city3 = city3;
+	}
 }

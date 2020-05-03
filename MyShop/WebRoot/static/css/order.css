@@ -16,7 +16,7 @@ a{color: #000000; text-decoration: none;}
 			
 			
 			.logo_img{width: 100px;} 
-			.main{width: 950px;height: 200px; margin: 0 auto;} 
+			.main{width: 950px; margin: 0 auto;} 
 			/*.main *{border: 0px; }*/
 			td span{display: block;text-align: center;}
 			table .th{background: #FF5000; color: #fff;}

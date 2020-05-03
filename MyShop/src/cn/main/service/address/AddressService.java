@@ -48,5 +48,19 @@ public interface AddressService {
 	 */
 	int updateDefaultAddress(@Param(value = "id") Integer id,
 			@Param(value = "uid") Integer uid);
+	/**
+	 * 将某个用户的地址设置isDefault0
+	 * @param id
+	 * @param uid
+	 * @return
+	 */
+	int updateAddress(@Param(value = "uid") Integer uid);
+	/**
+	 * 修改信息
+	 * @param address
+	 * @return
+	 */
+	int updateAddressById(@Param(value = "address")Address address);
+	
 	
 }

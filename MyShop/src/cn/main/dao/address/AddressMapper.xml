@@ -28,14 +28,43 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE FROM address WHERE id=#{id} AND uid=#{uid}
 	</delete>
 	<insert id="addAddress"> 
-		INSERT INTO address(`uid`,name,`address`,`remark`,phone)
-		values(#{address.uid},#{address.name},#{address.address},#{address.remark},#{address.phone});
+		INSERT INTO address(`uid`,name,`address`,`remark`,phone,city1,city2,city3)
+		values(#{address.uid},#{address.name},#{address.address},#{address.remark},#{address.phone},#{address.city1},#{address.city2},#{address.city3});
 	</insert>
-	<update id="updateDefaultAddress">
-	
-		UPDATE address SET isDefault = 0 WHERE uid =#{uid};
+	<update id="updateDefaultAddress">  
 		UPDATE address SET isDefault = 1 WHERE uid =#{uid}  AND id =#{id};
 
+	</update>
+	<update id="updateAddress"> 
+		UPDATE address SET isDefault = 0 WHERE uid =#{uid}; 
+	</update>
+	<update id="updateAddressById">
+		UPDATE   `address` 
+		<trim prefix="SET" suffixOverrides="," suffix="WHERE `id`=#{address.id} " >
+			<if test=" address.city1!=null and address.city1!= '' ">
+				city1=#{address.city1},
+			</if>
+			<if test=" address.city2!=null and address.city2!= '' ">
+				city2=#{address.city2},
+			</if>
+			<if test=" address.city3!=null and address.city3!= '' ">
+				city3=#{address.city3},
+			</if>
+			<if test=" address.name!=null and address.name!= '' ">
+				name=#{address.name},
+			</if>
+			<if test=" address.address!=null and address.address!= '' ">
+				address=#{address.address},
+			</if>
+			<if test=" address.isDefault!=null and address.isDefault!= '' ">
+				isDefault=#{address.isDefault},
+			</if>
+			
+			<if test=" address.phone!=null and address.phone != '' ">
+				phone=#{address.phone},
+			</if> 
+		</trim>
+	
 	</update>
 	
 </mapper>

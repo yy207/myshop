@@ -92,8 +92,7 @@ public class LockUserController {
 		return "account";
 	}
 	@RequestMapping(value="image",method=RequestMethod.POST)
-	public String image(HttpServletRequest request,HttpSession session ,
-			@RequestParam(required=true,value="userId") Integer userId,
+	public String image(HttpServletRequest request,HttpSession session , 
 			@RequestParam(value = "userImage", required = false) MultipartFile file) {
 			User user = (User) session.getAttribute(Contains.SESSION_USER);//获取当前用户
 		

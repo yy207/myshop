@@ -1,0 +1,19 @@
+			*{/* border: 1px solid red */;box-sizing: border-box;}
+			.new_add input[type*='submit']{background:#ff5000;color: #fff;width: 60px ;height: 25px;border: 1px solid #FF5000;}
+			.new_add .table tr td:nth-child(1){text-align: right;}
+			.new_add .table tr td span{display: inline-block;color: red;}
+			
+			.new_add input[type*='text']{display: inline-block;width: 260px;height: 30px;border: 1px #CCCCCC solid; border-radius: 3px;}
+			input[type*='tel']{display: inline-block;height: 30px;border: 1px #CCCCCC solid; border-radius: 3px;}
+			
+			
+			.list table tr{display: inline-block;}
+			.list table tr.user_adr{display: inline-block; height: 60px;font-size: 12px;}
+			.list table td {padding-left: 0.5em;}
+			
+			.list .city span{display: inline-block; width: 50px;}	
+			.list .title{background: #F1F7EB;}	
+			.list .title td{border-right: 1px solid gray;empty-cells: hide;}
+			.new_add ,.list{border: 1px solid #E0ECFF;font-size: 12px;margin-top: 10px;}
+			span.default{ display: inline-block; width: 80px; height: 30px; line-height: 30px;  text-align: center; border: 1px solid #ff5000;  border-radius: 3px;  background: #ffd6cc;  color: #f30;}
+			

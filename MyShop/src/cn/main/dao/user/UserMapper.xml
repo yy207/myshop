@@ -56,7 +56,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT
 		u.id,u.userCode,u.userName, u.userRole,
 		(YEAR(NOW())-
-		YEAR(`birthday`))AS age,
+		YEAR(`birthday`))AS age,u.score,u.superUser
 		(SELECT `valueName` FROM `data_dictionary`
 		WHERE `keyCode` ='userRole' AND `valueId` = u.userRole)
 		AS

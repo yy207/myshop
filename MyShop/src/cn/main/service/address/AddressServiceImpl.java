@@ -46,4 +46,16 @@ public class AddressServiceImpl implements AddressService {
 		return mapper.updateDefaultAddress(id, uid);
 	}
 
+	@Override
+	public int updateAddress(Integer uid) {
+		// TODO Auto-generated method stub
+		return mapper.updateAddress(uid);
+	}
+
+	@Override
+	public int updateAddressById(Address address) {
+		// TODO Auto-generated method stub
+		return mapper.updateAddressById(address);
+	}
+
 }

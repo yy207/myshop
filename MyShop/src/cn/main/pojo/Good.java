@@ -23,12 +23,18 @@ public class Good {
 	private Integer type3;//三级分类
 	private Integer state;//状态
 	private String createTime;//创建时间
+	private Integer score;
 	
 	private Shop shop;
 	private List<Image> images;//标题
 	private List<Image> imagesDetail;//详细信息
 	
-	 
+	public Integer getScore() {
+		return score;
+	}
+	public void setScore(Integer score) {
+		this.score = score;
+	}
 	public List<Image> getImages() {
 		return images;
 	}

@@ -91,6 +91,7 @@
 		<mvc:interceptor>
 			 <mvc:mapping path="/pre/nav/**"/>
 			 <mvc:mapping path="/pre/buy/**"/>
+			<!--  <mvc:mapping path="/main/**"/> -->
 			<bean class="cn.main.interceptors.PreInterceptor"/>
 		</mvc:interceptor> 
 	</mvc:interceptors>  

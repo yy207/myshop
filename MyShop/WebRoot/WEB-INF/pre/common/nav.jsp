@@ -13,10 +13,10 @@
 						<li class="li"><a href="${pageContext.request.contextPath }/pre/loginout ">退出</a></li>
 					</c:if>
 					<c:if test="${sessionUser ==null }">
-						<li class="li"><a href="${pageContext.request.contextPath }/main/login">登录</a></li> 
+						<li class="li"><a href="${pageContext.request.contextPath }/pre/login">登录</a></li> 
 					</c:if>
 					
-				<li class="li"><a href="${pageContext.request.contextPath }/main/register">免费注册</a></li> 
+				<li class="li"><a href="${pageContext.request.contextPath }/pre/register">免费注册</a></li> 
 			</ul>
 			 <ul class="top_nav_list_right"> 
 				<li class="li">

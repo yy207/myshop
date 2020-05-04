@@ -194,15 +194,6 @@ public class MainController {
 		
 		return cList;
 	}
-	@RequestMapping("login")
-	public String login(){
-		return "login";
-	}
-	@RequestMapping("register")
-	public String register(){
-		return "register";
-	}
-	
-	
+
 
 }

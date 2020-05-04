@@ -25,6 +25,7 @@ import org.springframework.web.multipart.MultipartFile;
 import cn.main.pojo.User;
 import cn.main.service.UserService;
 import cn.main.utils.Contains;
+import cn.main.utils.CookieUtil;
 
 @Controller
 @RequestMapping(value="/pre")
@@ -34,9 +35,9 @@ public class PreUserController {
 	@Resource
 	private UserService service;
 		//登录
-		@RequestMapping(value="dologin",method=RequestMethod.POST)
+		@RequestMapping(value="dologin")
 		public String doLogin(@RequestParam String userCode,@RequestParam String userPassword,
-								@RequestParam(required=false,value="suto") Boolean auto,
+								@RequestParam(required=false,value="auto") Boolean auto,
 								HttpServletRequest request,HttpServletResponse response,HttpSession session){
 			log.debug("===================dologin");
 			log.debug(userCode);
@@ -46,13 +47,22 @@ public class PreUserController {
 				if(user.getUserPassword().equals(userPassword)){ 
 					session.setAttribute(Contains.SESSION_USER, user);
 					service.updateUserLastLoginTime(user.getId(),Contains.getDate(), 1);
+					log.debug(">>>>>>>>======================auto 1-- "+auto);
 					if(auto!=null && auto) {
-						log.debug(">>>>>>>>auto  "+auto);
-						Cookie code = new Cookie("userCode", userCode);
-						Cookie pwd = new Cookie("userPassword", userPassword);
-						code.setMaxAge(24*60);
-						pwd.setMaxAge(24*60);
-						response.addCookie(code);
+						log.debug(">>>>>>>>======================auto 2--  "+auto);
+						Cookie name = new Cookie("userCode", userCode); 
+						Cookie pwd = new Cookie("userPassword", userPassword); 
+						name.setMaxAge(24*60*60);
+						pwd.setMaxAge(24*60*60);
+						response.addCookie(name); 
+						response.addCookie(pwd); 
+					}else {
+						log.debug(">>>>>>>>======================auto 2--  "+auto);
+						Cookie name = new Cookie("userCode", userCode); 
+						Cookie pwd = new Cookie("userPassword", userPassword); 
+						name.setMaxAge(0);
+						pwd.setMaxAge(0);
+						response.addCookie(name); 
 						response.addCookie(pwd);
 					}
 					return "redirect:/main/index";
@@ -80,10 +90,6 @@ public class PreUserController {
 					user.getUserPassword().length()<6 	){
 				return "register";
 			}
-			
-			
-			
-			
 			user.setUserName(user.getRealName()); 
 			user.setUserPic("default.jpg"); 
 			user.setCreateTime(Contains.getDate()); 
@@ -96,24 +102,62 @@ public class PreUserController {
 			if(imageCode!=null && imageCode.toUpperCase().equals(((String)session.getAttribute(Contains.IMAGECODE)).toUpperCase())){
 				if (service.addUser(user)) {
 					
-					return "redirect:/main/login";
+					return "redirect:/pre/login";
 				} else {
 					model.addAttribute(user);
 					model.addAttribute("imageCodeMsg", "添加失败,请重试!");
-					return "pre/register";
+					return "register";
 				}
 			} else {
 				model.addAttribute(user);
 				System.out.println(">>>>>>>>>>>>请输入正确的验证码");
 				model.addAttribute("imageCodeMsg", "请输入正确的验证码");
 				
-				return "pre/register";
+				return "register";
 			}
 			
+		} 
+		
+	
+		@RequestMapping(value = "cookie")
+		public String cookie(HttpServletRequest request,HttpServletResponse response,HttpSession session){
+			if(CookieUtil.exists(request)) {
+				String userCode = null;
+				String userPassword = null;
+				String [] value = CookieUtil.getCookieValue(request);
+				if(value[0]!=null && value[1]!=null ) {
+					userCode = value[0];
+					userPassword = value[1];
+				}
+				User user = service.getUserByUserCode(userCode);
+				log.debug("====================跳转到Cookie登录转到index code"+value[0]);
+				log.debug("====================跳转到Cookie登录转到index pwd"+value[1]);
+				if(null != user){
+					if(user.getUserPassword().equals(userPassword)){ 
+						session.setAttribute(Contains.SESSION_USER, user);
+						Cookie name = new Cookie("userCode", userCode); 
+						Cookie pwd = new Cookie("userPassword", userPassword); 
+						name.setMaxAge(24*60*60);
+						pwd.setMaxAge(24*60*60);
+						response.addCookie(name); 
+						response.addCookie(pwd);
+						log.debug("====================跳转到Cookie登录转到index");
+						return "redirect:/main/index";
+					} 
+				} 
+				return "login";
+			}else {
+				return "login";
+			}
+		}	
+		@RequestMapping("login")
+		public String login(){
+			return "login";
 		}
-		@RequestMapping(value = "registe", method = RequestMethod.GET)
-		public String reg(){ return "pre/register";}
-
+		@RequestMapping("register")
+		public String register(){
+			return "register";
+		}
 		// 登出
 		@RequestMapping(value = "loginout")
 		public String loginOut(HttpSession session) {
@@ -121,8 +165,9 @@ public class PreUserController {
 			if(user != null){
 				service.updateUserLastLoginTime(user.getId(), Contains.getDate(), 0);
 				session.removeAttribute(Contains.SESSION_USER);
-			} 
+				} 
 			return "redirect:/main/index";
 		}
-	
+		
+		
 }

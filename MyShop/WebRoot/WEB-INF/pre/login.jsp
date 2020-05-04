@@ -28,7 +28,7 @@
 					<form action="${pageContext.request.contextPath}/pre/dologin" method="post">
 						<p class="p1">
 							<strong style="font-size: 20px;">用户登录</strong>
-							<a href="${pageContext.request.contextPath }/main/register"style="color: blue;" >注册账号</a>
+							<a href="${pageContext.request.contextPath }/pre/register"style="color: blue;" >注册账号</a>
 						</p>
 						<p class="p2">
 							<input name="userCode" id="userCode" value="${userCode }" required type="text"placeholder="请输入用户名"/> 

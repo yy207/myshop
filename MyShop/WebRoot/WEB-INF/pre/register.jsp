@@ -19,7 +19,7 @@
     	
 			<div class="form" >
 				<div class="title">
-					<h2 class="s20">欢迎注册新用户 &nbsp;&nbsp;&nbsp;&nbsp;</h2><span><a href="">我要登陆</a></span>
+					<h2 class="s20">欢迎注册新用户 &nbsp;&nbsp;&nbsp;&nbsp;</h2><span><a href="${pageContext.request.contextPath }/pre/login">我要登陆</a></span>
 				</div>
 				<form id="register" name="register" action="${pageContext.request.contextPath }/pre/registe" method="post"
 					enctype="multipart/form-data" onsubmit="return fun_pre_register()">

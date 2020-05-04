@@ -15,6 +15,8 @@ public interface UserService {
 	//根据用户编码获取对象
 	public User getUserByUserCode(String userCode);
 	
+	public User getUserByUserId(@Param(value="id")Integer Id);
+	
 	public int getAllUserCount(String userCode,String userName,Integer userRole,
 			String idCard, String address, String realName, String sex,
 			String email, String phone, String birthday,

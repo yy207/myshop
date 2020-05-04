@@ -80,16 +80,17 @@
     <!-- 配置interceptors -->
 	  <mvc:interceptors>
 	  	<!-- backed拦截 -->
-		<mvc:interceptor>
+		<!-- <mvc:interceptor>
 			<mvc:mapping path="/user/**"/> 
 			<mvc:mapping path="/shop/**"/> 
 			<mvc:mapping path="/good/**"/> 
-			<mvc:mapping path="/pay/**"/> <!-- 支付操作 --> 
+			<mvc:mapping path="/pay/**"/> 支付操作 
 			<bean class="cn.main.interceptors.interceptor"/>
-		</mvc:interceptor> 
+		</mvc:interceptor>  -->
 		<!-- pre拦截 -->
 		<mvc:interceptor>
 			 <mvc:mapping path="/pre/nav/**"/>
+			 <mvc:mapping path="/pre/buy/**"/>
 			<bean class="cn.main.interceptors.PreInterceptor"/>
 		</mvc:interceptor> 
 	</mvc:interceptors>  

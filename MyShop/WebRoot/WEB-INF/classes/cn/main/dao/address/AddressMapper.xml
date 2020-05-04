@@ -13,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 			and uid =#{uid}
 	 		</if> 
 	 	</trim>
-	 	order by id desc
+	 	order by id desc,isDefault desc
 	 	<if test="from !=null and pageSize !=null">
 	 		limit  #{from},#{pageSize}
 	 	</if> 
@@ -28,8 +28,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE FROM address WHERE id=#{id} AND uid=#{uid}
 	</delete>
 	<insert id="addAddress"> 
-		INSERT INTO address(`uid`,name,`address`,`remark`,phone,city1,city2,city3)
-		values(#{address.uid},#{address.name},#{address.address},#{address.remark},#{address.phone},#{address.city1},#{address.city2},#{address.city3});
+		INSERT INTO address(`uid`,name,`address`,`remark`,phone,city1,city2,city3,isDefault)
+		values(#{address.uid},#{address.name},#{address.address},#{address.remark},#{address.phone},#{address.city1},#{address.city2},#{address.city3},#{address.isDefault});
 	</insert>
 	<update id="updateDefaultAddress">  
 		UPDATE address SET isDefault = 1 WHERE uid =#{uid}  AND id =#{id};

@@ -39,8 +39,8 @@ import com.alipay.api.AlipayClient;
 import com.alipay.api.DefaultAlipayClient; 
 import com.alipay.api.request.AlipayTradePagePayRequest; 
 
-@Controller
-@RequestMapping("pay")
+//@Controller
+//@RequestMapping("pay")
 public class AlipayController {
 	AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.URL, // 请求网关
 			AlipayConfig.APPID, // APPID 沙箱测试
@@ -105,7 +105,7 @@ public class AlipayController {
 //					.getOrderList(null, null, code, null, null, null, null,
 //							null, null, null).get(0).getId();
 			Integer oid = orderService
-					.getOrderList(null, null, null, null, null, code, null, null, null, null, null, null, null).get(0).getId();
+					.getOrderList(null, null, null, null, null, code, null,null, null, null, null, null, null, null).get(0).getId();
 			OrderDetails details = new OrderDetails();
 			details.setGid(gid);
 			details.setSid(sid);

@@ -49,7 +49,7 @@ public class LockNavController {
 	public String orderPage(HttpSession session,HttpServletRequest request){
 		User user  = (User) session.getAttribute(Contains.SESSION_USER);
 		//所有
-		List<Order> orderList = orderService.getOrderList(null,user.getId(),null, null, null, null, null, null, null, null, null, null, null);		
+		List<Order> orderList = orderService.getOrderList(null,user.getId(),null, null,null, null, null, null, null, null, null, null, null, null);		
 		//待付款 1
 		//待发货 2
 		//待收获 3

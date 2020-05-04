@@ -1,4 +1,4 @@
-	.my_account{ text-align: left;border: 1px solid #EFEFEF;}
+			.my_account{ text-align: left;border: 1px solid #EFEFEF;}
 			.my_account tr{text-indent: 2em;}
 			.my_account tr td {vertical-align: top;}
 			.my_account tr td:nth-child(1){width: 100px;}

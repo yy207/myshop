@@ -34,11 +34,10 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	@Override
-	public List<Order> getOrderList(Integer id, Integer uid, Integer sid, Integer gid, Integer number, String orderCode,
+	public List<Order> getOrderList(Integer id, Integer uid, Integer sid, Integer gid, Integer number, String orderCode,String alipayCode,
 			String createTime, String endTime, Double price, Integer state, String logidtics, Integer from,
 			Integer pageSize) {
-		
-		List<Order> list =orderMapper.getOrderList(id, uid, sid, gid, number, orderCode, createTime, endTime, price, state, logidtics, from, pageSize);
+		List<Order> list =orderMapper.getOrderList(id, uid, sid, gid, number, orderCode, alipayCode, createTime, endTime, price, state, logidtics, from, pageSize);
 		for (Order order : list) {
 			System.out.println(">>>>>>>>sid   "+order.getSid());
 			System.out.println(">>>>>>>>gid   "+order.getGid());
@@ -51,5 +50,19 @@ public class OrderServiceImpl implements OrderService {
 		}  
 		return  list;
 	}
+
+	@Override
+	public int updateOrderAll(Order order) {
+		// TODO Auto-generated method stub
+		return orderMapper.updateOrderAll(order);
+	}
+
+	@Override
+	public int deleteOrder(Integer id) {
+		// TODO Auto-generated method stub
+		return orderMapper.deleteOrder(id);
+	}
+
+	 
 
 }

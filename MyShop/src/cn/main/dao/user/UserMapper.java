@@ -20,7 +20,7 @@ public interface UserMapper {
 	 */
 	public User getUserByUserCode(@Param(value="userCode")String userCode);
 	
-	public User getUserByUserId(@Param(value="id")String Id);
+	public User getUserByUserId(@Param(value="id")Integer Id);
 	
 	public int getAllUserCount(@Param(value="userCode")String userCode,
 			@Param(value="userName")String userName,

@@ -1,0 +1,56 @@
+			*{padding: 0; margin: 0;box-sizing: border-box; /*border: 1px solid red;*/font-size: 12px;}
+			.buy_order,.buy_info_step{width: 1000px; margin: 0 auto;}
+			.buy_info_step .s .cycle{display:inline-block; width: 30px; height: 30px; text-align: center;line-height: 30px;color: #000;border:1px #ccc solid;border-radius: 15px;}
+			.buy_info_step .s .active{color: #fff;background: #FF5000;}
+			.buy_info_step .s{display: inline-block;vertical-align: middle;}
+			.buy_info_step .hr{display: inline-block;vertical-align: middle;width: 60px;border: 0.5px #CCCCCC solid ;background: #ccc;}
+			 
+			.s1{width: 130px; text-align: center;}
+			
+			 .logo,.step{display: inline-block;vertical-align: middle;}
+			
+			.top_t .title,.top_t .right{display: inline-block;width: 450px;}
+			.top_t .right{text-align: right;}
+			a{text-decoration: none;}
+			
+			.radiobutton{width: 960px; height: 30px;line-height: 26px;margin: 10px;}
+			.active{ display: block; text-align: left; border: 1px solid #ff5000;  border-radius: 3px;  background: #ffd6cc; color: #f30;}
+			.radiobutton .pre,.radiobutton .radio,.radiobutton .update{display: inline-block;}
+			.radiobutton .pre{width: 100px;text-align: center;}
+			.radiobutton .radio{width: 750px;}
+			.radiobutton .update{width: 100px;}
+			.radiobutton .pre .checked{vertical-align: middle;}
+			
+			.radiobutton .show{display: none;}
+			/*当前显示*/
+			.active .show{display: block;}
+			.address_choose .new_add{margin: 5px 0 5px 130px ;}
+			
+			.address_choose a{color:blue;}
+			
+			.address_choose .new_add a.new{display: block;width: 80px; height: 30px;
+			 text-align: center; border: 1px solid #ff5000;  border-radius: 3px; line-height: 30px;
+			  background: #ffd6cc; color: #f30;}
+			
+			.good .info span{display: inline-block; vertical-align: top;}
+			.good .info span.txt{width: 200px;}
+			.good .info span.property{display: block;}
+			tr.title td{border-bottom: 2px solid #B7D2FF;text-align: center;}
+			
+			.num{text-align: center;}				
+			.num input{display: inline-block;}
+			.num input[type*='button']{width: 20px; height: 20px;}
+			.num input[type*='text']{width:30px;height: 20px;margin: 0 -5px;} 
+			
+			span.price{color: #FF5000;font-weight: bolder;}
+			
+			td.right{text-align: right;}
+			input,lable{vertical-align: middle;}
+			.good tr.else{background: #E9E9E9;}
+			.good table{border-bottom: 2px #B7D2FF solid ;}
+			.buy_order .final div{line-height: 25px; font-size: 14px;}
+			.buy_order .final{width: 450px; float: right;text-align: right;padding: 5px; margin-right: 10px; border: 2px solid #FF5000;}
+			.buy_order .final .price span.money{ color: #FF5000;font-size: 25px;font-weight: bolder;}
+			.address_choose,.clear{overflow: hidden;}
+			.buy_order .submit{float: right;margin-right: 10px;}
+			

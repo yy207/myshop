@@ -6,12 +6,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>  
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />	
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/order.css" />		
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/address.css" />
 				
 	</head>
 	<body>
 		<!-- nav -->
+		<%@ include file="common/nav.jsp" %>
+		<!-- nav left-->
 		<%@ include file="common/nav_left.jsp" %>
 		<div class="main">
 				<div class="new_add">
@@ -132,8 +135,11 @@
 						
 						
 					</table>
-				</div>
-			
+				</div> 
 		</div>
+		
+		
+		<!-- footer -->
+		<%@ include file="common/btm.jsp" %>
 	</body>
 </html>

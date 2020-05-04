@@ -70,7 +70,7 @@
 				</div>
 			</div>
 			<div class="good_info">
-				<form action="#">
+				<form action="${pageContext.request.contextPath }/pre/buy/buypage" method="post">
 					<table border="0" width="500">
 						<tr><th colspan="6" style="text-align: left;">${good.name }</th></tr>
 						<tr>
@@ -107,7 +107,7 @@
 									<a href=""><img src="${pageContext.request.contextPath }/static/img/sh_1.gif" width="16" height="16" /> </a>
 									<a href=""><img src="${pageContext.request.contextPath }/static/img/sh_2.gif" width="16" height="16" /> </a>
 									<a href=""><img src="${pageContext.request.contextPath }/static/img/sh_3.gif" width="16" height="16" /> </a>
-									<a href=""><img src="${pageContext.request.contextPath }/static/img/sh_4.gif" width="16" height="16" /> </a>
+									<%-- <a href=""><img src="${pageContext.request.contextPath }/static/img/sh_4.gif" width="16" height="16" /> </a> --%>
 								</div>
 							</td>
 						</tr>
@@ -122,7 +122,7 @@
 							<td width="100">数量</td>
 							<td width="100" class="num">
 								<input type="button" value=" - "/>
-								<input type="number"  value="1" min="1"  />
+								<input type="number" name="number" id="number"  value="1" min="1"  />
 								<input type="button" value="+" /> 
 							</td>
 							<td>(库存233件)</td>
@@ -136,7 +136,8 @@
 							</td>
 						</tr>
 					</table>
-					<input type="hidden" name="id" value="${good.id }"/>
+					<input type="hidden" name="gid" value="${good.id }"/>
+					<input type="hidden" name="sid" value="${shop.id }"> 
 					<input type="hidden" name="price" value="${good.price }"/> 
 				</form> 
 			</div>

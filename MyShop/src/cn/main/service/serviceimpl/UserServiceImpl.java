@@ -60,6 +60,11 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return mapper.upateUserInfo(id, userName, email, phone, userPassword, userPic);
 	}
+	@Override
+	public User getUserByUserId(Integer Id) {
+		// TODO Auto-generated method stub
+		return mapper.getUserByUserId(Id);
+	}
 
 	
 	

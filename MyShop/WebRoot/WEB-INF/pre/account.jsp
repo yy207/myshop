@@ -10,6 +10,8 @@
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/ui/demo.css">
 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/ui/jquery.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/ui/jquery.easyui.min.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/nav.css" />	
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/order.css" />		
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/account.css" />
 		<style type="text/css">
@@ -17,6 +19,8 @@
 		</style>
 	</head>
 	<body>
+	
+		<%@ include file="common/nav.jsp" %>
 		<!-- nav -->
 		<%@ include file="common/nav_left.jsp" %>
 		
@@ -119,12 +123,12 @@
 						 		</tr>
 						 		<tr>
 						 			<td width="100">新密码 ：</td>
-						 			<td width="150"><input type="text" name="userPassword" id="userPassword" value="" /></td>
+						 			<td width="150"><input type="password" name="userPassword" id="userPassword" value="" /></td>
 						 			<td width="200"><span id="userPasswordMsg"></span> </td>
 						 		</tr>
 						 		<tr>
 						 			<td width="100">确认密码 ：</td>
-						 			<td width="150"><input type="text" name="userRePassword" id="userRePassword" value="" /></td>
+						 			<td width="150"><input type="password" name="userRePassword" id="userRePassword" value="" /></td>
 						 			<td width="200"><span id="userRePasswordMsg">${userPasswordMsg}</span> </td>
 						 		</tr>
 						 		<tr>  
@@ -170,6 +174,9 @@
 				</div>
 			</div>
 		</div> 
+		
+		<!-- footer -->
+		<%@ include file="common/btm.jsp" %>
 	</body>
 </html>
 <script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery.min.js" ></script>

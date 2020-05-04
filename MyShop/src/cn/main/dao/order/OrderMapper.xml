@@ -25,6 +25,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				<if test="orderCode !=null and orderCode != ''">
 					and orderCode like concat('%',#{orderCode},'%')
 				</if>
+				<if test="alipayCode !=null and alipayCode != ''">
+					and alipayCode like concat('%',#{alipayCode},'%')
+				</if>
 				<if test="createTime !=null and endTime !=null">
 					and createTime  BETWEEN #{createTime} AND #{endTime}
 				</if>
@@ -44,12 +47,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				</if> 
 	</select>
 	<insert id="addOrder">
-		INSERT INTO `order` (`uid`,`orderCode`,
-			`price`,`logidtics`,address)
-		VALUES(#{order.uid},#{order.orderCode},#{order.price},#{order.logidtics},#{order.address});
+		INSERT INTO `order` (`uid`,`orderCode`,`sid`,`gid`,
+			`price`,`logidtics`,address,remark)
+		VALUES(#{order.uid},#{order.orderCode},#{order.sid},#{order.gid},#{order.price},#{order.logidtics},#{order.address},#{order.remark});
 	</insert> 
 	<update id="updateOrder"> 
 		UPDATE 	`order` SET state =#{state} WHERE orderCode = #{orderCode}	 
+	</update>
+	<update id="deleteOrder"> 
+		delete from `order` WHERE id = #{id}	 
+	</update>
+	
+	<update id="updateOrderAll"> 
+		UPDATE 	`order` 
+		<trim prefix="SET" suffixOverrides="," suffix="where orderCode =#{order.orderCode}">
+			<if test="order.address!=null">
+				address = #{order.address},
+			</if>
+			<if test="order.alipayCode!=null">
+				alipayCode =#{order.orderCode},
+			</if>
+			<if test="order.state!=null">
+				state =#{order.state},
+			</if>
+			
+		</trim>
+		
+	
+
 	</update>
 </mapper>
 

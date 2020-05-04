@@ -13,21 +13,52 @@ public class Order {
 	private Integer id;//id
 	private Integer uid;//外键用户id
 
-	private Integer sid;//外键 订单id
+	private Integer sid;//外键 订单id 商店id
 	private Integer gid;//外键 商品id
 	private Integer number;//商品的数量
 	
-
+	private Integer to;//收货id
 	private String endTime;//创建时间
 	private Double price;//价格
 	private Integer state;//订单状态
 	private String logidtics;//物流编码
 	private Integer address;//收货地址外键
+	private String orderCode;//订单码
+	private String alipayCode;//alipay订单码
+	private String createTime;//创建时间
+	private String remark;//创建时间
+
 	
+	private List<OrderDetails> orderDetails = new ArrayList<OrderDetails>();
+
 	private Shop shop;
 	private Good good;
 	
 	
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
+	public String getAlipayCode() {
+		return alipayCode;
+	}
+
+	public void setAlipayCode(String alipayCode) {
+		this.alipayCode = alipayCode;
+	}
+
+	public Integer getTo() {
+		return to;
+	}
+
+	public void setTo(Integer to) {
+		this.to = to;
+	}
+
 	public Shop getShop() { 
 		return shop;
 	}
@@ -68,12 +99,6 @@ public class Order {
 		this.number = number;
 	}
 
-	private String orderCode;//订单码
-	private String createTime;//创建时间
-	
-
-	
-	private List<OrderDetails> orderDetails = new ArrayList<OrderDetails>();
 
 	
 	public Integer getAddress() {

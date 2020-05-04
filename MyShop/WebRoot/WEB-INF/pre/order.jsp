@@ -36,11 +36,11 @@
 									<td width="80px" style="text-align: center;">数量</td>
 									<td width="80px" style="text-align: center;">共计</td>
 									<td width="90px" style="text-align: center;"><a href="" style="color: #fff;">联系卖家</a> </td>
-									<td style="float: right;"><a href="" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
+									<td style="float: right;"><a href="${pageContext.request.contextPath }/pre/buy/orderdelete/${order.id}" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
 								</tr>
 								<tr class="tr">
 									<td width="120px"><img src="${pageContext.request.contextPath }/static/img/baby_3.jpg" width="100px" height="100px" /> </td>
-									<td width="400px" colspan="3">${order.good.name } </td>
+									<td width="400px" colspan="3" style="text-align: left;">${order.good.name } </td>
 									<td width="80px" style="text-align: center;">￥${order.good.price } </td>
 									<td width="80px" style="text-align: center;">${order.number } </td>
 									<td width="80px" style="text-align: center;">${order.price } </td>
@@ -52,7 +52,7 @@
 									</td>
 									<td width="90px">
 										<c:if test="${order.state ==1 }">
-												<span><button>去付款</button></span>	 
+												<span class="default"><a href="${pageContext.request.contextPath }/pre/buy/orderbuy/${order.id}">去付款</a> </span>
 												<span><a href="">取消订单</a> </span>	
 										</c:if>
 										<c:if test="${order.state ==2 }"> 
@@ -60,14 +60,14 @@
 												<span><a href="">取消订单</a> </span>
 										</c:if>
 										<c:if test="${order.state ==3 }"> 
-												<span><button>确认收货</button></span>	 
+												<span><a href="#">确认收货</a> </span> 
 												<span><a href="">联系退货</a> </span>
 										</c:if>
 										<c:if test="${order.state ==4 }"> 
-												<span><button>去评论</button></span>	
+												<span><a href="#">去评论</a> </span>
 										</c:if>
 										<c:if test="${order.state ==5 }">
-											<span><a href="">删除记录</a> </span>	
+											<span><a href="${pageContext.request.contextPath }/pre/buy/orderdelete/${order.id}">删除记录</a> </span>	
 										</c:if> 
 									</td>
 								</tr> 
@@ -90,11 +90,11 @@
 											<td width="80px" style="text-align: center;">数量</td>
 											<td width="80px" style="text-align: center;">共计</td>
 											<td width="90px" style="text-align: center;"><a href="" style="color: #fff;">联系卖家</a> </td>
-											<td style="float: right;"><a href="" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
+											<td style="float: right;"><a href="${pageContext.request.contextPath }/pre/buy/orderdelee/${order.id}" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
 										</tr>
 										<tr class="tr">
 											<td width="120px"><img src="${pageContext.request.contextPath }/static/img/baby_3.jpg" width="100px" height="100px" /> </td>
-											<td width="400px" colspan="3">${order.good.name } </td>
+											<td width="400px" colspan="3" style="text-align: left;">${order.good.name } </td>
 											<td width="80px" style="text-align: center;">￥${order.good.price } </td>
 											<td width="80px" style="text-align: center;">${order.number } </td>
 											<td width="80px" style="text-align: center;">${order.price } </td>
@@ -102,7 +102,7 @@
 												<span><a href="">订单详情</a> </span>	
 											</td>
 											<td width="90px">
-												<span><button>去付款</button></span>	 
+												<span class="default"><a href="${pageContext.request.contextPath }/pre/buy/orderbuy/${order.id}">去付款</a> </span>
 												<span><a href="">取消订单</a> </span>	
 											</td>
 										</tr> 
@@ -126,11 +126,11 @@
 											<td width="80px" style="text-align: center;">数量</td>
 											<td width="80px" style="text-align: center;">共计</td>
 											<td width="90px" style="text-align: center;"><a href="" style="color: #fff;">联系卖家</a> </td>
-											<td style="float: right;"><a href="" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
+											<td style="float: right;"><a href="${pageContext.request.contextPath }/pre/buy/orderdelete/${order.id}" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
 										</tr>
 										<tr class="tr">
 											<td width="120px"><img src="${pageContext.request.contextPath }/static/img/baby_3.jpg" width="100px" height="100px" /> </td>
-											<td width="400px" colspan="3">${order.good.name } </td>
+											<td width="400px" colspan="3" style="text-align: left;">${order.good.name } </td>
 											<td width="80px" style="text-align: center;">￥${order.good.price } </td>
 											<td width="80px" style="text-align: center;">${order.number } </td>
 											<td width="80px" style="text-align: center;">${order.price } </td>
@@ -164,11 +164,11 @@
 											<td width="80px" style="text-align: center;">数量</td>
 											<td width="80px" style="text-align: center;">共计</td>
 											<td width="90px" style="text-align: center;"><a href="" style="color: #fff;">联系卖家</a> </td>
-											<td style="float: right;"><a href="" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
+											<td style="float: right;"><a href="${pageContext.request.contextPath }/pre/buy/orderdelete/${order.id}" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
 										</tr>
 										<tr class="tr">
 											<td width="120px"><img src="${pageContext.request.contextPath }/static/img/baby_3.jpg" width="100px" height="100px" /> </td>
-											<td width="400px" colspan="3">${order.good.name } </td>
+											<td width="400px" colspan="3" style="text-align: left;">${order.good.name } </td>
 											<td width="80px" style="text-align: center;">￥${order.good.price } </td>
 											<td width="80px" style="text-align: center;">${order.number } </td>
 											<td width="80px" style="text-align: center;">${order.price } </td>
@@ -177,7 +177,7 @@
 												<span><a href="">订单详情</a> </span>	
 											</td>
 											<td width="90px">
-												<span><button>确认收货</button></span>	 
+												<span><a href="#">确认收货</a> </span> 
 												<span><a href="">联系退货</a> </span>
 												</td>
 										</tr> 
@@ -202,11 +202,11 @@
 											<td width="80px" style="text-align: center;">数量</td>
 											<td width="80px" style="text-align: center;">共计</td>
 											<td width="90px" style="text-align: center;"><a href="" style="color: #fff;">联系卖家</a> </td>
-											<td style="float: right;"><a href="" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
+											<td style="float: right;"><a href="${pageContext.request.contextPath }/pre/buy/orderdelete/${order.id}" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
 										</tr>
 										<tr class="tr">
 											<td width="120px"><img src="${pageContext.request.contextPath }/static/img/baby_3.jpg" width="100px" height="100px" /> </td>
-											<td width="400px" colspan="3">${order.good.name } </td>
+											<td width="400px" colspan="3" style="text-align: left;">${order.good.name } </td>
 											<td width="80px" style="text-align: center;">￥${order.good.price } </td>
 											<td width="80px" style="text-align: center;">${order.number } </td>
 											<td width="80px" style="text-align: center;">${order.price } </td>
@@ -214,7 +214,7 @@
 												<span><a href="">订单详情</a> </span>	
 											</td>
 											<td width="90px">
-												<span><button>去评论</button></span>	 
+												<span><a href="#">去评论</a> </span>  
 										</tr> 
 									</table> 
 								</li>

@@ -19,6 +19,7 @@ public interface OrderMapper {
 						@Param(value="gid") Integer gid,
 						@Param(value="number") Integer number,
 						@Param(value="orderCode") String orderCode,
+						@Param(value="alipayCode") String alipayCode,
 						@Param(value="createTime") String createTime,
 						@Param(value="end") String endTime,
 						@Param(value="price") Double price,
@@ -35,10 +36,15 @@ public interface OrderMapper {
 			@Param(value="orderCode") String orderCode,  
 			@Param(value="state") Integer state );
 	
+
+	//更新记录  
+	int updateOrderAll(@Param(value="order")Order order);
 	
 	
 	
-	
+	//删除记录  
+	int deleteOrder(@Param(value="id") Integer id);
+		
 	
 	
 	

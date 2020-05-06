@@ -47,9 +47,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				</if> 
 	</select>
 	<insert id="addOrder">
-		INSERT INTO `order` (`uid`,`orderCode`,`sid`,`gid`,
+		INSERT INTO `order` (`uid`,`orderCode`,`sid`,`gid`,`number`,
 			`price`,`logidtics`,address,remark)
-		VALUES(#{order.uid},#{order.orderCode},#{order.sid},#{order.gid},#{order.price},#{order.logidtics},#{order.address},#{order.remark});
+		VALUES(#{order.uid},#{order.orderCode},#{order.sid},#{order.gid},#{order.number},#{order.price},#{order.logidtics},#{order.address},#{order.remark});
 	</insert> 
 	<update id="updateOrder"> 
 		UPDATE 	`order` SET state =#{state} WHERE orderCode = #{orderCode}	 

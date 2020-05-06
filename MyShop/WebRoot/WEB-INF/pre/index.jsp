@@ -54,9 +54,9 @@
 	      		<div class="">
 	      			<img class="photo" src="${pageContext.request.contextPath }/static/img/b2.png"/></div>
 	      		<h2>hi,您好</h2>
-	      		<button class="button " onclick="javascript:location.href='index.html'">登录</button>
-	      		<button class="button " onclick="javascript:location.href='index.html'">注册</button>
-	      		<button class="button "  onclick="javascript:location.href='index.html'">开店</button>
+	      		<button class="button " onclick="javascript:location.href='${pageContext.request.contextPath }/pre/login'">登录</button>
+	      		<button class="button " onclick="javascript:location.href='${pageContext.request.contextPath }/pre/register'">注册</button>
+	      		<button class="button "  onclick="javascript:location.href='${pageContext.request.contextPath }/pre/shop/index'">开店</button>
 	      	</div>
 	      </div> 
 		</div>

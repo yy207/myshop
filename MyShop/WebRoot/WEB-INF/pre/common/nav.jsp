@@ -24,7 +24,14 @@
 					
 					
 				</li> 
-				<li class="li"><a href="${pageContext.request.contextPath }/pre/nav/orderpage">我的淘宝</a></li> 
+				<li class="li">
+					<div class="li_menu ">
+						<a href="${pageContext.request.contextPath }/pre/nav/orderpage">我的淘宝<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
+					</div>
+					<div class="li_menu_li">
+						<a href="#">浏览记录</a> 
+					</div>   	
+				</li> 
 				<li class="li">
 					<div class="li_menu ">
 						<a href="#">购物车<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
@@ -48,21 +55,16 @@
 					<div class="li_menu_li">
 						<a href="#">我的积分</a> 
 					</div>   
-				</li>
-				<li class="li">
-					<div class="li_menu">
-						<a href="#">辅助功能<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
-					</div>  
-					<div class="li_menu_li">
-						<a href="#">浏览记录</a> 
-					</div>  
-					</li>
+				</li> 
 				<li class="li">
 					<div class="li_menu">
 						<a href="#">网址导航<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
 					</div>  
+					<div class="li_menu_li">
+						<a href="${pageContext.request.contextPath }/pre/shop/index">免费开店</a> 
+					</div>  
 				</li>
-				</li>
+				
 			</ul> 
 		</div>
 		<!--导航栏结束-->

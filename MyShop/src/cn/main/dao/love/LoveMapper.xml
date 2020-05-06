@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.main.dao.love.LoveMapper">
+	<select id="getLoveList" resultType="Love">
+		SELECT * FROM `love`
+		<trim prefix="where" prefixOverrides="and | or">
+				<if test="id!=null">
+					and id = #{id}
+				</if>
+				<if test="uid != null">
+					and uid = #{uid}
+				</if>
+				<if test="sid != null">
+					and sid = #{sid}
+				</if>
+			
+				<if test="type != null">
+					and type = #{type}
+				</if> 
+		</trim>
+		order by id desc ,createTime desc
+				<if test="from != null and pageSize != null">
+					limit #{from},#{pageSize}
+				</if>   
+	</select>
+
+
+		<insert id="insertLove" parameterType="Love">
+			INSERT INTO `love` (`uid`,`sid`,`type`)
+			values(#{love.uid},#{love.sid},#{love.type}); 
+		</insert>
+		<delete id="deleteLove">
+			DELETE FROM `love` WHERE `id`=#{id}
+		</delete>
+</mapper>

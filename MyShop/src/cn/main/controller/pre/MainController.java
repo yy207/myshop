@@ -4,8 +4,10 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.PageContext;
 
+import org.apache.commons.codec.digest.Md5Crypt;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,19 +19,25 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import cn.main.pojo.Category;
 import cn.main.pojo.Good;
 import cn.main.pojo.Image;
+import cn.main.pojo.Love;
 import cn.main.pojo.News;
 import cn.main.pojo.Shop;
+import cn.main.pojo.User;
 import cn.main.service.CategoryService;
 import cn.main.service.GoodService;
 import cn.main.service.ImageService;
 import cn.main.service.NewsService;
 import cn.main.service.ShopService;
+import cn.main.service.love.LoveService;
+import cn.main.utils.Contains;
 import cn.main.utils.Page;
 
 @Controller
 @RequestMapping("/main")
 public class MainController {
-
+ 
+	@Resource
+	private LoveService loveService;//收藏
 	@Resource
 	private GoodService goodService;// 商品
 	@Resource
@@ -48,10 +56,6 @@ public class MainController {
 			@RequestParam(value="cate",required=false)Integer cate,
 			@RequestParam(value="name",required=false)String name, 
 			@RequestParam(value="currentIndex",required=false)Integer currentIndex) {
-		
-		
-		
-		
 		Page pages = new Page(8);// 分页 8 条
 		logger.debug(">========cate========" + cate);
 		logger.debug(">========name========" + name);
@@ -127,7 +131,7 @@ public class MainController {
 
 	@RequestMapping("goodinfo/{gid}/{sid}")
 	public String good(@PathVariable(value = "gid") Integer gid,
-			@PathVariable(value = "sid") Integer sid, Model model) {
+			@PathVariable(value = "sid") Integer sid, Model model,HttpSession session) {
 
 		logger.debug(">>>>>>>>>>>" + gid);
 		logger.debug(">>>>>>>>>>>" + sid);
@@ -159,6 +163,18 @@ public class MainController {
 		//所属商店
 		Shop shop = shopService.getShopById(sid,null, null);
 		
+		User user = (User) session.getAttribute(Contains.SESSION_USER);
+		if(user!=null) {
+			//是否收藏了
+			List<Love> loveGood = loveService.getLoveList(null,user.getId() , gid, 1, null, null);
+			if(loveGood.size()!=0) {
+				model.addAttribute("loveGood", loveGood);
+			}
+			List<Love> loveShop = loveService.getLoveList(null,user.getId() , sid,2, null, null);
+			if(loveShop.size()!=0) {
+				model.addAttribute("loveGood", loveShop);
+			}
+		}		
 		
 		model.addAttribute("cateList1", cateList1);
 		model.addAttribute("cateList2", cateList2);

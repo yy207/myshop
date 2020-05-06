@@ -11,6 +11,7 @@ public class Love {
 	private Integer type;//类型 1 商品 2店铺 
 
 	private String  createTime;
+	
 	private User user;
 	private Shop shop;
 	private Good good;

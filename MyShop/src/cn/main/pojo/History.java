@@ -9,13 +9,22 @@ public class History {
 	private Integer id;
 	private Integer uid;
 	private Integer sid;
-	private Integer gid;
+	private Integer type;
 
 	private String  createTime;
 	
 	private User user;
 	private Shop shop;
 	private Good good;
+	
+	
+	
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
+	}
 	public Integer getId() {
 		return id;
 	}
@@ -33,12 +42,6 @@ public class History {
 	}
 	public void setSid(Integer sid) {
 		this.sid = sid;
-	}
-	public Integer getGid() {
-		return gid;
-	}
-	public void setGid(Integer gid) {
-		this.gid = gid;
 	}
 	public String getCreateTime() {
 		return createTime;

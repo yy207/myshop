@@ -30,10 +30,20 @@
 			</div>
 			<div class="action">
 				<div class="heart">
-					<a href="" >
-						<img src="${pageContext.request.contextPath }/static/img/heart_h.png" width="18px"/>
-						<img src="${pageContext.request.contextPath }/static/img/heart.png" width="18px"/> 
-						收藏店铺
+					<a href="javascript:void(0);" onclick="love_add(${shop.id },2)"> 
+						<img id="s_y"	
+								<c:if test="${loveShop !=null }">style="display: inline-block;;"</c:if>
+								src="${pageContext.request.contextPath }/static/img/heart_h.png" width="18px"/>
+						<span id="s_y_txt"
+								<c:if test="${loveShop !=null }">style="display: inline-block;;"</c:if>
+								>取消收藏</span>
+						
+						<img id="s_n" 
+								<c:if test="${loveShop ==null }">style="display: inline-block;"</c:if>
+							  	src="${pageContext.request.contextPath }/static/img/heart.png" width="18px"/> 
+						<span id="s_n_txt" 
+								<c:if test="${loveShop ==null }">style="display: inline-block;"</c:if>
+								>收藏店铺</span> 
 					</a>
 				</div> 
 			</div> 
@@ -97,9 +107,23 @@
 							<td colspan="3">全国 免运费 </td> 
 						</tr>
 						<tr>
-							<td></td>
+							<td></td> 
 							<td>
-								<a href="">收藏 <img src="${pageContext.request.contextPath }/static/img/heart.png" width="16" height="13" /></a>
+								<a href="">
+									  <span id="g_y_txt"
+									  		<c:if test="${loveGood ==null }">style="display: inline-block;"</c:if>
+									  		>收藏</span>
+								 	 <img id="g_y" 
+								 	 		<c:if test="${loveGood ==null }">style="display: inline-block;"</c:if>
+								 	 	 	src="${pageContext.request.contextPath }/static/img/heart.png" width="16" height="13" />
+									 
+									 <span id="g_n_txt"
+									 		<c:if test="${loveShop !=null }">style="display: inline-block;"</c:if> 
+									 		>取消收藏</span>
+									 <img id="g_n"
+									 	<c:if test="${loveShop !=null }">style="display: inline-block;"</c:if> 
+									  	src="${pageContext.request.contextPath }/static/img/care.png" width="16" height="13" />
+								</a>
 							</td>
 							<td class="share_img">
 								<a href="">分享 <img src="${pageContext.request.contextPath }/static/img/sh.png" width="16" height="13" /></a>
@@ -238,6 +262,9 @@
 				
 			</div> 
 		</div> 
+		
+		<%@ include file="common/btm.jsp" %>
+		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/love.js"></script>
 	</body>
 </html>
 

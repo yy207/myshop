@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.main.dao.history.HistoryMapper">
+	<select id="getHistoryList">
+		SELECT * FROM `history` 
+		<trim prefix="SET" prefixOverrides="and | or">
+				<if test="id!=null">
+					and id = #{id}
+				</if>
+				<if test="uid != null">
+					and uid = #{uid}
+				</if>
+				<if test="sid != null">
+					and sid = #{sid}
+				</if> 
+				<if test="type != null">
+					and type = #{type}
+				</if> 
+		</trim> 
+	</select>
+	
+	<insert id="insertHistory" parameterType="History">
+		INSERT INTO `history`(`uid`,`sid`,`type`)
+			VALUES(#{history.uid},#{history.sid},#{history.type});
+	</insert>
+	
+	<delete id="deleteHistory">
+		DELETE FROM `history` WHERE id =#{id}
+	</delete>
+	 
+</mapper>

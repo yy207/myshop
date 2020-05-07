@@ -14,10 +14,10 @@ public class HistoryServiceImpl implements HistoryService {
 	private HistoryMapper historyMapper;
 	
 	@Override
-	public List<History> getHistoryList(Integer id, Integer uid, Integer sid, Integer gid, Integer from,
+	public List<History> getHistoryList(Integer id, Integer uid, Integer sid, Integer type, Integer from,
 			Integer pageSize) {
 		// TODO Auto-generated method stub
-		return historyMapper.getHistoryList(id, uid, sid, gid, from, pageSize);
+		return historyMapper.getHistoryList(id, uid, sid, type, from, pageSize);
 	} 
 	@Override
 	public int insertHistory(History history) {

@@ -39,8 +39,15 @@
 				</li>
 				<li class="nav_left_li">
 					<div class="li_a">
-						<a href="#">我的收藏</a> 
+						<a href="#">我的收藏</a> &nbsp;&nbsp;
+						<img src="${pageContext.request.contextPath }/static/img/xia.png" height="5" width="10" />
 					</div> 
+					<div class="content">
+						<ul>
+							<li><a href="${pageContext.request.contextPath }/pre/love/lovepage/2">收藏店铺</a></li>
+							<li><a href="${pageContext.request.contextPath }/pre/love/lovepage/1">收藏宝贝</a></li>
+						</ul>
+					</div>
 				</li>
 				<li class="nav_left_li">
 					<div class="li_a">

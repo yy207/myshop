@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.main.pojo.Category;
 import cn.main.pojo.Good;
+import cn.main.pojo.History;
 import cn.main.pojo.Image;
 import cn.main.pojo.Love;
 import cn.main.pojo.News;
@@ -28,6 +29,7 @@ import cn.main.service.GoodService;
 import cn.main.service.ImageService;
 import cn.main.service.NewsService;
 import cn.main.service.ShopService;
+import cn.main.service.history.HistoryService;
 import cn.main.service.love.LoveService;
 import cn.main.utils.Contains;
 import cn.main.utils.Page;
@@ -36,6 +38,8 @@ import cn.main.utils.Page;
 @RequestMapping("/main")
 public class MainController {
  
+	@Resource
+	private HistoryService historyService;//历史记录
 	@Resource
 	private LoveService loveService;//收藏
 	@Resource
@@ -52,7 +56,7 @@ public class MainController {
 	private Logger logger = Logger.getLogger(getClass());
 
 	@RequestMapping("index")
-	public String index(Model model,
+	public String index(Model model,HttpSession session,
 			@RequestParam(value="cate",required=false)Integer cate,
 			@RequestParam(value="name",required=false)String name, 
 			@RequestParam(value="currentIndex",required=false)Integer currentIndex) {
@@ -96,9 +100,6 @@ public class MainController {
 		List<Good> goodList3 = goodService.getGoodList(null, null, null, 628, null, null,4, 0, 11); 
 		//商品6数码
 		List<Good> goodList4 = goodService.getGoodList(null, null, null, 670, null, null,4, 0, 11);
-		
-		
-		
 
 		model.addAttribute("cateList1", cateList1);
 		model.addAttribute("cateList2", cateList2);
@@ -111,10 +112,10 @@ public class MainController {
 		model.addAttribute("goodList2", goodList2); 
 		model.addAttribute("goodList3", goodList3); 
 		model.addAttribute("goodList4", goodList4);
-		model.addAttribute("likeList", likeList);
-		
+		model.addAttribute("likeList", likeList); 
 		model.addAttribute("name", name);
-
+		 
+		
 		return "index";
 	}
 
@@ -168,13 +169,23 @@ public class MainController {
 			//是否收藏了
 			List<Love> loveGood = loveService.getLoveList(null,user.getId() , gid, 1, null, null);
 			if(loveGood.size()!=0) {
-				model.addAttribute("loveGood", loveGood);
+				model.addAttribute("loveGood", 0);
 			}
 			List<Love> loveShop = loveService.getLoveList(null,user.getId() , sid,2, null, null);
 			if(loveShop.size()!=0) {
-				model.addAttribute("loveGood", loveShop);
+				model.addAttribute("loveShop", 0);
 			}
-		}		
+			List<History> history = historyService.getHistoryList(null, user.getId(), sid, 1, null, null);
+			logger.debug(">>>>>>>>>>>>>>>>>>>>>>>>>history"+history);
+			if(history.size()==0) {
+				History h = new History();
+				h.setUid(user.getId());
+				h.setSid(sid);
+				h.setType(1);
+				historyService.insertHistory(h); 
+			}
+		}		 
+		 
 		
 		model.addAttribute("cateList1", cateList1);
 		model.addAttribute("cateList2", cateList2);

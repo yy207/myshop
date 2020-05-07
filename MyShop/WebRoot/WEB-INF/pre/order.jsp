@@ -39,7 +39,12 @@
 									<td style="float: right;"><a href="${pageContext.request.contextPath }/pre/buy/orderdelete/${order.id}" style="color: #fff;">删除 <img src="${pageContext.request.contextPath }/static/img/delete.png"/> </a> </td> 
 								</tr>
 								<tr class="tr">
-									<td width="120px"><img src="${pageContext.request.contextPath }/static/img/baby_3.jpg" width="100px" height="100px" /> </td>
+									<td width="120px"><img src="<c:if test="${fn:contains(order.good.picPath,'http:') }">
+																${order.good.picPath }
+															</c:if>
+															<c:if test="${!fn:contains(order.good.picPath,'http:') }">
+																${pageContext.request.contextPath }/static/img/${order.good.picPath }
+															</c:if>" width="100px" height="100px" /> </td>
 									<td width="400px" colspan="3" style="text-align: left;">${order.good.name } </td>
 									<td width="80px" style="text-align: center;">￥${order.good.price } </td>
 									<td width="80px" style="text-align: center;">${order.number } </td>

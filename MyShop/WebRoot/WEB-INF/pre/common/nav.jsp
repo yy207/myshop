@@ -42,10 +42,10 @@
 						<a href="#">我的收藏<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
 					</div>
 					<div class="li_menu_li">
-						<a href="#">收藏店铺</a> 
+						<a href="${pageContext.request.contextPath }/pre/love/lovepage/2">收藏店铺</a> 
 					</div>   
 					<div class="li_menu_li">
-						<a href="#">收藏商品</a> 
+						<a href="${pageContext.request.contextPath }/pre/love/lovepage/1">收藏宝贝</a> 
 					</div>   
 				</li> 
 				<li class="li"> 

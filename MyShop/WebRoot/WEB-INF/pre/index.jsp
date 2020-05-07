@@ -53,10 +53,17 @@
 	      	<div class="info_user">
 	      		<div class="">
 	      			<img class="photo" src="${pageContext.request.contextPath }/static/img/b2.png"/></div>
-	      		<h2>hi,您好</h2>
-	      		<button class="button " onclick="javascript:location.href='${pageContext.request.contextPath }/pre/login'">登录</button>
-	      		<button class="button " onclick="javascript:location.href='${pageContext.request.contextPath }/pre/register'">注册</button>
-	      		<button class="button "  onclick="javascript:location.href='${pageContext.request.contextPath }/pre/shop/index'">开店</button>
+	      			<c:if test="${sessionUser!=null }">
+	      				<h2>hi,${sessionUser.userName }</h2>
+	      				<button class="button" onclick="javascript:location.href='${pageContext.request.contextPath }/pre/nav/accountpage'">我的账户</button>
+	      			</c:if>
+	      			<c:if test="${sessionUser==null }">
+	      				<h2>hi,您好</h2>
+			      		<button class="button " onclick="javascript:location.href='${pageContext.request.contextPath }/pre/login'">登录</button>
+			      		<button class="button " onclick="javascript:location.href='${pageContext.request.contextPath }/pre/register'">注册</button>
+	      			</c:if>
+	      		
+	      			<button class="button "  onclick="javascript:location.href='${pageContext.request.contextPath }/pre/shop/index'">开店</button>
 	      	</div>
 	      </div> 
 		</div>

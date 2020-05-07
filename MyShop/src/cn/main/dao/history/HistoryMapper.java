@@ -11,7 +11,7 @@ public interface HistoryMapper {
 	List<History> getHistoryList(@Param(value="id")Integer id,
 								@Param(value="uid")Integer uid,
 								@Param(value="sid")Integer sid,
-								@Param(value="gid")Integer gid,
+								@Param(value="type")Integer type,
 								@Param(value="from")Integer from,
 								@Param(value="pageSize")Integer pageSize);
 	

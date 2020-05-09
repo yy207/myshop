@@ -9,6 +9,7 @@
 		<title></title>
 		
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" /> 
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/style.css" /> 
 	</head>
 <body>
 		  <!-- nav -->
@@ -22,7 +23,7 @@
 				<ul class="cate_ul">
 					<c:forEach var="cate" items="${cateList2}" begin="0" end="9">
 						<li class="cate_li">  
-							<img src="<%=request.getContextPath() %>/static/img/${cate.iconClass }" />
+							<img src="<%=request.getContextPath() %>/static/img/${cate.iconClass }" width="10" />
 							<span class="fl"> <a href="${pageContext.request.contextPath }/pre/index?cate=${cate.id}">${cate.name }</a> </span>
 						</li>  
 					</c:forEach>
@@ -30,22 +31,41 @@
 				
 			</div>
 			<div class="banner">    	
-	            <div class="top_slide_wrap">
-	                <ul class="slide_box bxslider">
-	                    <li><img src="${pageContext.request.contextPath }/static/img/ban1.jpg" width="740" height="401" /></li>
-	                    <li><img src="${pageContext.request.contextPath }/static/img/ban1.jpg" width="740" height="401" /></li> 
-	                    <li><img src="${pageContext.request.contextPath }/static/img/ban1.jpg" width="740" height="401" /></li> 
-	                </ul>	
-	                <div class="op_btns clearfix">
-	                    <a href="#" class="op_btn op_prev"><span></span></a>
-	                    <a href="#" class="op_btn op_next"><span></span></a>
-	                </div>        
-	            </div>
-	      </div>
+		        <div class="top_slide_wrap adver">
+		            <ul class="slide_box bxslider" id="slide_box"> 
+		              	<c:forEach items="${imageList }" var="img">
+		              		<li>
+		              			<img class="bg" src="${pageContext.request.contextPath }/static/img/${img.path}" 
+		              			width="740" height="401" />
+		              			
+		              		</li>
+		              	
+		              	</c:forEach>
+		              	<li><img class="bg" src="${pageContext.request.contextPath }/static/img/ban1.jpg" width="740" height="401" /></li>
+		              	<li><img class="bg" src="${pageContext.request.contextPath }/static/img/ban1.jpg" width="740" height="401" /></li>
+		              	<li><img class="bg" src="${pageContext.request.contextPath }/static/img/ban1.jpg" width="740" height="401" /></li>
+		            </ul>
+		            <ul class="num">
+		            	<li>1</li>
+		            	<li>2</li>
+		            	<li>3</li> 
+		            </ul>	
+		            <div class="op_btns clearfix"> 
+		                <a href="#" class="op_btn op_prev"><img class="arrowLeft" src="<%=request.getContextPath() %>/statics/localimg/s_left.png" /></a>
+		                <a href="#" class="op_btn op_next"> <img class="arrowRight" src="<%=request.getContextPath() %>/statics/localimg/s_right.png" /></a>
+		            </div>        
+		        </div>
+		   </div>  
 	      <div class="news">
 	      <div class="info_user">
 	      		<div class="">
-	      			<img class="photo" src="${pageContext.request.contextPath }/static/img/b2.png"/></div>
+	      			<c:if test="${sessionUser==null }">
+	      				<img class="photo" src="${pageContext.request.contextPath }/static/img/b2.png"/> 
+	      			</c:if>
+	      			<c:if test="${sessionUser!=null }">
+	      				<img class="photo" src="${pageContext.request.contextPath }/static/img/${sessionUser.userPic}"/>
+	      			</c:if>
+	      		</div>
 	      			<c:if test="${sessionUser!=null }">
 	      				<h2>hi,${sessionUser.userName }</h2>
 	      				<button class="button" onclick="javascript:location.href='${pageContext.request.contextPath }/pre/nav/accountpage'">我的账户</button>
@@ -215,3 +235,5 @@
 		</div>
 		
 <%@ include file="common/footer.jsp" %>
+<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/ui/jquery.min.js" ></script>
+		 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/changeImg.js" ></script> 

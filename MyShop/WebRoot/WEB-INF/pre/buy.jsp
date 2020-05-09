@@ -75,12 +75,16 @@
 					</div> 
    				  </c:forEach>
    				  
-   				  <c:if test="${fn:length(addressList)==0 }">
-   				  	请先添加一个新的地址<input type="radio" name="addressRadio" required />
-   				  </c:if>
+   				 
 				</div>
 				<div class="new_add">
-					<a href="${pageContext.request.contextPath }/pre/nav/addresspage" class="new">使用新地址</a>
+					 <c:if test="${fn:length(addressList)==0 }">
+	   				  	
+	   				  	<a href="${pageContext.request.contextPath }/pre/nav/addresspage" class="news"><input type="radio" name="addressRadio" style="display: none;" required />请先添加一个地址!</a>
+	   				  </c:if>
+					<c:if test="${fn:length(addressList)!=0 }">
+	   				  		<a href="${pageContext.request.contextPath }/pre/nav/addresspage" class="new">使用新地址</a>
+	   				  </c:if>
 				</div>
 			</div>
 			

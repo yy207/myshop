@@ -31,6 +31,9 @@
 			.address_choose .new_add a.new{display: block;width: 80px; height: 30px;
 			 text-align: center; border: 1px solid #ff5000;  border-radius: 3px; line-height: 30px;
 			  background: #ffd6cc; color: #f30;}
+			  .address_choose .new_add a.news{display: block;width: 180px; height: 30px;
+			 text-align: center; border: 1px solid #ff5000;  border-radius: 3px; line-height: 30px;
+			  background: #ffd6cc; color: #f30;}
 			
 			.good .info span{display: inline-block; vertical-align: top;}
 			.good .info span.txt{width: 200px;}

@@ -29,7 +29,7 @@
 				<img src="${pageContext.request.contextPath }/static/img/logo.png" class="logo_img" alt="logo"/>
 			</div>  --%>
 			<div class="head_logo i_car">
-		     <div class="car_t"><%-- <img src="${pageContext.request.contextPath }/static/img/car.png" alt="logo"/> --%> 购物车 [ <span>3</span> ]</div>
+		     <div class="car_t"><%-- <img src="${pageContext.request.contextPath }/static/img/car.png" alt="logo"/> --%> 购物车 [ <span>${fn:length(cartList)}</span> ]</div>
 		        <div class="car_bg">
 		        	<c:if test="${sessionUser==null }">
 			        	<!--Begin 购物车未登录 Begin-->
@@ -37,24 +37,33 @@
 			            <!--End 购物车未登录 End-->
 		        	</c:if>
 		        	<c:if test="${sessionUser!=null }">
+						<c:if test="${fn:length(cartList)>0 }">
 						<!--Begin 购物车已登录 Begin-->
 			            <ul class="cars">
-			            	<c:forEach items="${cartList }" var="cart">
-			            		<li>
-				                	<div class="img"><a href="#"><img src="<c:if test="${fn:contains(cart.good.picPath,'http:') }">
-																		${cart.good.picPath }
-																	</c:if>
-																	<c:if test="${!fn:contains(cart.good.picPath,'http:') }">
-																		${pageContext.request.contextPath }/static/img/${cart.good.picPath }
-																	</c:if>" width="58" height="58" /></a></div>
-				                    <div class="name"><a href="<%=request.getContextPath()%>/pre/goodinfo/${cart.good.id}/${cart.good.shop.id }">${cart.good.name }</a></div>
-				                    <div class="price"><font color="#ff4e00">￥${cart.good.price }</font> X1</div>
-				                </li>
-			            	</c:forEach> 
+			            	
+			            		<c:forEach items="${cartList }" var="cart">
+				            		<li>
+					                	<div class="img"><a href="#"><img src="<c:if test="${fn:contains(cart.good.picPath,'http:') }">
+																			${cart.good.picPath }
+																		</c:if>
+																		<c:if test="${!fn:contains(cart.good.picPath,'http:') }">
+																			${pageContext.request.contextPath }/static/img/${cart.good.picPath }
+																		</c:if>" width="58" height="58" /></a></div>
+					                    <div class="name"><a href="<%=request.getContextPath()%>/pre/goodinfo/${cart.good.id}/${cart.good.shop.id }">${cart.good.name }</a></div>
+					                    <div class="price"><font color="#ff4e00">￥${cart.good.price }</font> X1</div>
+					                </li>
+				            	</c:forEach>  
 			            </ul>
 			            <div class="price_sum"><!-- 共计&nbsp; <font color="#ff4e00">￥</font><span>1058</span> --></div>
 			            <div class="price_a"><a href="${pageContext.request.contextPath }/pre/cart/cartpage">去购物车结算</a></div>
 			            <!--End 购物车已登录 End-->
+			            </c:if>
+			            
+			            <c:if test="${fn:length(cartList)==0 }"> 
+			            	<div class="un_login">
+			            		<a href="#">暂时还没有添加喜爱的商品 ,先去购物吧！</a>
+			            	</div>
+			            </c:if>
 		        	</c:if> 
 		        </div>
 	  		  </div> 

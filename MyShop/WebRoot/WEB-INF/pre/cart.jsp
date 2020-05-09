@@ -25,7 +25,7 @@
 		 
 		 <div class="title">
 		 	<div class="p1">
-		 		<span>全部商品 23</span>
+		 		<span>全部商品 ${fn:length(cartList)}</span>
 		 	</div> 
 		 </div>
 		 

@@ -28,15 +28,14 @@ public class PreInterceptor extends HandlerInterceptorAdapter {
 		if (user != null) {
 			logger.debug("当前登录用户信息  "+user.getUserCode()+"    "+user.getUserName());
 			return true;
-		} else {
-			//response.sendRedirect(request.getContextPath() + "/pre403.jsp");
-			//根据cookie的信息转发一次请求 
-			if(CookieUtil.exists(request)) {
-				logger.debug("====================跳转到Cookie登录");
-				response.sendRedirect(request.getContextPath() + "/pre/cookie");
-			}else {
-				response.sendRedirect(request.getContextPath() + "/pre/login");
-			}			
+		} else { 
+//			if(CookieUtil.exists(request)) {
+//				logger.debug("====================跳转到Cookie登录");
+//				response.sendRedirect(request.getContextPath() + "/pre/cookie");
+//			}else {
+//				response.sendRedirect(request.getContextPath() + "/pre/login");
+//			}	
+			response.sendRedirect(request.getContextPath() + "/pre/login");
 			return false;
 		} 
 	}

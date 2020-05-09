@@ -4,7 +4,7 @@
 	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 		<!--导航栏开始-->
 		<div class="top_nav ">
-			<ul class="top_nav_list_left">
+			<ul class="top_nav_list_left" style="width: 700px;">
 				
 					<c:if test="${sessionUser!=null }">
 						<li class="li"> 	
@@ -20,26 +20,23 @@
 			</ul>
 			 <ul class="top_nav_list_right"> 
 				<li class="li">
-					<a href="${pageContext.request.contextPath }/main/index">网站首页</a>
-					
-					
+					<a href="${pageContext.request.contextPath }/pre/index">网站首页</a>
 				</li> 
 				<li class="li">
 					<div class="li_menu ">
 						<a href="${pageContext.request.contextPath }/pre/nav/orderpage">我的淘宝<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
 					</div>
+						<div class="li_menu_li">
+						<a href="${pageContext.request.contextPath }/pre/cart/cartpage">购物车</a>
+					</div>
 					<div class="li_menu_li">
-						<a href="#">浏览记录</a> 
+						<a href="${pageContext.request.contextPath }/pre/history/historypage">浏览记录</a> 
 					</div>   	
 				</li> 
+				 
 				<li class="li">
 					<div class="li_menu ">
-						<a href="#">购物车<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
-					</div>
-				</li>
-				<li class="li">
-					<div class="li_menu ">
-						<a href="#">我的收藏<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
+						<a href="${pageContext.request.contextPath }/pre/love/lovepage/1"><img src="${pageContext.request.contextPath }/static/img/care.png" class="img_li" alt="↓" width="15" height="13"/>我的收藏</a>
 					</div>
 					<div class="li_menu_li">
 						<a href="${pageContext.request.contextPath }/pre/love/lovepage/2">收藏店铺</a> 
@@ -50,7 +47,7 @@
 				</li> 
 				<li class="li"> 
 					<div class="li_menu ">
-						<a href="#">会员中心<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
+						<a href="#">会员中心<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓" width="10" height="5"/></a>
 					</div>
 					<div class="li_menu_li">
 						<a href="#">我的积分</a> 
@@ -58,13 +55,14 @@
 				</li> 
 				<li class="li">
 					<div class="li_menu">
-						<a href="#">网址导航<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
+						<a href="#">网址导航<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓" width="10" height="5"/></a>
 					</div>  
 					<div class="li_menu_li">
 						<a href="${pageContext.request.contextPath }/pre/shop/index">免费开店</a> 
-					</div>  
+					</div>   
 				</li>
-				
+				<li class="li"></li>
+				<li class="li"></li> 
 			</ul> 
 		</div>
 		<!--导航栏结束-->

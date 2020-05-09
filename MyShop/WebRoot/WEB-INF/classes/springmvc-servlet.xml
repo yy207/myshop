@@ -92,9 +92,14 @@
 			 <mvc:mapping path="/pre/nav/**"/>
 			 <mvc:mapping path="/pre/buy/**"/>
 			 <mvc:mapping path="/pre/shop/**"/>
-			 <mvc:mapping path="/pre/love/**"/>
-			<!--  <mvc:mapping path="/main/**"/> -->
+			 <mvc:mapping path="/pre/love/**"/> 
+			 <mvc:mapping path="/pre/cart/**"/>
+			 <mvc:mapping path="/pre/history/**"/> 
 			<bean class="cn.main.interceptors.PreInterceptor"/>
+		</mvc:interceptor> 
+		<mvc:interceptor> 
+			<mvc:mapping path="/pre/index/**"/>  
+			<bean class="cn.main.interceptors.PreInterceptor2"/>
 		</mvc:interceptor> 
 	</mvc:interceptors>  
     <!-- 配置文件上传  MultipartResolver-->

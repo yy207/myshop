@@ -9,8 +9,7 @@
 					var p = ds.parentNode.parentNode;
 					$(p).addClass("active");
 					$(".active").find(".show").show();
-					//parent  
-					
+					//parent   
 					copyInfo();
 				}
 				function copyInfo(){

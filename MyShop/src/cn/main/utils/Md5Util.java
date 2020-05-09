@@ -11,7 +11,7 @@ public class Md5Util {
      * @return 密文
      * @throws Exception
      */
-    public static String md5(String text) throws Exception {
+    public static String MD5(String text) throws Exception {
         //加密后的字符串
         String encodeStr=DigestUtils.md5Hex(text + MD5);
         System.out.println("MD5加密后的字符串为:encodeStr="+encodeStr);
@@ -27,9 +27,9 @@ public class Md5Util {
      * @return true/false
      * @throws Exception
      */
-    public static boolean verify(String text, String md5) throws Exception {
+    public static boolean MD5Verify(String text, String md5) throws Exception {
         //根据传入的密钥进行验证
-        String md5Text = md5(text);
+        String md5Text = MD5(text);
         if(md5Text.equalsIgnoreCase(md5))
         {
             System.out.println("MD5验证通过");
@@ -39,9 +39,9 @@ public class Md5Util {
     }
     
     public static void main(String[] args) throws Exception {
-    	String  m =md5("123456");
+    	String  m =MD5("123456");
 		System.out.println(m); 
 		
-		verify("123456", m);
+		MD5Verify("123456", m);
 	}
 }

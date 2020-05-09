@@ -26,6 +26,7 @@ import cn.main.pojo.User;
 import cn.main.service.UserService;
 import cn.main.utils.Contains;
 import cn.main.utils.CookieUtil;
+import cn.main.utils.Md5Util;
 
 @Controller
 @RequestMapping(value="/pre")
@@ -38,20 +39,20 @@ public class PreUserController {
 		@RequestMapping(value="dologin")
 		public String doLogin(@RequestParam String userCode,@RequestParam String userPassword,
 								@RequestParam(required=false,value="auto") Boolean auto,
-								HttpServletRequest request,HttpServletResponse response,HttpSession session){
+								HttpServletRequest request,HttpServletResponse response,HttpSession session) throws Exception{
 			log.debug("===================dologin");
 			log.debug(userCode);
 			log.debug(userPassword); 
 			User user = service.getUserByUserCode(userCode);
 			if(null != user){
-				if(user.getUserPassword().equals(userPassword)){ 
+				if(Md5Util.MD5Verify(userPassword,user.getUserPassword())){ 
 					session.setAttribute(Contains.SESSION_USER, user);
 					service.updateUserLastLoginTime(user.getId(),Contains.getDate(), 1);
 					log.debug(">>>>>>>>======================auto 1-- "+auto);
 					if(auto!=null && auto) {
 						log.debug(">>>>>>>>======================auto 2--  "+auto);
 						Cookie name = new Cookie("userCode", userCode); 
-						Cookie pwd = new Cookie("userPassword", userPassword); 
+						Cookie pwd = new Cookie("userPassword", Md5Util.MD5(userPassword)); 
 						name.setMaxAge(24*60*60);
 						pwd.setMaxAge(24*60*60);
 						response.addCookie(name); 
@@ -59,13 +60,13 @@ public class PreUserController {
 					}else {
 						log.debug(">>>>>>>>======================auto 2--  "+auto);
 						Cookie name = new Cookie("userCode", userCode); 
-						Cookie pwd = new Cookie("userPassword", userPassword); 
+						Cookie pwd = new Cookie("userPassword",  Md5Util.MD5(userPassword)); 
 						name.setMaxAge(0);
 						pwd.setMaxAge(0);
 						response.addCookie(name); 
 						response.addCookie(pwd);
 					}
-					return "redirect:/main/index";
+					return "redirect:/pre/index";
 				}else{
 					request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERPWD);
 				} 
@@ -81,7 +82,7 @@ public class PreUserController {
 				@RequestParam(value = "imageCode", required = true) String imageCode,
 				HttpSession session,
 				HttpServletRequest request,
-				@RequestParam(value = "userImage", required = false) MultipartFile file) {
+				@RequestParam(value = "userImage", required = false) MultipartFile file) throws Exception {
 			log.debug("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 			log.debug(user.getUserCode()); 
 			log.debug(user.getUserPassword());
@@ -90,6 +91,7 @@ public class PreUserController {
 					user.getUserPassword().length()<6 	){
 				return "register";
 			}
+			user.setUserPassword(Md5Util.MD5(user.getUserPassword()));
 			user.setUserName(user.getRealName()); 
 			user.setUserPic("default.jpg"); 
 			user.setCreateTime(Contains.getDate()); 
@@ -142,7 +144,7 @@ public class PreUserController {
 						response.addCookie(name); 
 						response.addCookie(pwd);
 						log.debug("====================跳转到Cookie登录转到index");
-						return "redirect:/main/index";
+						return "redirect:/pre/index";
 					} 
 				} 
 				return "login";
@@ -160,13 +162,20 @@ public class PreUserController {
 		}
 		// 登出
 		@RequestMapping(value = "loginout")
-		public String loginOut(HttpSession session) {
+		public String loginOut(HttpSession session,HttpServletResponse response) throws Exception {
 			User user = (User) session.getAttribute(Contains.SESSION_USER);
 			if(user != null){
 				service.updateUserLastLoginTime(user.getId(), Contains.getDate(), 0);
 				session.removeAttribute(Contains.SESSION_USER);
-				} 
-			return "redirect:/main/index";
+				log.debug("======================loginout==");
+				Cookie name = new Cookie("userCode", user.getUserCode()); 
+				Cookie pwd = new Cookie("userPassword", user.getUserPassword()); 
+				name.setMaxAge(0);
+				pwd.setMaxAge(0);
+				response.addCookie(name); 
+				response.addCookie(pwd);
+			} 
+			return "redirect:/pre/index";
 		}
 		
 		

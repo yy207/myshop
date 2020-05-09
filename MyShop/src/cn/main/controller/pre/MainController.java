@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.main.pojo.Cart;
 import cn.main.pojo.Category;
 import cn.main.pojo.Good;
 import cn.main.pojo.History;
@@ -29,13 +30,14 @@ import cn.main.service.GoodService;
 import cn.main.service.ImageService;
 import cn.main.service.NewsService;
 import cn.main.service.ShopService;
+import cn.main.service.cart.CartService;
 import cn.main.service.history.HistoryService;
 import cn.main.service.love.LoveService;
 import cn.main.utils.Contains;
 import cn.main.utils.Page;
 
 @Controller
-@RequestMapping("/main")
+@RequestMapping("/pre")
 public class MainController {
  
 	@Resource
@@ -52,7 +54,8 @@ public class MainController {
 	private NewsService newsService;// 新闻分类
 	@Resource
 	private ImageService imageService;// 图片集合
-
+	@Resource
+	private CartService cartService;
 	private Logger logger = Logger.getLogger(getClass());
 
 	@RequestMapping("index")
@@ -101,6 +104,19 @@ public class MainController {
 		//商品6数码
 		List<Good> goodList4 = goodService.getGoodList(null, null, null, 670, null, null,4, 0, 11);
 
+		
+		//购物车
+		if(session.getAttribute(Contains.SESSION_USER)!=null) {
+			User user = (User) session.getAttribute(Contains.SESSION_USER);
+			List<Cart> cartList = cartService.getList(null, user.getId(), null, null, null, null, null);
+			
+			if(cartList.size()!=0) {
+				for (Cart cart : cartList) {
+					cart.setGood(goodService.getGoodList(cart.getGid(), null, null, null, null, null, null, null, null).get(0));
+				}
+			} 
+			model.addAttribute("cartList", cartList);
+		} 
 		model.addAttribute("cateList1", cateList1);
 		model.addAttribute("cateList2", cateList2);
 		model.addAttribute("newsList", newsList);
@@ -180,10 +196,21 @@ public class MainController {
 			if(history.size()==0) {
 				History h = new History();
 				h.setUid(user.getId());
-				h.setSid(sid);
+				h.setSid(gid);
 				h.setType(1);
 				historyService.insertHistory(h); 
+			}else {
+				historyService.updateHistory(history.get(0).getId(), Contains.getDate());
 			}
+			
+			List<Cart> cartList = cartService.getList(null, user.getId(), null, null, null, null, null);
+			
+			if(cartList.size()!=0) {
+				for (Cart cart : cartList) {
+					cart.setGood(goodService.getGoodList(cart.getGid(), null, null, null, null, null, null, null, null).get(0));
+				}
+			} 
+			model.addAttribute("cartList", cartList);
 		}		 
 		 
 		

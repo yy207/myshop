@@ -35,4 +35,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		DELETE FROM `history` WHERE id =#{id}
 	</delete>
 	 
+	 
+	 <update id="updateHistory">
+	 		update history set createTime=#{createTime} where id=#{id}
+	 </update>
 </mapper>

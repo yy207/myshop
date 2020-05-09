@@ -65,7 +65,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				address = #{order.address},
 			</if>
 			<if test="order.alipayCode!=null">
-				alipayCode =#{order.orderCode},
+				alipayCode =#{order.alipayCode},
 			</if>
 			<if test="order.state!=null">
 				state =#{order.state},

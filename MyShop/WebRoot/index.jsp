@@ -1,6 +1,6 @@
 
 <script type="text/javascript">
-	 location.href="<%=request.getContextPath()+"/main/index"%>";  
+	 location.href="<%=request.getContextPath()+"/pre/index"%>";  
 </script>   
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8" isErrorPage="true"%> 
 <!DOCTYPE html>

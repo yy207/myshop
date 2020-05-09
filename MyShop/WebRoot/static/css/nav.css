@@ -1,10 +1,10 @@
 			.top_nav  *{font-size:13px;}
 			.top_nav{width: 100%; min-width: 1200px;text-align: center; }
-			.top_nav{background: #F1F7EB;height: 23px;line-height: 20px;} 
+			.top_nav{background: #F5F5F5;height: 40px;line-height: 38px;} 
 			.cate_list{text-align: left;}
 			
 			.top_nav_list_left,.top_nav_list_right,.top_nav .li{display: inline-block;position: relative;vertical-align: top;}
-			.img_li{width: 10px;height: 5px;vertical-align: middle;}
+			.img_li{/* width: 10px;height: 5px; */vertical-align: middle;}
 			.top_nav_list_left{width: 500px;}
 			.top_nav a{color:#000;text-decoration:none;}
 			.top_nav a:hover{color: #FF5000;}
@@ -15,7 +15,7 @@
 			.orangle{color: #FF5000;}
 			.s20{font-size: 20px;}
 			
-			.top_nav .li{display:inline-block; background:  #F1F7EB;margin:0 15px;}
+			.top_nav .li{display:inline-block; background:  #F5F5F5;margin:0 15px;}
 			.li_menu_li{display: none;}		
 			.li:hover .li_menu_li{display: block;}	
 			

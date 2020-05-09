@@ -73,7 +73,7 @@
 						<td class="label" align="right"><font color="#ff4e00">*</font>&nbsp;邮箱 &nbsp;</td>
 						<td class="input">
 								<input type="text" id="email" name="email" onblur="fun_email()"
-									value="${user.email }" class="l_email" />
+									value="${user.email }" class="l_email" required/>
 						</td>
 						<td class="msg"><span id="emailMsg"></span></td>
 					</tr>
@@ -81,8 +81,7 @@
 						<td class="label" align="right"><font color="#ff4e00">*</font>&nbsp;手机 &nbsp;</td>
 						<td class="input">
 								<input type="text" id="phone" name="phone" onblur="fun_phone()"
-									required="required" 
-									value="${user.phone }"class="l_tel" />
+									required  value="${user.phone }"class="l_tel" />
 						 </td>
 						<td class="msg"><span id="phoneMsg"> </span></td>
 					</tr>

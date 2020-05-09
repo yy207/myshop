@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.main.dao.cart.CartMapper">
+	<select id="getList" resultType="Cart">
+		SELECT * FROM `Cart`
+		<trim prefix="where" prefixOverrides="and | or">
+				<if test="id!=null">
+					and id = #{id}
+				</if>
+				<if test="uid != null">
+					and uid = #{uid}
+				</if>
+				<if test="number != null">
+					and number = #{number}
+				</if>
+				<if test="price != null">
+					and price = #{price}
+				</if> 
+		</trim>
+			order by id desc
+		<if test="from != null and pageSize != null">
+			limit #{from},#{pageSize}
+		</if>    
+	</select>
+	
+	<insert id="insertCart" parameterType="Cart">
+		INSERT INTO `cart`(`uid`,`gid`,`number`,`price`)
+		VALUES(#{cart.uid},#{cart.gid},#{cart.number},#{cart.price})
+	</insert>
+	<delete id="deleteCart" >
+		DELETE FROM `cart` WHERE `id`=#{id}
+	</delete>
+	
+
+</mapper>

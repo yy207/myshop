@@ -43,6 +43,19 @@
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/httpasyncclient-4.1.4.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/httpasyncclient-cache-4.1.4.jar"/>
 	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/org.dom4j.dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-beanutils-1.7.0.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-collections-3.2.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-email-1.4.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-lang-2.3.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/dsn.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/ezmorph-1.0.3.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/gimap.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/imap.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/mailapi.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/pop3.jar"/>
+	<classpathentry kind="lib" path="WebRoot/WEB-INF/lib/smtp.jar"/>
 	<classpathentry kind="con" path="com.genuitec.runtime.library/com.genuitec.generic_6.0">
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.web"/>

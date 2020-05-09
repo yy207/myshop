@@ -1,10 +1,10 @@
 			img,*{padding: 0; margin: 0; /* border: 0px dashed red; */ font-size: 13px;box-sizing: border-box;}
 			.footer,.hot,.shopping,.main_body,.nav,.head,.top_nav{width: 100%; min-width: 1200px;text-align: center; }
-			.top_nav{background: #F1F7EB;height: 23px;line-height: 21px} 
+			.top_nav{background: #F5F5F5;height: 40px;line-height: 38px} 
 			.cate_list{text-align: left;}
 			
 			.top_nav_list_left,.top_nav_list_right,.li{display: inline-block;position: relative;vertical-align: top;}
-			.img_li{width: 10px;height: 5px;vertical-align: middle;}
+			.img_li{/* width: 10px;height: 5px; */vertical-align: middle;}
 			.top_nav_list_left{width: 500px;}
 			a{color:#000;text-decoration:none;}
 			a:hover{color: #FF5000;}
@@ -15,7 +15,7 @@
 			.orangle{color: #FF5000;}
 			.s20{font-size: 20px;}
 			
-			.li{display:inline-block; background:  #F1F7EB;margin:0 15px;}
+			.li{display:inline-block; background:  #F5F5F5;margin:0 15px;}
 			.li_menu_li{display: none;}		
 			.li:hover .li_menu_li{display: block;}	
 			
@@ -30,8 +30,39 @@
 			.news,.cate_list,.head_logo,.logo_img{width: 249px;}
 			.logo_img{vertical-align: middle;}
 			
+			/* 购物车*/
+			.i_car *{/* border :1px solid red ; */ text-align: left;}
+			.i_car{	width:141px; height:38px; line-height:38px; background:url(../img/car.png) no-repeat 10px center; background-color:#f6f6f6;     border:1px solid #d9d9d9; position:relative;}
+			.car_t{width:95px; height:38px; overflow:hidden; background:url(../img/d_arrow.png) no-repeat right center; font-size:14px; margin-left:30px; cursor:pointer;}
+			.car_t span{color:#ff4e00;}
+			.i_car:hover .car_bg{ display:block; }
+			.car_bg{ width:283px; overflow:hidden; background-color:#FFF; border:1px solid #d9d9d9; position:absolute; right:-1px; top:38px; z-index:900; display:none;}
+			.un_login{ overflow:hidden; text-align:center; margin:15px auto; }
+			ul.cars{ overflow:hidden; }
+			ul.cars li{ height:70px; overflow:hidden; margin-top:10px; border-bottom:1px solid #e2e2e2; }
+			ul.cars li .img{ width:58px; height:58px; overflow:hidden; float:left; display:inline; margin-left:15px; border:1px solid #e2e2e2;}
+			ul.cars li .name{ width:180px; height:40px; line-height:20px; overflow:hidden; color:#888888; font-family:"宋体"; float:left; display:inline; margin-left:8px;}
+			ul.cars li .name a{ color:#888888; }
+			ul.cars li .name a:hover{ color:#ff4e00; }
+			ul.cars li .price{ width:180px; height:20px; line-height:20px; overflow:hidden; color:#888888; font-size:14px; float:left; display:inline; margin-left:8px;}
+			.price_sum{ width:255px; height:30px; line-height:30px; overflow:hidden; font-size:14px; text-align:right; margin-top:10px;}
+			.price_sum span{ color:#ff4e00; font-size:20px; font-weight:bold;}
+			.price_a{float:right; width:120px; height:35px; line-height:35px; overflow:hidden; background:url(../img/a_link.gif) repeat-x center top; color:#FFF; font-size:14px; text-align:center; margin-right:13px; margin-top:5px; margin-bottom:20px; -webkit-border-radius:2px; -moz-border-radius:2px; border-radius:2px;}
+			.price_a a{ color:#FFF;}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			.li_a{padding: 0 10px;font-size: 10px; text-align: left;}
-			.nav_title{padding: 0 10px; }
+			.nav_title{padding: 0 10px; margin-top: 5px;}
 			.nav_title,.nav_li,.nav_ul{display: inline-block;}
 			.nav{background: linear-gradient(to right, #FF5000, #ff6,#FF5000); color: #fff;font-size: 25px;margin: 5px 0px;}
 			

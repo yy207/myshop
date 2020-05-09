@@ -8,7 +8,7 @@
 			</div>	
 			<div class="p1"> 
 				<div class="my white">
-					<a href="${pageContext.request.contextPath }/main/index" style="color:#fff;font-size: 20px;">首页</a>
+					<a href="${pageContext.request.contextPath }/pre/index" style="color:#fff;font-size: 20px;">首页</a>
 				</div>
 			</div>
 			<div class="p1">

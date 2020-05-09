@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import cn.main.pojo.User;
 import cn.main.service.UserService;
 import cn.main.utils.Contains;
+import cn.main.utils.Md5Util;
 
 /**
  * 用户信息维护
@@ -48,10 +49,10 @@ public class LockUserController {
 	}
 	@RequestMapping(value="pwd",method=RequestMethod.POST)
 	public String pwd(HttpServletRequest request,HttpSession session   ,
-			@RequestParam(required=true,value="userPassword")String userPassword) {
+			@RequestParam(required=true,value="userPassword")String userPassword) throws Exception {
 		User user = (User) session.getAttribute(Contains.SESSION_USER);//获取当前用户
 		if(userPassword!=null && userPassword.length()>0) {
-			if(userService.upateUserInfo(user.getId(), null, null, null, userPassword, null)==0) {
+			if(userService.upateUserInfo(user.getId(), null, null, null, Md5Util.MD5(userPassword), null)==0) {
 				request.setAttribute("userPasswordMsg", "* 密码修改失败!");
 			}else {
 				session.setAttribute(Contains.SESSION_USER, userService.getUserByUserCode(user.getUserCode()));

@@ -19,10 +19,10 @@
 					<a href=""><img src="${pageContext.request.contextPath }/static/img/logo.jpg" width="120" height="51" /></a>
 				</div>
 				<div class="a"> 
-					<a href="#">宝贝收藏</a>
+					<a href="${pageContext.request.contextPath }/pre/love/lovepage/1">宝贝收藏</a>
 				</div>
 				<div class="a"> 
-					<a href="#">店铺收藏</a> 
+					<a href="${pageContext.request.contextPath }/pre/love/lovepage/2">店铺收藏</a> 
 				</div>
 			</div>
 		</div>

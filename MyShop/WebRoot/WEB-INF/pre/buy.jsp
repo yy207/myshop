@@ -74,6 +74,10 @@
 						</div>
 					</div> 
    				  </c:forEach>
+   				  
+   				  <c:if test="${fn:length(addressList)==0 }">
+   				  	请先添加一个新的地址<input type="radio" name="addressRadio" required />
+   				  </c:if>
 				</div>
 				<div class="new_add">
 					<a href="${pageContext.request.contextPath }/pre/nav/addresspage" class="new">使用新地址</a>
@@ -111,21 +115,20 @@
 								<span class="property">颜色：黑色</span>
 							</td>
 							<td width="100">
-								<span class="property singlePrice">￥ ${good.price }</span>								
+								 $<span class="property singlePrice" style="display:inline;" id="singlePrice">${good.price }</span>								
 							</td>
 							<td width="100" class="num">
-								<input type="button" value=" - "/>
-								<input type="text"  
-									value="<c:if test="${number ==null }">1</c:if><c:if test="${number !=null }">${number }</c:if>"
-								 name="number"  class="number" id="number"/>
-								<input type="button" value="+" />
+								<input type="button" value=" - " id="jian" onclick="jianNum(this)" />
+								<input type="number"  value="<c:if test="${number ==null }">1</c:if><c:if test="${number !=null }">${number }</c:if>"
+								 name="number"  class="number" id="num"  onblur="" onchange="minValueNum(this)"/>
+								<input type="button" value="+"  id="add" onclick="jiaNum(this)"/>
 							</td>
 							
 							<td width="200" style="text-align: center;">
 								<span class="property">满减</span>
 							</td>
 							<td width="100" class="right">
-								<span class="price totalPrice" style="font-size:14px ;" >￥ 
+								<span class="price totalPrice" style="font-size:14px ;" id="price">￥ 
 									<c:if test="${number ==null }"> ${good.price}</c:if>
 									<c:if test="${number !=null }">${number*good.price }</c:if>	
 								</span>								
@@ -143,7 +146,7 @@
 						</tr>
 						<tr class="else">
 							<td colspan="6" class="right">
-								店铺合计(含运费)<span class="price totalPrice" style="font-size:14px ;" >￥
+								店铺合计(含运费)<span class="price totalPrice" style="font-size:14px ;" id="total">￥
 									<c:if test="${number ==null }"> ${good.price}</c:if>
 									<c:if test="${number !=null }">${number*good.price }</c:if>	
 									</span>		
@@ -157,7 +160,7 @@
 			<div class="clear">
 				<div class="final">
 					<div class="price">
-						实付款:￥<span  class="money totalPrice" >
+						实付款:<span  class="money totalPrice" id="totalPrice">￥
 							<c:if test="${number ==null }"> ${good.price}</c:if>
 							<c:if test="${number !=null }" >${number*good.price }</c:if>	
 						</span>
@@ -185,5 +188,6 @@
 			<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery.min.js" ></script>
 			<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/buy.js" ></script>
 		
+		  <script type="text/javascript" src="${pageContext.request.contextPath }/static/js/number.js" ></script> 
 	</body>
 </html>

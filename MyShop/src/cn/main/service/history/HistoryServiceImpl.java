@@ -28,5 +28,10 @@ public class HistoryServiceImpl implements HistoryService {
 	public int deleteHistory(Integer id) {
 		// TODO Auto-generated method stub
 		return historyMapper.deleteHistory(id);
+	}
+	@Override
+	public int updateHistory(Integer id, String createTime) {
+		// TODO Auto-generated method stub
+		return historyMapper.updateHistory(id, createTime);
 	} 
 }

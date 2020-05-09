@@ -11,6 +11,11 @@
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/ui/demo.css">
 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/ui/jquery.min.js"></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/ui/jquery.easyui.min.js"></script>
+		
+		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.12.4.js" ></script>
+		 <script type="text/javascript" src="${pageContext.request.contextPath }/static/js/number.js" ></script> 
+		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/love.js"></script>
+		
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/goodinfo.css" /> 
 	</head>
@@ -136,25 +141,34 @@
 						<tr>
 							<td width="100">数量</td>
 							<td width="100" class="num">
-								<input type="button" value=" - "/>
+								<!-- <input type="button" value=" - "/>
 								<input type="number" name="number" id="number"  value="1" min="1"  />
-								<input type="button" value="+" /> 
+								<input type="button" value="+" />  -->
+								<input type="button" value=" - " id="jian" onclick="jianNum(this)" />
+								<input type="number"  name="number"  value="1" min="1" id="num" onblur="minValueNum(this)"/>
+								<input type="button" value="+" id="add" onclick="jiaNum(this)"/>
 							</td>
 							<td>(库存233件)</td>
 						</tr>
 						<tr>
 							<td  colspan="2" style="text-align: center;">
+								<input type="hidden" name="gid" value="${good.id }"/>
+								<input type="hidden" name="sid" value="${shop.id }"> 
+								<input type="hidden" name="price" value="${good.price }"/> 
 								<input type="submit" value="立即购买" style="width: 180px; height: 45px; font-size: 18px;color: #ffffff; background: #FFAB3F;" />
 							</td>
+							</form> 
 							<td  colspan="2">
-								<input type="image"  src="${pageContext.request.contextPath }/static/img/j_car.png" />
+								<form action="${pageContext.request.contextPath }/pre/cart/addcart">
+									<input type="hidden" name="gid" value="${good.id }"/>
+									<input type="hidden" name="sid" value="${shop.id }"> 
+									<input type="image"   src="${pageContext.request.contextPath }/static/img/j_car.png" />
+								</form>
 							</td>
 						</tr>
 					</table>
-					<input type="hidden" name="gid" value="${good.id }"/>
-					<input type="hidden" name="sid" value="${shop.id }"> 
-					<input type="hidden" name="price" value="${good.price }"/> 
-				</form> 
+					
+				
 			</div>
 			<div class="else">
 				<div class="h3">
@@ -163,7 +177,7 @@
 				<ul>
 					<c:forEach items="${goods }" var="good" begin="0" end="3">
 						<li>
-							<a href="<%=request.getContextPath()%>/main/goodinfo/${good.id}/${good.shop.id }">
+							<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }">
 								<img src="<c:if test="${fn:contains(good.picPath,'http:') }">
 										${good.picPath }
 										</c:if>
@@ -188,7 +202,7 @@
 				<ul>
 					<c:forEach items="${goodList }" var="good" begin="0" end="3">
 						<li class="like_li">
-							<a href="<%=request.getContextPath()%>/main/goodinfo/${good.id}/${good.shop.id }">
+							<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }">
 								<div><img src="<c:if test="${fn:contains(good.picPath,'http:') }">
 											${good.picPath }
 											</c:if>
@@ -255,7 +269,7 @@
 		</div> 
 		
 		<%@ include file="common/btm.jsp" %>
-		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/love.js"></script>
+		
 	</body>
 </html>
 

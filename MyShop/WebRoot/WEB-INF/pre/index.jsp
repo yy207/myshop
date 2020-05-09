@@ -23,7 +23,7 @@
 					<c:forEach var="cate" items="${cateList2}" begin="0" end="9">
 						<li class="cate_li">  
 							<img src="<%=request.getContextPath() %>/static/img/${cate.iconClass }" />
-							<span class="fl"> <a href="${pageContext.request.contextPath }/main/index?cate=${cate.id}">${cate.name }</a> </span>
+							<span class="fl"> <a href="${pageContext.request.contextPath }/pre/index?cate=${cate.id}">${cate.name }</a> </span>
 						</li>  
 					</c:forEach>
 				</ul>
@@ -43,14 +43,7 @@
 	            </div>
 	      </div>
 	      <div class="news">
-	      	<ul>
-	      		<c:forEach items="${newsList }" var="news" begin="0" end="5">
-					<li>
-						<a href=""><span>【${news.dataDictionary.valueName}】</span> ${news.content }</a>
-					</li> 
-	      		</c:forEach>
-	      	</ul>
-	      	<div class="info_user">
+	      <div class="info_user">
 	      		<div class="">
 	      			<img class="photo" src="${pageContext.request.contextPath }/static/img/b2.png"/></div>
 	      			<c:if test="${sessionUser!=null }">
@@ -65,6 +58,14 @@
 	      		
 	      			<button class="button "  onclick="javascript:location.href='${pageContext.request.contextPath }/pre/shop/index'">开店</button>
 	      	</div>
+	      	<ul>
+	      		<c:forEach items="${newsList }" var="news" begin="0" end="5">
+					<li>
+						<a href=""><span>【${news.dataDictionary.valueName}】</span> ${news.content }</a>
+					</li> 
+	      		</c:forEach>
+	      	</ul>
+	      	
 	      </div> 
 		</div>
 		<!--中部轮播图结束-->
@@ -80,7 +81,7 @@
 				<ul class="info"> 
 				<c:forEach var="good" items="${goodList1}" begin="0" end="5"> 
 					<li class="info_li">
-						<a href="<%=request.getContextPath()%>/main/goodinfo/${good.id}/${good.shop.id }" class="info_a">
+						<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }" class="info_a">
 							<div class="info_img ">
 								<img src="<c:if test="${fn:contains(good.picPath,'http:') }">${good.picPath }</c:if>
 										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" />
@@ -99,7 +100,7 @@
 				<ul class="info"> 
 				<c:forEach var="good" items="${goodList2}" begin="0" end="5"> 
 					<li class="info_li">
-						<a href="<%=request.getContextPath()%>/main/goodinfo/${good.id}/${good.shop.id }" class="info_a">
+						<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }" class="info_a">
 							<div class="info_img ">
 								<img src="<c:if test="${fn:contains(good.picPath,'http:') }">${good.picPath }</c:if>
 										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" />
@@ -122,10 +123,10 @@
 				<ul class="info"> 
 				<c:forEach var="good" items="${goodList3}" begin="0" end="5"> 
 					<li class="info_li">
-						<a href="<%=request.getContextPath()%>/main/goodinfo/${good.id}/${good.shop.id }" class="info_a">
+						<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }" class="info_a">
 							<div class="info_img ">
 								<img src="<c:if test="${fn:contains(good.picPath,'http:') }">${good.picPath }</c:if>
-										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" />
+										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>"  width="170" height="170" />
 							</div>
 							<div class="info_txt">
 								<h3>${fn:substring(good.name,0,5)}</h3>
@@ -141,10 +142,10 @@
 				<ul class="info"> 
 				<c:forEach var="good" items="${goodList4}" begin="0" end="5"> 
 					<li class="info_li">
-						<a href="<%=request.getContextPath()%>/main/goodinfo/${good.id}/${good.shop.id }" class="info_a">
+						<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }" class="info_a">
 							<div class="info_img ">
 								<img src="<c:if test="${fn:contains(good.picPath,'http:') }">${good.picPath }</c:if>
-										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" />
+										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" width="170" height="170"/>
 							</div>
 							<div class="info_txt">
 								<h3>${fn:substring(good.name,0,5)}</h3>
@@ -169,10 +170,10 @@
 			<ul class="info"> 
 				<c:forEach var="good" items="${goodList}" begin="0" end="11" > 
 					<li class="info_li">
-						<a href="<%=request.getContextPath()%>/main/goodinfo/${good.id}/${good.shop.id }" class="info_a">
+						<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }" class="info_a">
 							<div class="info_img ">
 								<img src="<c:if test="${fn:contains(good.picPath,'http:') }">${good.picPath }</c:if>
-										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" />
+										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" width="170" height="170"/>
 							</div>
 							<div class="info_txt">
 								<h3>${fn:substring(good.name,0,5)}</h3>
@@ -197,10 +198,10 @@
 			<ul class="info"> 
 				<c:forEach var="good" items="${likeList}" begin="0" end="11" > 
 					<li class="info_li">
-						<a href="<%=request.getContextPath()%>/main/goodinfo/${good.id}/${good.shop.id }" class="info_a">
+						<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }" class="info_a">
 							<div class="info_img ">
 								<img src="<c:if test="${fn:contains(good.picPath,'http:') }">${good.picPath }</c:if>
-										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" />
+										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" width="170" height="170"/>
 							</div>
 							<div class="info_txt">
 								<h3>${fn:substring(good.name,0,5)}</h3>

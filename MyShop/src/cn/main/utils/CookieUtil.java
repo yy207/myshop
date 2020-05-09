@@ -14,6 +14,9 @@ public class CookieUtil {
 		Cookie[] cookies = request.getCookies();
 		int count=0;
 		boolean flag = false;
+		if(cookies==null) {
+			return false;
+		}
 		for (Cookie cookie : cookies) {
 			if("userCode".equals(cookie.getName())) {
 				count++;

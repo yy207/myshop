@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.main.pojo.History;
 import cn.main.pojo.User;
@@ -46,6 +47,17 @@ public class LockHistoryController {
 	public String delete(HttpSession session,HttpServletRequest request,@PathVariable(value="id")Integer id) {
 		historyService.deleteHistory(id); 
 		return "redirect:/pre/history/historypage";
+	}
+	
+	@RequestMapping("deleteall")
+	@ResponseBody
+	public String deleteall(HttpSession session,HttpServletRequest request) {
+		User user = (User) session.getAttribute(Contains.SESSION_USER);
+		if(historyService.deleteHistoryByUid(user.getId())>0) {
+			return "true";
+		}else {
+			return "false";
+		}
 	}
 	
 }

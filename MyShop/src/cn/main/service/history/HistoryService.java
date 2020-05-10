@@ -19,5 +19,5 @@ public interface HistoryService {
 
 		int deleteHistory(@Param(value="id")Integer id);
 		int updateHistory(@Param(value="id")Integer id,@Param(value="createTime")String createTime);
-		
+		int deleteHistoryByUid(@Param(value="uid")Integer uid);
 }

@@ -24,3 +24,10 @@
 		 	
 		 	.lis .name{font-size: 13px;text-align: center;}
 		 	.lis .price{font-size: 15px; color: #FF5000;text-align: center;}
+		 	
+		 	
+		 	.goods .total a{ font-size: 13px; display: block;  width: 80px; height: 30px;  text-align: center;  border: 1px solid #ff5000; border-radius: 3px; line-height: 30px; background: #ffd6cc;  color: #f30; margin: 5px; float: right; }
+				.goods .total span:after{content: " ";display: block;clear: both;} 
+				.goods .total{border-bottom: 1px #ccc solid;text-align: right;}
+		 	
+		 	

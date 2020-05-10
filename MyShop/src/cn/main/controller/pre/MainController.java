@@ -191,7 +191,7 @@ public class MainController {
 			if(loveShop.size()!=0) {
 				model.addAttribute("loveShop", 0);
 			}
-			List<History> history = historyService.getHistoryList(null, user.getId(), sid, 1, null, null);
+			List<History> history = historyService.getHistoryList(null, user.getId(), gid, 1, null, null);
 			logger.debug(">>>>>>>>>>>>>>>>>>>>>>>>>history"+history);
 			if(history.size()==0) {
 				History h = new History();

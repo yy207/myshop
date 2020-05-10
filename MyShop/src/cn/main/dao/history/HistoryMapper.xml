@@ -32,11 +32,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</insert>
 	
 	<delete id="deleteHistory">
-		DELETE FROM `history` WHERE id =#{id}
+		DELETE FROM `history` where  id =#{id}
 	</delete>
-	 
+	 <delete id="deleteHistoryByUid">
+		DELETE FROM `history` where uid =#{uid}
+	</delete>
 	 
 	 <update id="updateHistory">
 	 		update history set createTime=#{createTime} where id=#{id}
-	 </update>
+	 </update> 
 </mapper>

@@ -26,6 +26,13 @@
 			</div>
 		</div>
 		<div class="goods" style="min-height: 500px;"> 
+			 <div class="total"> 
+			 	<a href="javascript:delall()">删除全部</a>
+			 	<span></span>
+			 </div>
+			
+		 		
+			 
 			<div class="lis" >
 				<c:forEach items="${historyList }" var="history">
 					<div class="li">
@@ -58,5 +65,8 @@
 			</div>
 		</div> 
 		<%@ include file="common/btm.jsp" %>
+		 <script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.12.4.js" ></script>
+		 	 <script type="text/javascript" src="${pageContext.request.contextPath }/static/js/history.js" ></script>
+		 	  
 	</body>
 </html>

@@ -62,7 +62,7 @@
 						<div class="radio">
 							<input type="radio" id="s${address.id }" name="addressRadio" value="${address.id }" required   onchange="buy(this)"  <c:if test="${address.isDefault==1 }">checked</c:if> />
 							<label for="s${address.id }">
-								<span id="sAddress">${address.city1} ${address.city2} ${address.city3}  ${address.address }</span> &nbsp;&nbsp;&nbsp;
+								<span id="sAddress">${address.c1.cityName} ${address.c2.cityName} ${address.c3.cityName}  ${address.address }</span> &nbsp;&nbsp;&nbsp;
 								(<span id="sName">${address.name }</span>)收&nbsp;&nbsp;&nbsp;
 								<span id="sPhone">${address.phone } </span>
 							</label>

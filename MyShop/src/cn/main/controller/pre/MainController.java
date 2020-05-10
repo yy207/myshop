@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.main.pojo.Cart;
 import cn.main.pojo.Category;
+import cn.main.pojo.City;
 import cn.main.pojo.Good;
 import cn.main.pojo.History;
 import cn.main.pojo.Image;
@@ -31,6 +32,7 @@ import cn.main.service.ImageService;
 import cn.main.service.NewsService;
 import cn.main.service.ShopService;
 import cn.main.service.cart.CartService;
+import cn.main.service.city.CityService;
 import cn.main.service.history.HistoryService;
 import cn.main.service.love.LoveService;
 import cn.main.utils.Contains;
@@ -40,6 +42,8 @@ import cn.main.utils.Page;
 @RequestMapping("/pre")
 public class MainController {
  
+	@Resource
+	private CityService cityService;
 	@Resource
 	private HistoryService historyService;//历史记录
 	@Resource
@@ -246,6 +250,19 @@ public class MainController {
 		//二级分类
 		List<Category> cList = categoryService.getCategory(null,null, parentId, type); 
 		
+		return cList;
+	}
+	/**
+	 * ajax实现分类三级联动获取城市
+	 * @param parentId
+	 * @param type
+	 * @return
+	 */
+	@RequestMapping("/city")
+	@ResponseBody
+	public Object getCityList(Integer pid,Integer type){
+		//二级分类
+		List<City> cList = cityService.getCityList(null, pid, null, type); 
 		return cList;
 	}
 

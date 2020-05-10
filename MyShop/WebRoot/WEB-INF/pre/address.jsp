@@ -34,13 +34,13 @@
 								<td width="100"><span>*</span>地址信息:</td>
 								<td colspan="2">
 									<select name="city1" id="city1">
-										<option value="1">河南省</option>
+										<option value="">-------</option>
 									</select>
 									<select name="city2" id="city2">
-										<option value="2">郑州市</option>
+										<option value="">-------</option>
 									</select>
 									<select name="city3" id="city3">
-										<option value="3">中原区</option>
+										<option value="">-------</option>
 									</select>
 								 </td>
 								<td class="msg" width="300"><span></span> </td>
@@ -106,12 +106,9 @@
 								<tr class="user_adr">
 									<td width="150">${address.name }</td>
 									<td width="150" class="city">
-										<span>河南省</span> 
-										<span>郑州市</span> 
-										<span>中原区</span>
-										<span>河南省</span> 
-										<span>郑州市</span> 
-										<span>中原区</span>
+										<span>${address.c1.cityName }&nbsp;</span> 
+										<span>${address.c2.cityName }</span> 
+										<span>${address.c3.cityName }</span> 
 									</td>
 									<td width="200">${address.address }</td>
 									<td width="100">0000</td>
@@ -141,5 +138,76 @@
 		
 		<!-- footer -->
 		<%@ include file="common/btm.jsp" %>
-	</body>
+		
+		 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.12.4.js" ></script>
+		 		<script type="text/javascript">
+		 			$(function(){ 
+							//后台根据以及分类的选择加载二级级分类
+							$("#city1").change(function(){ 
+								var type1 = $("#city1").val();
+								$.ajax({
+									type:"GET",
+									url:"/MyShop/pre/city",
+									data:{pid:type1,type:2},
+									dataType:"json",
+									success:function(result){   
+										var txt = " <option value=''>--请选择--</option>";
+										for(var i = 0; i<result.length;i++){
+											txt +="<option value='"+ result[i].id +"'>"+result[i].cityName+" </option>";
+										} 
+										$("#city2").html(txt);
+										$("#city3").html("-------");
+									},
+									error:function(result){
+										alert("后台数据请求错误,请联系管理员！");
+									}
+								});
+								
+							});
+							c1();
+							function c1(){ 
+								var type1 = $("#city1").val();
+								$.ajax({
+									type:"GET",
+									url:"/MyShop/pre/city",
+									data:{pid:1,type:1},
+									dataType:"json",
+									success:function(result){   
+										var txt = " <option value=''>--请选择--</option>";
+										for(var i = 0; i<result.length;i++){
+											txt +="<option value='"+ result[i].id +"'>"+result[i].cityName+" </option>";
+										} 
+										$("#city1").html(txt); 
+									},
+									error:function(result){
+										alert("后台数据请求错误,请联系管理员！");
+									}
+								});
+								
+							} 
+							$("#city2").change(function(){
+								var type2 = $("#city2").val();
+								$.ajax({
+									type:"GET",
+									url:"/MyShop/pre/city",
+									data:{pid:type2,type:3},
+									dataType:"json",
+									success:function(result){  
+										var txt = " <option value=''>--请选择--</option>";
+										for(var i = 0; i<result.length;i++){
+											txt +="<option value='"+ result[i].id +"'>"+result[i].cityName +" </option>";
+										} 
+										$("#city3").html(txt); 
+									},
+									error:function(result){
+										alert("后台数据请求错误,请联系管理员！");
+									} 
+									});
+								
+							}); 
+						});
+		 			
+		 		</script>
+		 		
+		 		</body>
 </html>

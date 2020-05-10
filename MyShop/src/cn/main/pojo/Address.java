@@ -20,6 +20,31 @@ public class Address {
 	private Integer city1;
 	private Integer city2;
 	private Integer city3;
+
+	private City c1;
+	private City c2;
+	private City c3;
+	
+	
+	 
+	public City getC1() {
+		return c1;
+	}
+	public void setC1(City c1) {
+		this.c1 = c1;
+	}
+	public City getC2() {
+		return c2;
+	}
+	public void setC2(City c2) {
+		this.c2 = c2;
+	}
+	public City getC3() {
+		return c3;
+	}
+	public void setC3(City c3) {
+		this.c3 = c3;
+	}
 	public Integer getId() {
 		return id;
 	}

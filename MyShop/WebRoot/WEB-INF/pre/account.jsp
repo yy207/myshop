@@ -51,7 +51,7 @@
 							<td><span id="userNameMsg">${userNameMsg }</span> </td>
 						</tr>
 						<tr>
-							<td>居住地：</td>
+						<!-- 	<td>居住地：</td>
 							<td>
 								<select>
 									
@@ -62,7 +62,7 @@
 								<select>
 									
 								</select>
-							</td>
+							</td> -->
 						</tr>
 						<tr id="f">
 							<td> 

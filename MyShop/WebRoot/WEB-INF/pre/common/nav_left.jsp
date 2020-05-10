@@ -29,7 +29,7 @@
 				</li>
 				<li class="nav_left_li">
 					<div class="li_a">
-						<a href="#">我的购物车</a> 
+						<a href="${pageContext.request.contextPath }/pre/cart/cartpage">我的购物车</a> 
 					</div> 
 				</li>
 				<li class="nav_left_li">
@@ -37,6 +37,23 @@
 						<a href="${pageContext.request.contextPath }/pre/nav/orderpage#">我的订单</a> 
 					</div> 
 				</li>
+				
+				<!-- <li class="nav_left_li">
+					<div class="li_a">
+						<a href="#">我的积分</a> 
+					</div> 
+				</li> -->
+				<li class="nav_left_li">
+					<div class="li_a"><a href="${pageContext.request.contextPath }/pre/history/historypage" >我的足迹</a>&nbsp;&nbsp;
+					<%-- 	<img src="${pageContext.request.contextPath }/static/img/xia.png" height="5" width="10" /> --%>
+					</div>
+					<!-- <div class="content">
+						<ul>
+							<li><a href="#">我的足迹</a></li>
+							<li><a href="#">我的足迹</a></li>
+						</ul>
+					</div> -->
+				</li> 
 				<li class="nav_left_li">
 					<div class="li_a">
 						<a href="#">我的收藏</a> &nbsp;&nbsp;
@@ -49,22 +66,6 @@
 						</ul>
 					</div>
 				</li>
-				<li class="nav_left_li">
-					<div class="li_a">
-						<a href="#">我的积分</a> 
-					</div> 
-				</li>
-				<li class="nav_left_li">
-					<div class="li_a"><a href="#" >我的足迹</a>&nbsp;&nbsp;
-						<img src="${pageContext.request.contextPath }/static/img/xia.png" height="5" width="10" />
-					</div>
-					<div class="content">
-						<ul>
-							<li><a href="#">我的足迹</a></li>
-							<li><a href="#">我的足迹</a></li>
-						</ul>
-					</div>
-				</li> 
 			</ul> 
 		</div> 
 		<!-- nav-left end -->

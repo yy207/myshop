@@ -65,7 +65,6 @@ public class LockNavController {
 	@RequestMapping("accountpage")
 	public String accountPage(HttpSession session,HttpServletRequest request){
 		User user  = (User) session.getAttribute(Contains.SESSION_USER);
-	 
 		return "account";
 	}
 	

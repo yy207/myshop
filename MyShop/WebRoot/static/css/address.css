@@ -11,7 +11,7 @@
 			.list table tr.user_adr{display: inline-block; height: 60px;font-size: 12px;}
 			.list table td {padding-left: 0.5em;}
 			
-			.list .city span{display: inline-block; width: 50px;}	
+			.list .city span{display: inline-block; font-size: 13px;}	
 			.list .title{background: #F1F7EB;}	
 			.list .title td{border-right: 1px solid gray;empty-cells: hide;}
 			.new_add ,.list{border: 1px solid #E0ECFF;font-size: 12px;margin-top: 10px;}

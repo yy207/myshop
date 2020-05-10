@@ -24,7 +24,7 @@
 				</li> 
 				<li class="li">
 					<div class="li_menu ">
-						<a href="${pageContext.request.contextPath }/pre/nav/orderpage">我的淘宝<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
+						<a href="${pageContext.request.contextPath }/pre/nav/accountpage">我的淘宝<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
 					</div> 
 					<div class="li_menu_li">
 						<a href="${pageContext.request.contextPath }/pre/nav/orderpage#">我的订单</a> 

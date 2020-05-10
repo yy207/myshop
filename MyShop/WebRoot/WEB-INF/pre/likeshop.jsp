@@ -64,7 +64,7 @@
 							<div class="good">
 								<div class="img">
 									<span>
-										<a href="<%=request.getContextPath()%>/main/goodinfo/${good.id}/${good.shop.id }"><img src="<c:if test="${fn:contains(good.picPath,'http:') }">
+										<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }"><img src="<c:if test="${fn:contains(good.picPath,'http:') }">
 										${good.picPath }
 									</c:if>
 									<c:if test="${!fn:contains(good.picPath,'http:') }">

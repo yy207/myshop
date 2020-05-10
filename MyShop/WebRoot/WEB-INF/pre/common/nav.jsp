@@ -4,7 +4,7 @@
 	<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 		<!--导航栏开始-->
 		<div class="top_nav ">
-			<ul class="top_nav_list_left" style="width: 700px;">
+			<ul class="top_nav_list_left">
 				
 					<c:if test="${sessionUser!=null }">
 						<li class="li"> 	
@@ -31,11 +31,9 @@
 					</div>  
 					<div class="li_menu_li">
 						<a href="${pageContext.request.contextPath }/pre/nav/addresspage">收货地址</a> 
-					</div> 
-					<div class="li_menu_li">
-						<a href="${pageContext.request.contextPath }/pre/history/historypage">我的足迹</a> 
-					</div> 
+					</div>  
 				</li> 
+					
 				 <li class="li">
 				 	<div class="li_menu">
 						<a href="${pageContext.request.contextPath }/pre/cart/cartpage"> 
@@ -54,6 +52,11 @@
 						<a href="${pageContext.request.contextPath }/pre/love/lovepage/1">收藏宝贝</a> 
 					</div>   
 				</li> 
+				<li  class="li">
+						<div class="li_menu">
+						<a href="${pageContext.request.contextPath }/pre/history/historypage">我的足迹</a> 
+					</div> 
+					</li>
 				<li class="li"> 
 					<div class="li_menu ">
 						<a href="#">会员中心<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓" width="10" height="5"/></a>
@@ -69,9 +72,7 @@
 					<div class="li_menu_li">
 						<a href="${pageContext.request.contextPath }/pre/shop/index">免费开店</a> 
 					</div>   
-				</li>
-				<li class="li"></li>
-				<li class="li"></li> 
+				</li> 
 			</ul> 
 		</div>
 		<!--导航栏结束-->

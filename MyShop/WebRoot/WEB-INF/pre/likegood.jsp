@@ -36,7 +36,7 @@
 					<div class="li">
 						<div class="img">
 							<span>
-								<a href="<%=request.getContextPath()%>/main/goodinfo/${love.good.id}/${love.good.shop.id }"><img src="<c:if test="${fn:contains(love.good.picPath,'http:') }">${love.good.picPath }</c:if>
+								<a href="<%=request.getContextPath()%>/pre/goodinfo/${love.good.id}/${love.good.shop.id }"><img src="<c:if test="${fn:contains(love.good.picPath,'http:') }">${love.good.picPath }</c:if>
 													<c:if test="${!fn:contains(love.good.picPath,'http:') }">${pageContext.request.contextPath }/static/img/${love.good.picPath }</c:if>" 
 													width="148" height="148" /></a>
 							</span>

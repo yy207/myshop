@@ -29,7 +29,7 @@
               <h2>Forbidden:请先登录,五秒后自动跳转登录页面...</h2> 
               </p>
               <div class="mid_center">
-                <h3><a href="${pageContext.request.contextPath }/login/login">若长时间未跳转请点击此处...<span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </h3>
+                <h3><a href="${pageContext.request.contextPath }/pre/login">若长时间未跳转请点击此处...<span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </h3>
               </div>
             </div>
           </div>

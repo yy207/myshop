@@ -156,7 +156,7 @@
 											txt +="<option value='"+ result[i].id +"'>"+result[i].cityName+" </option>";
 										} 
 										$("#city2").html(txt);
-										$("#city3").html("-------");
+										$("#city3").html("<option value=''>----------</option>");
 									},
 									error:function(result){
 										alert("后台数据请求错误,请联系管理员！");

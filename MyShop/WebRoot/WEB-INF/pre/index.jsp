@@ -107,7 +107,7 @@
 										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" />
 							</div>
 							<div class="info_txt">
-								<h3>${fn:substring(good.name,0,5)}</h3>
+								<h3>${fn:substring(good.name,0,12)}</h3>
 							<p class="p">${fn:substring(good.describe,0,12)}</p>
 							</div>
 						</a> 
@@ -126,7 +126,7 @@
 										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" />
 							</div>
 							<div class="info_txt">
-								<h3>${fn:substring(good.name,0,5)}</h3>
+								<h3>${fn:substring(good.name,0,12)}</h3>
 							<p class="p">${fn:substring(good.describe,0,12)}</p>
 							</div>
 						</a> 
@@ -149,7 +149,7 @@
 										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>"  width="170" height="170" />
 							</div>
 							<div class="info_txt">
-								<h3>${fn:substring(good.name,0,5)}</h3>
+								<h3>${fn:substring(good.name,0,12)}</h3>
 							<p class="p">${fn:substring(good.describe,0,12)}</p>
 							</div>
 						</a> 
@@ -168,7 +168,7 @@
 										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" width="170" height="170"/>
 							</div>
 							<div class="info_txt">
-								<h3>${fn:substring(good.name,0,5)}</h3>
+								<h3>${fn:substring(good.name,0,12)}</h3>
 							<p class="p">${fn:substring(good.describe,0,12)}</p>
 							</div>
 						</a> 
@@ -196,7 +196,7 @@
 										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" width="170" height="170"/>
 							</div>
 							<div class="info_txt">
-								<h3>${fn:substring(good.name,0,5)}</h3>
+								<h3>${fn:substring(good.name,0,12)}</h3>
 							<p class="p">${fn:substring(good.describe,0,12)}</p>
 							<span class="s20 bold orangle">￥${good.price }</span> <span class="p">卖出${good.buyCount }件</span>
 							</div>
@@ -224,7 +224,7 @@
 										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" width="170" height="170"/>
 							</div>
 							<div class="info_txt">
-								<h3>${fn:substring(good.name,0,5)}</h3>
+								<h3>${fn:substring(good.name,0,12)}</h3>
 							<p class="p">${fn:substring(good.describe,0,12)}</p>
 							<span class="s20 bold orangle">￥${good.price }</span> <span class="p">卖出${good.buyCount }件</span>
 							</div>

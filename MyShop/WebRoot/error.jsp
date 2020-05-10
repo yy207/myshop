@@ -28,7 +28,7 @@
               <h2>${exception.message}</h2> 
               </p>
               <div class="mid_center">
-                <h3><a href="${pageContext.request.contextPath }/login/login"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </h3>
+                <h3><a href="${pageContext.request.contextPath }/pre/index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </h3>
               </div>
             </div>
           </div>

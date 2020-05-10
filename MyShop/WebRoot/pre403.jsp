@@ -16,10 +16,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
   <h2>Forbidden:请先登录,五秒后自动跳转登录页面...</h2> 
-   <h3><a href="${pageContext.request.contextPath }/main/login">若长时间未跳转请点击此处...<span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </h3>
+   <h3><a href="${pageContext.request.contextPath }/pre/login">若长时间未跳转请点击此处...<span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </h3>
              
   </body>
   <script type="text/javascript">
-    	setTimeout(function(){location.href="/MyShop/main/login"},5000);
+    	setTimeout(function(){location.href="/MyShop/pre/login"},5000);
    	</script>
 </html>

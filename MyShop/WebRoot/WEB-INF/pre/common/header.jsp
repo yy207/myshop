@@ -5,7 +5,7 @@
 		<div class="head">
 			<div class="head_logo" >
 				<a href="${pageContext.request.contextPath }/pre/index"><img src="${pageContext.request.contextPath }/static/img/logo.png" class="logo_img" alt="logo"/>
-			</a>	
+				</a>	
 			</div>
 			<div class="head_input">
 				<div class="form">
@@ -21,7 +21,7 @@
 				</div>
 				<div class="li_a">
 					<c:forEach var="cate" items="${cateList1}" begin="0" end="6"> 
-							 <span class="fl"> <a href="${pageContext.request.contextPath }/pre/index?cate=${cate.id}">${cate.name }</a> </span> 
+							 <span class="fl"> <a href="${pageContext.request.contextPath }/pre/index?cate=${cate.id}">${cate.name }</a> </span> &nbsp; &nbsp; 
 					</c:forEach>
 				</div>
 			</div>
@@ -69,9 +69,9 @@
 	  		  </div> 
 			</div>
 		<div class="nav">
-			<h2 class="nav_title head_logo">全部分类</h2>
+			<h2 class="nav_title " style="width: 220px;"><!-- 全部分类 --></h2>
 			<ul class="nav_ul head_input">
-				<li class="nav_li"> <a href="${pageContext.request.contextPath }/pre/index">首页</a> </li> 
+				<li class="nav_li"> <a href="${pageContext.request.contextPath }/pre/index">首页</a> </li> |
 				<li class="nav_li"> <a href="#">店铺</a> </li> | 
 				<li class="nav_li"> <a href="#">折扣专场</a> </li> |
 				<li class="nav_li"> <a href="#">好货中心</a></li> |

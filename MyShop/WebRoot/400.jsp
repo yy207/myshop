@@ -29,7 +29,7 @@
               <h2>Bad Request</h2> 
               </p>
               <div class="mid_center">
-                <h3><a href="${pageContext.request.contextPath }/login/login"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </h3>
+                <h3><a href="${pageContext.request.contextPath }/pre/login"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a> </h3>
               </div>
             </div>
           </div>

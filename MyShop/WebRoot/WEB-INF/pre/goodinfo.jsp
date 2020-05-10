@@ -9,12 +9,6 @@
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/ui/easyui.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/ui/icon.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/ui/demo.css">
-		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/ui/jquery.min.js"></script>
-		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/ui/jquery.easyui.min.js"></script>
-		
-		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.12.4.js" ></script>
-		 <script type="text/javascript" src="${pageContext.request.contextPath }/static/js/number.js" ></script> 
-		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/love.js"></script>
 		
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/goodinfo.css" /> 
@@ -144,9 +138,9 @@
 								<!-- <input type="button" value=" - "/>
 								<input type="number" name="number" id="number"  value="1" min="1"  />
 								<input type="button" value="+" />  -->
-								<input type="button" value=" - " id="jian" onclick="jianNum(this)" />
-								<input type="number"  name="number"  value="1" min="1" id="num" onblur="minValueNum(this)"/>
-								<input type="button" value="+" id="add" onclick="jiaNum(this)"/>
+								<input type="button" value=" - " id="" onclick="jian(this)" />
+								<input type="number"  name="number"  value="1" min="1" id="num" onblur="minValue(this)"/>
+								<input type="button" value="+" id="add" onclick="jia(this)"/>
 							</td>
 							<td>(库存233件)</td>
 						</tr>
@@ -159,11 +153,13 @@
 							</td>
 							</form> 
 							<td  colspan="2">
-								<form action="${pageContext.request.contextPath }/pre/cart/addcart">
+								<%-- <form action="${pageContext.request.contextPath }/pre/cart/addcart">
 									<input type="hidden" name="gid" value="${good.id }"/>
 									<input type="hidden" name="sid" value="${shop.id }"> 
-									<input type="image"   src="${pageContext.request.contextPath }/static/img/j_car.png" />
-								</form>
+									<input type="image" onclick="addCart()"   src="${pageContext.request.contextPath }/static/img/j_car.png" />
+								</form> --%>
+							  		<img type="image" onclick="addCart(${good.id },${shop.id })"  
+							  		 src="${pageContext.request.contextPath }/static/img/j_car.png" />
 							</td>
 						</tr>
 					</table>
@@ -269,7 +265,52 @@
 		</div> 
 		
 		<%@ include file="common/btm.jsp" %>
-		
+				<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/ui/jquery.min.js"></script>
+				<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/ui/jquery.easyui.min.js"></script>
+		 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.12.4.js" ></script>
+			 	<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/love.js"></script>
+		 		<script type="text/javascript">
+		 			//最小值限制
+		 			function minValue(num){
+		 				if($(num).val()==''||parseInt($(num).val())<=1){
+		 					$(num).val(1);
+		 				}
+		 			}
+		 			//数量加
+		 			function jia(add){
+		 				var num = add.previousElementSibling;
+		 				$(num).val(parseInt($(num).val())+1);  
+		 			}
+		 			//数量减
+		 			function jian(jian){
+		 				var num = jian.nextElementSibling;
+		 				if(parseInt($(num).val())==1){
+		 					alert("不能再减了！");
+		 					return ;
+		 				}
+		 				$(num).val(parseInt($(num).val())-1);  
+		 			} 
+		 			//添加购物车
+					function addCart(gid,sid){
+						$.ajax({
+							type:"GET",
+							url:"/MyShop/pre/cart/addcart/",
+							data:{"gid":gid,"sid":sid},
+							dataType:"text",
+							success:function(dataresult){
+								if(dataresult=="true"){
+									alert("添加成功!"); 
+									//location.href="/MyShop/pre/goodinfo/"+gid+"/"+sid;
+								} else{
+									alert("添加失败!");
+								}  
+							},
+							error:function(dataresult){
+								alert("后台数据请求错误,请联系管理员解决！");
+							} 
+						});
+					}
+		 		</script> 
 	</body>
 </html>
 

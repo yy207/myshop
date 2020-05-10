@@ -18,7 +18,7 @@
 			.top_nav .li{display:inline-block; background:  #F5F5F5;margin:0 15px;}
 			.li_menu_li{display: none;}		
 			.li:hover .li_menu_li{display: block;}	
-			
+			.li_menu_li{line-height: 18px;height: 20px;border-bottom: 1px #ccc solid;}
 			
 			
 			

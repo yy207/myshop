@@ -2,6 +2,7 @@ package cn.main.controller.pre.lock;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -78,21 +79,35 @@ public class LockBuyController {
 	@RequestMapping("buypage")
 	public String buyPage(HttpSession session,
 						HttpServletRequest request,
-						@RequestParam(value="gid")Integer gid,
-						@RequestParam(value="sid")Integer sid,
-						@RequestParam(value="number")Integer number,
-						@RequestParam(value="price")Double price) {
+						@RequestParam(value="gid")Integer[] gids,
+						@RequestParam(value="sid")Integer[] sids,
+						@RequestParam(value="number")Integer[] numbers,
+						@RequestParam(value="price")Double[] prices) {
 		
 		User user = (User)session.getAttribute(Contains.SESSION_USER);
-		Good good = goodService.getGoodList(gid, sid, null, null, null, null, null, null, null).get(0);
-		Shop shop = shopService.getShopById(sid, null, null);
-		shop.setUser(userService.getUserByUserId(shop.getUid()));
+		List<Order> orderList = new ArrayList<Order>();
 		List<Address> addressList = addressService.getAddress(null, user.getId(), null, null);
-		
-		
-		request.setAttribute("number", number); 
-		request.setAttribute("good", good);
-		request.setAttribute("shop",shop );
+		Double totalPrice = 0.0;
+		for (int i = 0; i < gids.length; i++) {
+			Integer gid = gids[i];
+			Integer num = numbers[i];
+			Good good = goodService.getGoodList(gid, null, null, null, null, null, null, null, null).get(0);
+			Shop shop = shopService.getShopById(good.getSid(), null, null); 
+			
+			Order order = new Order(); 
+				order.setUid(user.getId());
+				order.setGid(good.getId());
+				order.setSid(shop.getId()); 
+				order.setPrice(good.getPrice()*num);
+				order.setOrderCode(StringUtil.getRandomOrderId(user.getId(), shop.getId(), gid));
+				order.setNumber(num);
+				order.setShop(shop);
+				order.setGood(good);
+				orderList.add(order);
+				totalPrice+=(good.getPrice()*num);
+		}
+		request.setAttribute("totalPrice", totalPrice);  
+		request.setAttribute("orderList", orderList);  
 		request.setAttribute("addressList", addressList); 
 		return "buy";
 	}
@@ -112,33 +127,55 @@ public class LockBuyController {
 	public String order(HttpSession session,
 						HttpServletRequest request,
 						HttpServletResponse response,
-						@RequestParam(value="gid")Integer gid,
-						@RequestParam(value="sid")Integer sid,
+						@RequestParam(value="gid")Integer[] gids,
+						@RequestParam(value="sid")Integer[] sids,
 						@RequestParam(value="addressRadio")Integer address,
-						@RequestParam(value="remark")String remark,
-						@RequestParam(value="number")Integer number) throws IOException {
+						@RequestParam(value="remark")String[] remarks,
+						@RequestParam(value="number")Integer[] numbers) throws IOException {
 		
-		logger.debug(">>>>>>>>>>>>>>gid"+gid);
-		logger.debug(">>>>>>>>>>>>>>sid"+sid);
+		
+		List<Order> orderList = new ArrayList<Order>();
+		logger.debug(">>>>>>>>>>>>>>gid"+gids);
+		logger.debug(">>>>>>>>>>>>>>sid"+sids);
 		logger.debug(">>>>>>>>>>>>>>address"+address);
-		logger.debug(">>>>>>>>>>>>>>number"+number);
+		logger.debug(">>>>>>>>>>>>>>number"+numbers);
 		//购买者
 		User user = (User)session.getAttribute(Contains.SESSION_USER);
-		Good good = goodService.getGoodList(gid, sid, null, null, null, null, null, null, null).get(0);
-		Shop shop = shopService.getShopById(sid, null, null);
+		String orderCode = null;
 		
-		String orderCode = StringUtil .getRandomOrderId(user.getId(), shop.getId(), good.getId());
-		Order order = new Order();
-		order.setAddress(address);
-		order.setUid(user.getId());
-		order.setGid(good.getId());
-		order.setSid(shop.getId());
-		order.setRemark(remark);
-		order.setPrice(good.getPrice()*number);
-		order.setOrderCode(orderCode);
-		order.setNumber(number);
+		for (int i = 0; i < gids.length; i++) {
+			
+			Integer gid = gids[i];
+			Integer sid = sids[i];
+			String remark = null; 
+			if(remarks!=null&&remarks.length!=0) {
+				remark = remarks[i];
+			}
+			
+			Integer number = numbers[i];
+			Shop shop = shopService.getShopById(sid, null, null);
+			Good good = goodService.getGoodList(gid, sid, null, null, null, null, null, null, null).get(0);
+			
+			//按次序生成订单
+			if(orderCode==null) {
+				orderCode =  StringUtil .getRandomOrderId(user.getId(),sid, good.getId());
+			}else {
+				orderCode = orderCode +i ;
+			}
+			Order order = new Order();
+			order.setAddress(address);
+			order.setUid(user.getId());
+			order.setGid(gid);
+			order.setGood(good);
+			order.setSid(sid);
+			order.setRemark(remark);
+			order.setPrice(good.getPrice()*number);
+			order.setOrderCode(orderCode);
+			order.setNumber(number); 
+			orderList.add(order);
+		} 
 
-		return pay(session, request, response, order);
+		return pay(session, request, response, orderList);
 	}
 	/**
 	 * 支付现有订单
@@ -160,6 +197,8 @@ public class LockBuyController {
 		//订单
 		Order order = orderService.getOrderList(oid, null, null, null, null, null, null, null, null, null, 1, null, null, null).get(0);
 		Good good = goodService.getGoodList(order.getGid(), null, null, null, null, null, null, null, null).get(0);
+		
+		
 		String c = "{" + "\"out_trade_no\":\"" + order.getOrderCode() + "\","
 				+ "\"product_code\":\"FAST_INSTANT_TRADE_PAY\","
 				+ "\"total_amount\":\"" + order.getPrice() + "\","
@@ -223,13 +262,24 @@ public class LockBuyController {
 	//支付操作
 	private String  pay(HttpSession session,
 			HttpServletRequest request,
-			HttpServletResponse response,Order order) throws IOException {
-		Good good = goodService.getGoodList(order.getGid(),order.getSid(), null, null, null, null, null, null, null).get(0);
-		if(orderService.addOrder(order)>0) {
-			String c = "{" + "\"out_trade_no\":\"" + order.getOrderCode() + "\","
+			HttpServletResponse response,List<Order> orderList) throws IOException {
+		int count =0;
+		Double totalPrice = 0.0;
+		Good good = null;
+		StringBuilder sb = new StringBuilder();
+		for (Order order : orderList) {
+			if(orderService.addOrder(order)>0) {//添加
+				count++;
+				good = order.getGood();
+				totalPrice += (good.getPrice()*order.getNumber());
+				sb.append(good.getName()+"x"+order.getNumber()+",");
+			} 
+		}
+		if(count==orderList.size()) {
+			String c = "{" + "\"out_trade_no\":\"" + orderList.get(0).getOrderCode() + "\","
 					+ "\"product_code\":\"FAST_INSTANT_TRADE_PAY\","
-					+ "\"total_amount\":\"" + order.getPrice() + "\","
-					+ "\"subject\":\"" + good.getName() + "\"," + "\"body\":\"" + good.getName()
+					+ "\"total_amount\":\"" + totalPrice+ "\","
+					+ "\"subject\":\"  共计" + count+"件商品" + "\"," + "\"body\":\"" +""+sb.toString()
 					+ "\"" + "}";
 
 			AlipayTradePagePayRequest alipayRequest = new AlipayTradePagePayRequest(); // 创建API对应的request

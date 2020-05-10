@@ -25,15 +25,24 @@
 				<li class="li">
 					<div class="li_menu ">
 						<a href="${pageContext.request.contextPath }/pre/nav/orderpage">我的淘宝<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓"/></a>
-					</div>
-						<div class="li_menu_li">
-						<a href="${pageContext.request.contextPath }/pre/cart/cartpage">购物车</a>
-					</div>
+					</div> 
 					<div class="li_menu_li">
-						<a href="${pageContext.request.contextPath }/pre/history/historypage">浏览记录</a> 
-					</div>   	
+						<a href="${pageContext.request.contextPath }/pre/nav/orderpage#">我的订单</a> 
+					</div>  
+					<div class="li_menu_li">
+						<a href="${pageContext.request.contextPath }/pre/nav/addresspage">收货地址</a> 
+					</div> 
+					<div class="li_menu_li">
+						<a href="${pageContext.request.contextPath }/pre/history/historypage">我的足迹</a> 
+					</div> 
 				</li> 
-				 
+				 <li class="li">
+				 	<div class="li_menu">
+						<a href="${pageContext.request.contextPath }/pre/cart/cartpage"> 
+						<img src="${pageContext.request.contextPath }/static/img/car.png" alt="logo"/>
+						购物车</a>
+					</div>
+				 </li>
 				<li class="li">
 					<div class="li_menu ">
 						<a href="${pageContext.request.contextPath }/pre/love/lovepage/1"><img src="${pageContext.request.contextPath }/static/img/care.png" class="img_li" alt="↓" width="15" height="13"/>我的收藏</a>

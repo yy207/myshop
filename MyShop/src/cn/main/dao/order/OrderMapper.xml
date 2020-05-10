@@ -60,7 +60,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<update id="updateOrderAll"> 
 		UPDATE 	`order` 
-		<trim prefix="SET" suffixOverrides="," suffix="where orderCode =#{order.orderCode}">
+		<trim prefix="SET" suffixOverrides="," suffix="where orderCode like concat('%',#{order.orderCode},'%')">
 			<if test="order.address!=null">
 				address = #{order.address},
 			</if>

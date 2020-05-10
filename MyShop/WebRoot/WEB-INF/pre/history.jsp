@@ -46,7 +46,7 @@
 						<div class="name">
 							<span>
 								<a href="<%=request.getContextPath()%>/pre/goodinfo/${history.good.id}/${history.good.shop.id }"> 
-									<img src="${pageContext.request.contextPath }/static/img/tm.png" width="24" height="18" />${history.good.name }
+									<img src="${pageContext.request.contextPath }/static/img/tm.png" width="24" height="18" />${fn:substring(history.good.name,0,20) }
 								</a>
 							</span>
 						</div>

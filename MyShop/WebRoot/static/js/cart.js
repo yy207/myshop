@@ -8,7 +8,7 @@
 								var ch=$(this).prop("checked")
 								if(ch==true){
 									 count++;
-									var num = $(this.parentNode.parentNode.parentNode).find("#total").html();
+									var num = $(this.parentNode.parentNode.parentNode).find(".total_price").eq(0).html();
 									totalPrice+=FloatAdd(0,num)
 								} 
 							}); 
@@ -27,12 +27,13 @@
 							$(pNode).css("background","#fff");
 						}
 						var chks = $(".good_chk");
-						var count = 0;
-						for (var i in chks) {
+						var count = 0; 
+						for (var i = 0; i < chks.length; i++) {
 							if(chks[i].checked){
 								 count++;
 							}
 						}
+ 
 						$("#total_chk").html(count); 
 						count();
 		 			}  
@@ -48,9 +49,9 @@
 		 				$(num).val(parseInt($(num).val())+1); 
 		 				
 		 				var tr = add.parentNode.parentNode;
-		 				var p = parseFloat($(tr).find("#price").html());
+		 				var p = parseFloat($(tr).find(".single_price").eq(0).html());
 						var n = parseInt($(num).val());
-						$(tr).find("#total").html(FloatMul(p,n));
+						$(tr).find(".total_price").html(FloatMul(p,n));
 		 				count();
 		 			}
 		 			//数量减
@@ -62,9 +63,9 @@
 		 				}
 		 				$(num).val(parseInt($(num).val())-1);
 		 				var tr = jian.parentNode.parentNode;
-		 				var p = parseFloat($(tr).find("#price").html());
+		 				var p = parseFloat($(tr).find(".single_price").eq(0).html());
 						var n = parseInt($(num).val());
-						$(tr).find("#total").html(FloatMul(p,n)); 
+						$(tr).find(".total_price").eq(0).html(FloatMul(p,n)); 
 		 				count();
 		 			} 
 		 			//乘法
@@ -109,4 +110,132 @@
 						});   
 						count();
 					});
+					
+										
+	//删除事件
+function del(cid){
+	$.ajax({
+		type:"GET",
+		url:"/MyShop/pre/cart/delcart/",
+		data:{"cid":cid},
+		dataType:"text",
+		success:function(dataresult){
+			if(dataresult=="true"){
+				alert("删除成功!");
+				location.href="/MyShop/pre/cart/cartpage"; 
+			} else{
+				alert("删除失败!");
+			}  
+		},
+		error:function(dataresult){
+			alert("后台数据请求错误,请联系管理员解决！");
+		} 
+	});
+}
+//收藏一个
+function addheart(cid){
+	$.ajax({
+		type:"GET",
+		url:"/MyShop/pre/cart/addheart",
+		data:{"cid":cid},
+		dataType:"text",
+		success:function(dataresult){
+			if(dataresult=="true"){ 
+				alert("收藏成功!");
+				location.href="/MyShop/pre/cart/cartpage"; 
+			} else{
+				alert("收藏失败!");
+			}  
+			alert(dataresult);
+		},
+		error:function(dataresult){
+			alert("后台数据请求错误,请联系管理员解决！");
+		} 
+	});
+}
+
+//删除事件
+function dels(){
+	var ids = []; 
+	$(".good_chk").each(function(){
+		var ch=$(this).prop("checked");
+		var id = $(this); 
+		if(ch==true){
+			ids.push(id.val()); 
+		} 
+	}); 
+$.ajax({
+	type:"GET",
+	url:"/MyShop/pre/cart/delcarts/",
+	contentType:"application/json",
+	data:{"ids":ids},
+	traditional:true,
+	dataType:"text",
+	success:function(dataresult){
+		if(dataresult=="true"){
+			alert("删除成功!");
+			location.href="/MyShop/pre/cart/cartpage"; 
+		} else{
+			alert("删除失败!");
+		}  
+	},
+	error:function(dataresult){
+		alert("后台数据请求错误,请联系管理员解决！");
+	} 
+});
+}			
+//收藏事件S
+function adds(){
+	var ids = []; 
+	$(".good_chk").each(function(){
+		var ch=$(this).prop("checked");
+		var id = $(this); 
+		if(ch==true){
+			ids.push(id.val()); 
+		} 
+	}); 
+$.ajax({
+	type:"GET",
+	url:"/MyShop/pre/cart/addhearts/",
+	contentType:"application/json",
+	data:{"ids":ids},
+	traditional:true,
+	dataType:"text",
+	success:function(dataresult){
+		if(dataresult=="true"){
+			alert("收藏成功!");
+			location.href="/MyShop/pre/cart/cartpage"; 
+		} else{
+			alert("收藏失败!");
+		}  
+	},
+	error:function(dataresult){
+		alert("后台数据请求错误,请联系管理员解决！");
+	} 
+});
+}			
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 						

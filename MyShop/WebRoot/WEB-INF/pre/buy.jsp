@@ -105,54 +105,57 @@
 							<td width="200">优惠方式</td>
 							<td width="100x">小计</td>
 						</tr> 
-						<tr>
-							<td  style="border-bottom: 2px #B7D2FF dashed;">店铺：${shop.name }</td>
-							<td colspan="5"  style="border-bottom: 2px #B7D2FF dashed;">卖家：${shop.user.userName }</td>
-						</tr>
-						<tr class="info">
-							<td width="300">
-								<span><img src="${pageContext.request.contextPath }/static/img/O1CN017IVk7V1bevFsDb8FQ_!!13493491.jpg_220x220.jpg" width="50" height="50" /> </span>
-								<span class="txt">${good.name }</span>
-							</td>
-							<td width="150">
-								<span class="property">颜色：黑色</span>
-								<span class="property">颜色：黑色</span>
-							</td>
-							<td width="100">
-								 $<span class="property singlePrice" style="display:inline;" id="singlePrice">${good.price }</span>								
-							</td>
-							<td width="100" class="num">
-								<input type="button" value=" - " id="jian" onclick="jianNum(this)" />
-								<input type="number"  value="<c:if test="${number ==null }">1</c:if><c:if test="${number !=null }">${number }</c:if>"
-								 name="number"  class="number" id="num"  onblur="" onchange="minValueNum(this)"/>
-								<input type="button" value="+"  id="add" onclick="jiaNum(this)"/>
-							</td>
-							
-							<td width="200" style="text-align: center;">
-								<span class="property">满减</span>
-							</td>
-							<td width="100" class="right">
-								<span class="price totalPrice" style="font-size:14px ;" id="price">￥ 
-									<c:if test="${number ==null }"> ${good.price}</c:if>
-									<c:if test="${number !=null }">${number*good.price }</c:if>	
-								</span>								
-							</td>
-						</tr>
-						<tr class="else">
-							<td colspan="2">
-								给卖家留言：
-								<input type="text" name="remark" id="remark"  multiple="multiple"/>
-							</td>
-							<td colspan="3" class="">配送方式：普通快递 免邮  </td>
-							<td width="100" class="right">
-								<span class="price" style="font-size:14px ;" >0.0</span>								
-							</td>
-						</tr>
+						
+						<c:forEach items="${orderList }" var="order">
+							<input type="hidden" name="gid" value="${order.good.id }"/>
+							<input type="hidden" name="sid" value="${order.shop.id }"/> 
+							<tr>
+								<td  style="border-bottom: 2px #B7D2FF dashed;">店铺：${order.shop.name }</td>
+								<td colspan="5"  style="border-bottom: 2px #B7D2FF dashed;">卖家：${order.shop.user.userName }</td>
+							</tr>
+							<tr class="info order_info">
+								<td width="300">
+									<span><img src="${pageContext.request.contextPath }/static/img/O1CN017IVk7V1bevFsDb8FQ_!!13493491.jpg_220x220.jpg" width="50" height="50" /> </span>
+									<span class="txt">${order.good.name }</span>
+								</td>
+								<td width="150">
+									<span class="property">颜色：黑色</span>
+									<span class="property">颜色：黑色</span>
+								</td>
+								<td width="100">
+									 $<span class="property singlePrice single_price" style="display:inline;" id="singlePrice">${order.good.price }</span>								
+								</td>
+								<td width="100" class="num">
+									<input type="button" value=" - " class="jian" onclick="jian(this)" />
+									<input type="number"  value="<c:if test="${order.number ==null }">1</c:if><c:if test="${order.number !=null }">${order.number }</c:if>"
+									 name="number"  class="number good_num" id="num"  onblur="" onchange="minValue(this)"/>
+									<input type="button" value="+"  id="add"  class="add" onclick="jia(this)"/>
+								</td> 
+								<td width="200" style="text-align: center;">
+									<span class="property">满减</span>
+								</td>
+								<td width="100" class="right">￥
+									<span class="price totalPrice" style="font-size:14px ;" id="total"> 
+										<c:if test="${order.number ==null }"> ${order.good.price}</c:if>
+										<c:if test="${order.number !=null }">${order.number*order.good.price }</c:if>	
+									</span>								
+								</td>
+							</tr>
+							<tr class="else">
+								<td colspan="2">
+									给卖家留言：
+									<input type="text" name="remark" id="remark"  multiple="multiple"/>
+								</td>
+								<td colspan="3" class="">配送方式：普通快递 免邮  </td>
+								<td width="100" class="right">
+									<span class="price" style="font-size:14px ;" >0.0</span>								
+								</td>
+							</tr> 
+						</c:forEach>
 						<tr class="else">
 							<td colspan="6" class="right">
-								店铺合计(含运费)<span class="price totalPrice" style="font-size:14px ;" id="total">￥
-									<c:if test="${number ==null }"> ${good.price}</c:if>
-									<c:if test="${number !=null }">${number*good.price }</c:if>	
+								店铺合计(含运费)<span class="price total" style="font-size:14px ;" id="total_price">￥
+									<c:if test="${totalPrice !=null }">${totalPrice }</c:if>	 
 									</span>		
 							</td>
 						</tr> 
@@ -164,9 +167,8 @@
 			<div class="clear">
 				<div class="final">
 					<div class="price">
-						实付款:<span  class="money totalPrice" id="totalPrice">￥
-							<c:if test="${number ==null }"> ${good.price}</c:if>
-							<c:if test="${number !=null }" >${number*good.price }</c:if>	
+						实付款:<span  class="money" id="realMoney">￥
+							<c:if test="${totalPrice !=null }">${totalPrice }</c:if>	 
 						</span>
 					</div>
 					<div class="address">
@@ -180,8 +182,7 @@
 			</div>
 			<div class="submit">
 				<input type="image" src="${pageContext.request.contextPath }/static/img/btn_sure.gif" />
-				<input type="hidden" name="gid" value="${good.id }"/>
-				<input type="hidden" name="sid" value="${shop.id }"/> 
+				
 			</div>
 	      </form> 
 		</div>  
@@ -191,7 +192,6 @@
 		
 			<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery.min.js" ></script>
 			<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/buy.js" ></script>
-		
-		  <script type="text/javascript" src="${pageContext.request.contextPath }/static/js/number.js" ></script> 
+		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/number.js" ></script> 
 	</body>
 </html>

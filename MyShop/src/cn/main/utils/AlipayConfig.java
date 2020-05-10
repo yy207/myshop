@@ -14,7 +14,7 @@ public class AlipayConfig {
 	 // 请求网关地址 沙箱测试网管
 	 public static String URL =  "https://openapi.alipaydev.com/gateway.do";//https://openapi.alipay.com/gateway.do
 	 // 编码
-	 public static String CHARSET = "UTF-8";
+	 public static String CHARSET = "utf-8";
 	 // 返回格式
 	 public static String FORMAT = "json";
 	 // 支付宝公钥

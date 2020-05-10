@@ -39,12 +39,17 @@
 		 			<td width="130">操作</td>
 		 		</tr>  
 		 		</table>
+		 		<form action="${pageContext.request.contextPath }/pre/buy/buypage" method="post">
+	
 		 		<table width="1050">  
 					<c:forEach items="${cartList }" var="cart">
 						<tr class="good">
 							<td width="330" class="good_info">
 								<!-- <span><input type="checkbox" class="good_chk" name="" id="" value="" onchange="Checked(this)" /> </span> -->
-								<span><input type="checkbox" class="good_chk" name="" id="" value="" onchange="Checked(this)" /> </span>
+								<input type="hidden" name="gid" value="${cart.good.id}"> 
+								<input type="hidden" name="sid" value="${cart.good.shop.id }"> 
+								<input type="hidden" name="price" value="${cart.good.price}"> 
+								<span><input type="checkbox" class="good_chk"  name="cid"   value="${cart.id }" onchange="Checked(this)" /> </span>
 								<span><img src="<c:if test="${fn:contains(cart.good.picPath,'http:') }">
 																		${cart.good.picPath }
 																	</c:if>
@@ -66,19 +71,19 @@
 								<span>颜色:蓝色 </span> -->
 							</td>
 							<td class="price" width="130">
-								$<span id="price">${cart.good.price }</span>
+								$<span id="price" class="single_price">${cart.good.price }</span>
 							</td>
 							<td class="num" width="130" >
-								<input type="button" value=" - " id="jian" onclick="jian(this)" />
-								<input type="number"  value="1" min="1" id="num" onblur="minValue(this)"/>
-								<input type="button" value="+" id="add" onclick="add(this)"/>
+								<input type="button" value=" - " class="jian" onclick="jian(this)" />
+								<input type="number"  value="1" min="1" class="good_num" name="number" onblur="minValue(this)"/>
+								<input type="button" value="+" class="add" onclick="add(this)"/>
 							</td>
 							<td class="total" width="130" >
-								$<span id="total">${cart.good.price }</span>										
+								$<span id="total" class="total_price">${cart.good.price }</span>										
 							</td>
 							<td class="action property" width="130">
-								<span><a href="">移入收藏</a> </span>
-								<span><a href="">删除</a> </span>
+								<span><a href="javascript:addheart(${cart.id });">移入收藏</a> </span>
+								<span><a href="javascript:del(${cart.id });">删除</a> </span>
 							</td>
 						</tr> 
 					</c:forEach>
@@ -90,16 +95,16 @@
 		 					<input type="checkbox" name="" id="all" value="" />
 		 					<label for="all">全选</label >
 		 				</td>
-		 				<td width="130"><a href="">删除 </a> </td>
-		 				<td width="350"><a href="">移入收藏夹</a> </td> 
+		 				<td width="130"><a href="javascript:dels()">删除 </a> </td>
+		 				<td width="350"><a href="javascript:adds()">移入收藏夹</a> </td> 
 		 				<td width="130">已选<span id="total_chk">0</span> 件</td> 
 		 				<td width="180">合计(不含运费):&nbsp;&nbsp;<span class="price total" id="total_price">0</span> </td> 
 		 				<td width="130">
-		 					<input type="button" id="" value="结算" class="final"/>
+		 					<input type="submit" id="" value="结算" class="final"/>
 		 				</td>
 		 			</tr>  
 		 		</table>
-		 		
+		 	 </form>
 		 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.12.4.js" ></script>
 		 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/cart.js" ></script> 
 		 	</div>

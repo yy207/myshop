@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>${sessionUser.userName }的订单</title>
 			<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/ui/easyui.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/ui/icon.css">
 		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/ui/demo.css">

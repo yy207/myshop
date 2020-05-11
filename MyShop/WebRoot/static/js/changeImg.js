@@ -15,15 +15,9 @@
 					index = 0;//返回第一
 				}else{
 					index=index+1;
-				}  		
-				console.log(index);
-				console.log(left[index]);
-				  
-/*//				 $("ui.slide_box").eq(0).animate({"left":"20px"},2500,function(){
-//				 });//柱子移动
-//				
-*/	 		 pub();
-			},3000);
+				}  
+				pub();
+			},5000);
 		}
 		$(".adver").mouseover(function(){//悬浮事件
 			clearInterval(interval);  
@@ -62,7 +56,7 @@
 		
 		
 		function  pub(){
-			$("#slide_box").animate({ left:left[index]}, 1000);
+			$("#slide_box").animate({ left:left[index]},2000);
 			$(".adver .num li:nth-of-type("+num[index]+")").siblings().css("background","#333");
 			$(".adver .num li:nth-of-type("+num[index]+")").css("background","#FFA500"); 
 		}

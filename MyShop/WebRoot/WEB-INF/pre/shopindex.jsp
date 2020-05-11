@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>我要开店</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/shopindex.css" />
 	</head>
 	<body>

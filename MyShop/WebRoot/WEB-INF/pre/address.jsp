@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>  
+		<title>${sessionUser.userName }的收货地址</title>  
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />	
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/order.css" />		
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/address.css" />

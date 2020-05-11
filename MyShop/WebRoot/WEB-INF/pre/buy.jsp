@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>生成订单</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/nav.css" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/buy.css" />
 	</head>

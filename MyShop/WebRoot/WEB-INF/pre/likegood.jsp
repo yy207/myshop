@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>${sessionUser.userName }收藏的宝贝</title>
 		  <!-- nav -->
 		 <link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/nav.css" />
 		 <link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/likegood.css" />

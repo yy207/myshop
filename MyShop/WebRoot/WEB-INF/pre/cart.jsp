@@ -5,7 +5,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>${sessionUser.userName }的购物车</title>
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/nav.css" />
 	 	<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/cart2.css" />
 	</head>

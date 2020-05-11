@@ -82,8 +82,7 @@ public class ImageCode {
 
 		// 7.返回验证码和图片
 		return new Object[] { sb.toString(), image };
-	}
-
+	} 
 	/**
 	 * 随机取色
 	 */
@@ -93,7 +92,20 @@ public class ImageCode {
 				ran.nextInt(256));
 		return color;
 	}
-
+	/**
+	 * 获取随机邮箱验证码
+	 * @return
+	 */
+	public static String createEmailCode() {
+		StringBuffer sb = new StringBuffer();
+		 
+		for (int i = 0; i < 6; i++) {
+			Random ran = new Random();
+			int n = ran.nextInt(chars.length);  
+			sb.append(chars[n]);
+		} 
+		return  sb.toString();
+	}
 	public static void main(String[] args) throws IOException {
 
 		// 测试随机验证码

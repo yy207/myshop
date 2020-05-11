@@ -14,6 +14,8 @@ import java.util.Locale;
 public class Contains { 
 	
 	public static final String IMAGECODE = "imageCode";//验证码
+	public static final String EMAIL = "email";//邮箱验证码
+	public static final String EMAIL_CODE = "emailCode";//邮箱验证码
 	public static final String ERROR ="error";//错误信息
 	public static final String SUCCESS ="success";//成功信息
 	public static final String SESSION_USER = "sessionUser";//当前会话用户信息

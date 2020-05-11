@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title></title>
+		<title>首页</title>
 		
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" /> 
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/style.css" /> 

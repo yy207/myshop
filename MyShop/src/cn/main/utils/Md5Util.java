@@ -14,6 +14,7 @@ public class Md5Util {
     public static String MD5(String text) throws Exception {
         //加密后的字符串
         String encodeStr=DigestUtils.md5Hex(text + MD5);
+        System.out.println(">>>>>>>>>"+text);
         System.out.println("MD5加密后的字符串为:encodeStr="+encodeStr);
         return encodeStr;
         }
@@ -39,9 +40,9 @@ public class Md5Util {
     }
     
     public static void main(String[] args) throws Exception {
-    	String  m =MD5("123456");
+    	String  m =MD5("KmlfyG");
 		System.out.println(m); 
 		
-		MD5Verify("123456", m);
+		MD5Verify("KmlfyG", m);
 	}
 }

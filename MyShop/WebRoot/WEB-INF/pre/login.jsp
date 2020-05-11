@@ -9,13 +9,14 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/login.css" /> 
 	</head>
 	<body>
-		<div class="logo">
+		<div class="logo" style="padding: 20px ; ">
 			<a href="${pageContext.request.contextPath }/pre/index"> 
-				<img src="${pageContext.request.contextPath }/static/img/logo.png" width="200" height="80"/>
+				<img src="${pageContext.request.contextPath }/static/img/logoen.png" width="100" />
 			</a>
 		</div>
+		
 		<div class="bg" style="position: relative;">
-			<div class="img" style="background-image: url(${pageContext.request.contextPath }/static/img/download1.jpg);"></div>
+			<div class="img" style="background-image: url(${pageContext.request.contextPath }/static/img/download<%=(int)(Math.random()*10%3+1)%>.jpg);"></div>
 		</div> 
 		
 		<div class="form-field"> 
@@ -45,10 +46,10 @@
 								</div>
 								<div class="bottom_a">
 									<span class="forget_pwd">
-										<a href="">忘记密码？</a>
+										<a href="#">忘记密码？</a>
 									</span>
 									<span class="resister">
-										<a href="">注册用户</a>
+										<a href="${pageContext.request.contextPath }/pre/register">注册用户</a>
 									</span>
 								</div>
 							</form>  
@@ -71,17 +72,17 @@
 								<div class="submit">
 									<input type="submit" value="登录"/>
 								</div>
-								<span>${msg }</span>
+								<span style="color: red;font-size: 10px;">${msg }</span>
 								<div class="send_code">
 									<img alt="" src="${pageContext.request.contextPath }/static/img/success.png" width="25" height="25" /> 
 									<label for="auto" style="font-size: 12px;">验证码已发送,请注意查收</label>
 								</div>
 								<div class="bottom_a"> 
 									<span class="forget_pwd">
-										<a href="">忘记密码？</a>
+										<a href="#">忘记密码？</a>
 									</span>
 									<span class="resister">
-										<a href="">注册用户</a>
+										<a href="${pageContext.request.contextPath }/pre/register">注册用户</a>
 									</span>
 								</div>
 							</form>  

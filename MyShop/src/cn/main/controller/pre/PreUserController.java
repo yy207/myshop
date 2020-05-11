@@ -192,6 +192,10 @@ public class PreUserController {
 								,@Param(value="code") String code){
 			
 			String eqEmail = (String) session.getAttribute(Contains.EMAIL);
+			if(eqEmail==null) {
+				session.removeAttribute("msg");
+				return "redirect:/pre/login";
+			}
 			String eqCode = (String) session.getAttribute(Contains.EMAIL_CODE);
 			session.removeAttribute(Contains.EMAIL_CODE);
 			session.removeAttribute(Contains.EMAIL);
@@ -206,24 +210,16 @@ public class PreUserController {
 				} catch (Exception e) { 
 					e.printStackTrace();
 				}
-				session.setAttribute("msg", "验证码有误,请重新获取！");
+				session.setAttribute("msg", "* 验证码有误,请重新获取！");
 			}else {
-				session.setAttribute("msg", "登录邮箱与验证邮箱不一致！");
+				session.setAttribute("msg", "* 登录邮箱与验证邮箱不一致！");
 			} 
 			session.setAttribute("display", email);
-			return "redirect:/pre/login";
-		}
-		
-		
-		
-		
-		
-		
-		
-		
+			return "login";
+		} 
 		
 		@RequestMapping("login")
-		public String login(){
+		public String login(){ 
 			return "login";
 		}
 		@RequestMapping("register")

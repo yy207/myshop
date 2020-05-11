@@ -27,19 +27,19 @@
 								</c:if> 
 					</div>
 					<div class="table">
-					  <form action="${pageContext.request.contextPath }/pre/address/add" method="post">
+					  <form action="${pageContext.request.contextPath }/pre/address/add" method="post" onsubmit="return tel()">
 						<table border="0" width="700" height="250">
 						 
 							<tr>
 								<td width="100"><span>*</span>地址信息:</td>
 								<td colspan="2">
-									<select name="city1" id="city1">
+									<select name="city1" id="city1" required>
 										<option value="">-------</option>
 									</select>
-									<select name="city2" id="city2">
+									<select name="city2" id="city2" required>
 										<option value="">-------</option>
 									</select>
-									<select name="city3" id="city3">
+									<select name="city3" id="city3" required>
 										<option value="">-------</option>
 									</select>
 								 </td>
@@ -47,7 +47,7 @@
 							</tr>
 							<tr>
 								<td width="100"><span>*</span>详细地址:</td>
-								<td colspan="2"><input type="text" name="address" id="address" value="${address.address }" /> </td>
+								<td colspan="2"><input type="text" name="address" id="address" value="${address.address }" required/> </td>
 								<td class="msg" width="300"><span id="addressMsg">${addressMsg }</span> </td>
 							</tr>
 							<tr>
@@ -57,7 +57,7 @@
 							</tr>
 							<tr>
 								<td width="100"><span>*</span>收货人姓名:</td>
-								<td colspan="2"><input type="text" name="name" id="name"  value="${address.name }"/> </td>
+								<td colspan="2"><input type="text" name="name" id="name"  value="${address.name }" required/> </td>
 								<td class="msg" width="300"><span id="nameMsg">${nameMsg }</span> </td>
 							</tr>
 							<tr>

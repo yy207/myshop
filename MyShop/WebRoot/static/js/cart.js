@@ -145,8 +145,7 @@ function addheart(cid){
 				location.href="/MyShop/pre/cart/cartpage"; 
 			} else{
 				alert("收藏失败!");
-			}  
-			alert(dataresult);
+			}   
 		},
 		error:function(dataresult){
 			alert("后台数据请求错误,请联系管理员解决！");

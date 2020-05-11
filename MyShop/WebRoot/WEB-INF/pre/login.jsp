@@ -3,75 +3,77 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<title></title>
+		<meta charset="UTF-8">
+		<title>登录</title> 
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/login.css" /> 
 	</head>
 	<body>
-	
-		<%@ include file="common/nav.jsp" %>
-		<div class="login">
-			<%-- <div class="header">
-				<div class="left">
-					<a href="${pageContext.request.contextPath }/main/index">
-						<img src="${pageContext.request.contextPath }/static/img/logo.png" />
-					</a> 
-				</div>
-			</div> --%> 
-			<div class="section">
-				<div class="left">
-					<img src="${pageContext.request.contextPath }/static/img/loadimg.jpg" />
-				</div>
-				<div class="right">
-					<!--表单-->
-					<form action="${pageContext.request.contextPath}/pre/dologin" method="post">
-						<p class="p1">
-							<strong style="font-size: 20px;">用户登录</strong>
-							<a href="${pageContext.request.contextPath }/pre/register"style="color: blue;" >注册账号</a>
-						</p>
-						<p class="p2">
-							<input name="userCode" id="userCode" value="${userCode }" required type="text"placeholder="请输入用户名"/> 
-						</p>
-						<p class="p3">
-							<input name="userPassword" id="userPassword" value="${userPassword }" required type="password" placeholder="请输入密码"/> 
-						</p> 
-						<p style="color:red; text-align: left;">&nbsp;${error}</p>
-						<p class="p4">
-							<input type="checkbox" name="auto" id="auto" />
-							<label for="auto">下次自动登录</label>
-							<a href="">忘记密码？</a>
-						</p>
-						<p class="p5">
-							<input type="submit" name="submit"value="登录" />
-						</p>
-						<div class="p6">
-							更多合作网站账号登录
-						</div>
-						<p class="p7">
-							<a href="" class="a1 aimg" > </a>
-							<a href="" class="a2 aimg">  </a>
-							<a href="" class="a3 aimg">  </a>
-							<a href="" class="a4 aimg"> </a>
-							<a href="" class="a5">
-								更多合作网站
-							</a>
-						</p>
-					</form>
-					
-				</div>
-			</div>
-			
-			<div class="footer">
-				<p>
-					沪ICP备13044278号 | 合字B1.B2-20130004 | 营业执照
-				</p>
-				<p>
-					Copyright &copy; 1号店网上超市2007-2016 ，AllRights Reserved
-				</p>
-			</div>
-			
+		<div class="logo">
+			<img src="${pageContext.request.contextPath }/static/img/logo.png" />
 		</div>
+		<div class="bg" style="position: relative;">
+			<div class="img" style="background-image: url(${pageContext.request.contextPath }/static/img/download1.jpg);"></div>
+		</div> 
+		
+		<div class="form-field"> 
+				<div class="right">
+					<div class="login">
+						<p class="title" id="title_pwd" onclick="changeform(1,this)">密码登录</p>
+						<p class="title" id="title_email" onclick="changeform(2,this)">邮箱登录</p> 
+					</div>
+					<div class="form">
+						<div class="form_password" id="form_password">
+							<form action="" method="post">
+								<div class="name">
+									<span class="icon"><img src="${pageContext.request.contextPath }/static/img/user.png" width="38" height="38" /> </span>
+									<input type="text" name="userCode" id="userCode" value="" placeholder="请输入账号" />
+								</div >
+								<div class="password">
+									<span class="icon"><img src="${pageContext.request.contextPath }/static/img/lock.png" width="38" height="38" /> </span>
+									<input type="password" name="userPassword" id="userPassword" value="" placeholder="请输入密码"/>
+								</div>
+								<div class="submit">
+									<input type="submit" value="登录"/>
+								</div>
+								<div class="bottom_a">
+									<span class="forget_pwd">
+										<a href="">忘记密码？</a>
+									</span>
+									<span class="resister">
+										<a href="">注册用户</a>
+									</span>
+								</div>
+							</form>  
+						</div> 
+						<div class="form_email" id="form_email">
+							<form action="" method="post">
+								<div class="name">
+									<span class="icon"><img src="${pageContext.request.contextPath }/static/img/email.png" width="38" height="38" /> </span>
+									<input type="text" name="userCode" id="userCode" value="" placeholder="请输入邮箱"/>
+								</div >
+								<div class="code">
+									<span class="icon"><img src="${pageContext.request.contextPath }/static/img/number.png" width="38" height="38" /> </span>
+									<input type="text" name="code" id="code" value="" />
+									<span>
+										<a href="" class="get_code"> 获取验证码</a>
+									</span>
+								</div>
+								<div class="submit">
+									<input type="submit" value="登录"/>
+								</div>
+								<div class="bottom_a"> 
+									<span class="resister">
+										<a href="">注册用户</a>
+									</span>
+								</div>
+							</form>  
+						</div> 
+					</div>
+				</div>
+	</div> 
+		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.12.4.js" ></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/login.js" ></script>
+		
 	</body>
 </html>
-

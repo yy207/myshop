@@ -217,15 +217,12 @@
 				<div class="easyui-tabs" style="width:750px; border: 0px ;">
 					<div title="宝贝详情" style="padding:10px">
 						<div class="property">
-							<span  class="key">name : value </span>
-							<span  class="key">name : value </span>
-							<span  class="key">name : value </span>
-							<span  class="key">name : value </span>
-							<span  class="key">name : value </span>
-							<span  class="key">name : value </span>
-							<span  class="key">name : value </span>
-							<span  class="key">name : value </span>
-							<span  class="key">name : value </span> 
+							<span  class="key">颜色 : 红色 </span>
+							<span  class="key">产地 : 郑州 </span>
+							<span  class="key">规格 : 1.4kg </span>
+							<span  class="key">尺寸 : 30*62 </span>
+							<span  class="key">样式 : 条纹 </span>
+							<span  class="key">分辨率 : 1080*1024 </span> 
 						</div> 
 						<ul class="">
 							<li>
@@ -244,7 +241,7 @@
 						</ul>
 							
 					</div>
-					<div title="累计评论" style="padding:10px">
+					<!-- <div title="累计评论" style="padding:10px">
 						<ul class="easyui-tree" >
 							<li>
 								<div class="commonts">
@@ -258,7 +255,7 @@
 					
 					<div title="其他" style="padding:10px">
 						<ul class="easyui-tree"  ></ul>
-					</div>
+					</div> -->
 				</div>
 				
 			</div> 

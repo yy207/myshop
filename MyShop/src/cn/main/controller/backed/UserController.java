@@ -1,5 +1,7 @@
 package cn.main.controller.backed;
 
+import java.util.List;
+
 import javax.annotation.Resource; 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -67,6 +69,26 @@ public class UserController {
 			}
 			User user = service.getUserByUserCode(userCode);
 			if (user == null) {
+				return "true";
+			} else {
+				return "false";
+			}
+		}
+		/**
+		 * 前台的ajax验证
+		 * @param userCode
+		 * @return
+		 */
+		@RequestMapping(value = "email", method = RequestMethod.GET)
+		@ResponseBody
+		public String getUserEmail(
+				@RequestParam(value = "email", required = false) String email) {
+			log.debug(">>>>>>>>>>>>>>>>>>>>>>>>" + email + ">>>>>>>>>");
+			if (StringUtil.isEmpty(email)) {
+				return "error";
+			}
+			List<User> user = service.getAllUser(null, null, null, null, null, null, null, email, null, null, null, 0, 5);
+			if (user.size()==0) {
 				return "true";
 			} else {
 				return "false";

@@ -131,11 +131,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		INSERT INTO `myshop`.`user`
 		(`userCode`, `userName`, `userPassword`,
 		`userRole`, `idCard`, `realName`, `phone`,
-		`address`,`birthday`,`createBy`,`createTime`,`userPic`)
+		`address`,`birthday`,`createBy`,`createTime`,`userPic`,`email`)
 		VALUES
 		(#{user.userCode},#{user.userName}, #{user.userPassword},
 		#{user.userRole}, #{user.idCard}, #{user.realName}, #{user.phone},
-		#{user.address},#{user.birthday},#{user.createBy},#{user.createTime},#{user.userPic})
+		#{user.address},#{user.birthday},#{user.createBy},#{user.createTime},#{user.userPic},#{user.email})
 	</insert>
 	
 	<update id="upateUserInfo">

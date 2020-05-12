@@ -41,7 +41,7 @@
 						<!--Begin 购物车已登录 Begin-->
 			            <ul class="cars">
 			            	
-			            		<c:forEach items="${cartList }" var="cart">
+			            		<c:forEach items="${cartList }" var="cart" begin="0" end="2">
 				            		<li>
 					                	<div class="img"><a href="#"><img src="<c:if test="${fn:contains(cart.good.picPath,'http:') }">
 																			${cart.good.picPath }

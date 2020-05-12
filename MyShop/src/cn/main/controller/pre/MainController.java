@@ -87,7 +87,7 @@ public class MainController {
 		
 		
 		//猜你喜欢
-		List<Good> likeList = goodService.getGoodList(null, null, name, cate,null,
+		List<Good> likeList = goodService.getGoodList(null, null, name, null,null,
 				null, 4, 0, 20);//state 4 已上架 
 		if (likeList.size() <= 20) {// 长度小于5,集合再次查询补充
 			likeList.addAll(goodService.getGoodList(null, null, null, null,
@@ -127,12 +127,12 @@ public class MainController {
 		model.addAttribute("imageList", imageList);
 		model.addAttribute("goodList", goodList);
 		
-		System.out.println(">>>>>>>>>"+goodList3.size());
 		model.addAttribute("goodList1", goodList1); 
 		model.addAttribute("goodList2", goodList2); 
 		model.addAttribute("goodList3", goodList3); 
 		model.addAttribute("goodList4", goodList4);
 		model.addAttribute("likeList", likeList); 
+		System.out.println(">>>>>>>>>"+likeList.size());
 		model.addAttribute("name", name);
 		 
 		

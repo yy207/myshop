@@ -35,6 +35,7 @@ function fun_userCode(){
 		return false;
 	}  
 }
+ 
 /**
  * 账号名称
  * 
@@ -182,15 +183,57 @@ function fun_email(){
 	var u=document.getElementById("email");	
 	//表达式
 	var reg = /^\w+@\w+([\.a-zA-Z0-9]{2,3}){1,2}$/;
-	if(reg.test(email)==false){
-		u.setCustomValidity("电子邮箱格式不对")
+	if(email == null || email ==""){
+		$("#emailMsg").html("电子邮箱不能为空！");
+		return  false;
+	}
+	if(reg.test(email)==false){ 
 		$("#emailMsg").html("电子邮箱格式不正确！");
 		return  false;
 	}else{
+		if(email!=''){
+			$.ajax({
+				type:"GET",
+				url:"/MyShop/login/email",
+				data:{"email":email},
+				dataType:"text",
+				success:function(dataresult){
+					if(dataresult=="true"){
+						$("#emailMsg").html("该邮箱可以使用");
+						c=true;
+						return true;
+					}else if(dataresult=="false"){
+						$("#emailMsg").html("该邮箱已被占用,请尝试换一个"); 
+						c = false;
+					}else{
+						$("#emailMsg").html("该邮箱地址输入不合法,请重新输入!");
+						c = false;
+					}  
+				},
+				error:function(dataresult){
+					c = false;
+					alert("后台数据请求错误,请联系管理员解决！");
+				} 
+			});
+			
+			return true;
+		}
 		$("#emailMsg").html("");
 		u.setCustomValidity("")
 		return  true;
 	} 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 } 
 
 /**

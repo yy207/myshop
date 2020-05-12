@@ -67,7 +67,7 @@
 										<option>中国大陆+86</option>
 									</select>
 								</td>
-								<td colspan=""><input type="tel" name="phone" id="phone" value="${address.phone }" /> </td>
+								<td colspan=""><input type="tel" name="phone" id="phone" value="${address.phone }" onblur="tel()"/> </td>
 								<td class="msg" width="300"><span id="phoneMsg">${phoneMsg }</span> </td>
 							</tr> 
 							<tr>

@@ -66,18 +66,18 @@ $(function(){
 
 function tel(){
 	//手机号
-	var pwd=$("#phone").val();
+	var phone=$("#phone").val();
 	//提示
 	var $divPwd=$("#phoneMsg");
 	//表达式		数字1开头	1+10个
 	var reg = /^1{7|3|5}{5|7|6|8|9|1}\d{7}$/;
 	//验证
-	if(pwd == null){
-		$divPwd.html("请输入一个手机号！");
+	if(phone == null || phone == ''){
+		$divPwd.html("* 请输入一个手机号！");
 		return false;
 	}
-	if(reg.test(pwd)==false){
-		$divPwd.html("手机号格式不正确！");
+	if(reg.test(phone)==false||phone.length!=11){
+		$divPwd.html("* 手机号格式不正确！");
 		return false;
 	}
 	$divPwd.html("");

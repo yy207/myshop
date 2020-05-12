@@ -1,4 +1,4 @@
-a{color: #000000; text-decoration: none;}
+			a{color: #000000; text-decoration: none;}
 			a:hover{color: #FF5000;}
 			li{list-style: none;}
 			img , a{vertical-align: middle;}
@@ -8,15 +8,50 @@ a{color: #000000; text-decoration: none;}
 			.white{color: white;}
 			.p1{display: inline-block; padding: 5px;vertical-align: middle; width: 200px;}
 			
-			/*.nav_left{width: 150px;position: fixed; top: 150px ; left: 150px;font-size: 13px;}*/
-			.nav_left{width: 150px; font-size: 13px;position: fixed;  right: 50%; top: 20%; margin-right:450px ;}
+			/*  .nav_left{width: 150px; font-size: 13px;position: fixed;  right: 50%; top: 20%; margin-right:450px ;}
+		  */.nav_left{width: 150px; font-size: 13px;/* ;position: fixed;  right: 50%; top: 20%; margin-right:500px ;*/ margin:20px 0 0 140px ;}
+		  
 			.content{display: none;transition: all 5S ; text-indent: 1em;}	
 			.nav_left_li:hover .content{display: block;}		
-			
+			.m_left a{color: #000000;text-decoration: none;}
+			.m_left a:hover{color: #FF5000;}
+			.m_left{
+				width:150px; overflow:hidden; padding:5px; float:left;
+			}
+			.left_n{
+				height:35px; line-height:35px; overflow:hidden; background:url(../img//m_t.png) no-repeat 5px center; background-color:#ff4e00; color:#FFF; font-size:14px; text-indent:40px; margin-bottom:10px;
+			}
+			.left_m{
+				overflow:hidden; background-color:#FFF; padding-bottom:20px; margin-bottom:10px; -webkit-box-shadow:0 0 5px #e0e0e0; -moz-box-shadow:0 0 5px #e0e0e0; box-shadow:0 0 5px #e0e0e0;
+			}
+			.left_m_t{
+				height:35px; line-height:35px; overflow:hidden; color:#3e3e3e; font-size:14px; text-indent:30px; margin-bottom:10px; border-bottom:1px solid #e2e2e2;
+			}
+			.t_bg1{
+				background:url(../img/m_i_1.png) no-repeat 5px center;
+			}
+			.t_bg2{
+				background:url(../img/m_i_2.png) no-repeat 5px center;
+			}
+			.t_bg3{
+				background:url(../img/m_i_3.png) no-repeat 5px center;
+			}
+			.t_bg4{
+				background:url(../img/m_i_4.png) no-repeat 5px center;
+			}
+			.left_m ul li{
+				height:28px; line-height:28px; overflow:hidden; color:#3e3e3e; text-indent:30px;
+			}
+			.left_m ul li a{
+				color:#3e3e3e;
+			}
+			.left_m ul li a:hover, .left_m ul li a.now{
+				color:#ff4e00;
+			}
 			
 			
 			.logo_img{width: 100px;} 
-			.main{width: 950px;min-height:500px; margin: 0 auto;} 
+			.main{width: 1250px;min-height:500px; margin: 0 auto;} 
 			/*.main *{border: 0px; }*/
 			td span{display: block;text-align: center;}
 			table .th{background: #FF5000; color: #fff;}

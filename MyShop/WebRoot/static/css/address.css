@@ -3,8 +3,8 @@
 			.new_add .table tr td:nth-child(1){text-align: right;}
 			.new_add .table tr td span{display: inline-block;color: red;}
 			
-			.new_add input[type*='text']{display: inline-block;width: 260px;height: 30px;border: 1px #CCCCCC solid; border-radius: 3px;}
-			input[type*='tel']{display: inline-block;height: 30px;border: 1px #CCCCCC solid; border-radius: 3px;}
+			.new_add input[type*='text']{display: inline-block;width: 260px;height: 30px;border: 1px #CCCCCC solid; border-radius: 3px;outline: none;}
+			input[type*='tel']{display: inline-block;height: 30px;border: 1px #CCCCCC solid; border-radius: 3px;outline: none;}
 			
 			
 			.list table tr{display: inline-block;}

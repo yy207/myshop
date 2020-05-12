@@ -9,6 +9,11 @@
 		
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/index.css" />
 		 <link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/likegood.css" />
+		 <style type="text/css">
+		 	.his img{
+		 		width: 120px;height:51px;
+		 	}
+		 </style>
 	</head>
 	<body> 
 	<!-- 引入导航 -->  
@@ -16,7 +21,7 @@
 		  <!-- header -->
 		<div class="header">
 			<div class="list">
-				<div class="head_logo">
+				<div class="head_logo his">
 					<a href=""><img src="${pageContext.request.contextPath }/static/img/logo.jpg" width="120" height="51" /></a>
 				</div>
 				<div class="a"> 

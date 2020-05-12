@@ -19,53 +19,19 @@
 		</div>
 		<!-- header end  -->
 		<!-- nav_left begin -->
-		<div class="nav_left">
-			<h3>全部功能</h3>
-			<ul class="nav_left_ul">
-				<li class="nav_left_li">
-					<div class="li_a">
-						<a href="${pageContext.request.contextPath }/pre/nav/addresspage">收货地址</a> 
-					</div>  
-				</li>
-				<li class="nav_left_li">
-					<div class="li_a">
-						<a href="${pageContext.request.contextPath }/pre/cart/cartpage">我的购物车</a> 
-					</div> 
-				</li>
-				<li class="nav_left_li">
-					<div class="li_a">
-						<a href="${pageContext.request.contextPath }/pre/nav/orderpage#">我的订单</a> 
-					</div> 
-				</li>
-				
-				<!-- <li class="nav_left_li">
-					<div class="li_a">
-						<a href="#">我的积分</a> 
-					</div> 
-				</li> -->
-				<li class="nav_left_li">
-					<div class="li_a"><a href="${pageContext.request.contextPath }/pre/history/historypage" >我的足迹</a>&nbsp;&nbsp;
-					<%-- 	<img src="${pageContext.request.contextPath }/static/img/xia.png" height="5" width="10" /> --%>
-					</div>
-					<!-- <div class="content">
-						<ul>
-							<li><a href="#">我的足迹</a></li>
-							<li><a href="#">我的足迹</a></li>
-						</ul>
-					</div> -->
-				</li> 
-				<li class="nav_left_li">
-					<div class="li_a">
-						<a href="#">我的收藏</a> &nbsp;&nbsp;
-						<img src="${pageContext.request.contextPath }/static/img/xia.png" height="5" width="10" />
-					</div> 
-					<div class="content">
-						<ul>
-							<li><a href="${pageContext.request.contextPath }/pre/love/lovepage/2">收藏店铺</a></li>
-							<li><a href="${pageContext.request.contextPath }/pre/love/lovepage/1">收藏宝贝</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul> 
-		</div> 
+		<div class="nav_left"> 
+			<div class="m_left">
+        	<div class="left_n">管理中心</div>
+            <div class="left_m"> 
+                <ul>
+                	<li><a href="${pageContext.request.contextPath }/pre/nav/accountpage">账户中心</a></li>
+                	<li><a href="${pageContext.request.contextPath }/pre/nav/orderpage#">我的订单</a> </li>
+                    <li><a href="${pageContext.request.contextPath }/pre/nav/addresspage">收货地址</a></li>
+                    <li><a href="${pageContext.request.contextPath }/pre/cart/cartpage">去购物车</a> </li>
+                    <li><a href="${pageContext.request.contextPath }/pre/love/lovepage/2">收藏店铺</a></li> 
+                    <li><a href="${pageContext.request.contextPath }/pre/love/lovepage/1">收藏宝贝</a></li>
+                </ul>
+            </div> 
+        	</div> 
+			</div> 
 		<!-- nav-left end -->

@@ -21,5 +21,14 @@
 			.li_menu_li{line-height: 18px;height: 20px;border-bottom: 1px #ccc solid;}
 			
 			
-			
-			 
+			input{outline: none;}
+			 .tabs {
+				  list-style-type: none;
+				  height: 26px;
+				  margin: 0px;
+				  padding: 0px;
+				  padding-left: 4px;
+				   width: 700px; 
+				  border-style: solid;
+				  border-width: 0 0 1px 0;
+				}

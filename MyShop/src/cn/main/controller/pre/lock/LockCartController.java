@@ -75,28 +75,19 @@ public class LockCartController {
 		return "cart";
 	}
 		
-	//@RequestMapping("addcart")
-//	public String addcart(HttpSession session,
-//			HttpServletRequest request,
-//			@Param(value="sid")Integer sid
-//			,@Param(value="gid")Integer gid) {
-//		User user = (User) session.getAttribute(Contains.SESSION_USER);
-//		Cart cart = new Cart();
-//		cart.setGid(gid);
-//		cart.setUid(user.getId());
-//		cartService.insertCart(cart); 
-//		return "redirect:/pre/goodinfo/"+gid+"/"+sid;
-//	}
 	@RequestMapping("addcart")
 	@ResponseBody
 	public String addcart2(HttpSession session,
 			HttpServletRequest request,
 			@Param(value="sid")Integer sid
-			,@Param(value="gid")Integer gid) {
+			,@Param(value="gid")Integer gid,@Param(value="num")Integer num) {
 		User user = (User) session.getAttribute(Contains.SESSION_USER);
 		Cart cart = new Cart();
 		cart.setGid(gid);
 		cart.setUid(user.getId());
+		cart.setNumber(num);	
+		Double price = goodService.getGoodList(gid, null, null, null, null, null, 4, null, null).get(0).getPrice()*num;
+		cart.setPrice(price);
 		if(cartService.insertCart(cart)>0) {
 			return "true";
 		}else {

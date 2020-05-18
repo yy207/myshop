@@ -36,6 +36,7 @@ import cn.main.service.OrderService;
 import cn.main.service.ShopService;
 import cn.main.service.UserService;
 import cn.main.service.address.AddressService;
+import cn.main.service.cart.CartService;
 import cn.main.utils.AlipayConfig;
 import cn.main.utils.Contains;
 import cn.main.utils.StringUtil;
@@ -57,6 +58,9 @@ public class LockBuyController {
 	
 	@Resource
 	private OrderService orderService;
+	@Resource
+	private CartService cartService;
+	
 	
 	AlipayClient alipayClient = new DefaultAlipayClient(AlipayConfig.URL, // 请求网关
 			AlipayConfig.APPID, // APPID 沙箱测试
@@ -80,6 +84,7 @@ public class LockBuyController {
 	public String buyPage(HttpSession session,
 						HttpServletRequest request,
 						@RequestParam(value="gid")Integer[] gids,
+						@RequestParam(value="cid")Integer[] cids,
 						@RequestParam(value="sid")Integer[] sids,
 						@RequestParam(value="number")Integer[] numbers,
 						@RequestParam(value="price")Double[] prices) {
@@ -87,8 +92,13 @@ public class LockBuyController {
 		User user = (User)session.getAttribute(Contains.SESSION_USER);
 		List<Order> orderList = new ArrayList<Order>();
 		List<Address> addressList = addressService.getAddress(null, user.getId(), null, null);
+		
+		
 		Double totalPrice = 0.0;
 		for (int i = 0; i < gids.length; i++) {
+			if(cids!=null&&cids.length!=0) {
+				cartService.deleteCart(cids[i]);
+			}
 			Integer gid = gids[i];
 			Integer num = numbers[i];
 			Good good = goodService.getGoodList(gid, null, null, null, null, null, null, null, null).get(0);

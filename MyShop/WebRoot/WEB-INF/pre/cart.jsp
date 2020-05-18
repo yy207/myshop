@@ -59,9 +59,9 @@
 								<span style="width: 180px;height: 80px;">
 									<span >${cart.good.name }</span>
 									<span>
-										<img src="${pageContext.request.contextPath }/static/img/T1EQA5FpVgXXceOP_X-16-16.jpg"width="16" height="16" /> 
-										<img src="${pageContext.request.contextPath }/static/img/T1bnR4XEBhXXcQVo..-14-16.png"width="16" height="16" /> 
-										<img src="${pageContext.request.contextPath }/static/img/T1SyeXFpliXXaSQP_X-16-16.png"width="16" height="16" /> 
+										<img src="${pageContext.request.contextPath }/static/img/T1EQA5FpVgXXceOP_X-16-16.jpg" width="16" height="16" /> 
+										<img src="${pageContext.request.contextPath }/static/img/T1bnR4XEBhXXcQVo..-14-16.png" width="16" height="16" /> 
+										<img src="${pageContext.request.contextPath }/static/img/T1SyeXFpliXXaSQP_X-16-16.png" width="16" height="16" /> 
 									</span>
 								</span>
 							</td>
@@ -75,11 +75,11 @@
 							</td>
 							<td class="num" width="130" >
 								<input type="button" value=" - " class="jian" onclick="jian(this)" />
-								<input type="number"  value="1" min="1" class="good_num" name="number" onblur="minValue(this)"/>
+								<input type="number"  value="${cart.number }" min="1" class="good_num" name="number" onblur="minValue(this)"/>
 								<input type="button" value="+" class="add" onclick="add(this)"/>
 							</td>
 							<td class="total" width="130" >
-								$<span id="total" class="total_price">${cart.good.price }</span>										
+								$<span id="total" class="total_price">${cart.price }</span>										
 							</td>
 							<td class="action property" width="130">
 								<span><a href="javascript:addheart(${cart.id });">移入收藏</a> </span>

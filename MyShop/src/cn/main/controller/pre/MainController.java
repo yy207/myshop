@@ -1,9 +1,11 @@
 package cn.main.controller.pre;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.servlet.jsp.PageContext;
 
@@ -63,10 +65,16 @@ public class MainController {
 	private Logger logger = Logger.getLogger(getClass());
 
 	@RequestMapping("index")
-	public String index(Model model,HttpSession session,
+	public String index(HttpServletRequest request,Model model,HttpSession session,
 			@RequestParam(value="cate",required=false)Integer cate,
 			@RequestParam(value="name",required=false)String name, 
 			@RequestParam(value="currentIndex",required=false)Integer currentIndex) {
+		try {
+			request.setCharacterEncoding("UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		Page pages = new Page(8);// 分页 8 条
 		logger.debug(">========cate========" + cate);
 		logger.debug(">========name========" + name);

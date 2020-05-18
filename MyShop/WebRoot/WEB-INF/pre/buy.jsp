@@ -115,7 +115,13 @@
 							</tr>
 							<tr class="info order_info">
 								<td width="300">
-									<span><img src="${pageContext.request.contextPath }/static/img/O1CN017IVk7V1bevFsDb8FQ_!!13493491.jpg_220x220.jpg" width="50" height="50" /> </span>
+									<span><img src="<c:if test="${fn:contains(order.good.picPath,'http:') }">
+													${order.good.picPath }
+												</c:if>
+												<c:if test="${!fn:contains(order.good.picPath,'http:') }">
+													${pageContext.request.contextPath }/static/img/${order.good.picPath }
+												</c:if>"
+												 width="50" height="50" /> </span>
 									<span class="txt">${order.good.name }</span>
 								</td>
 								<td width="150">

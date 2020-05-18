@@ -20,10 +20,11 @@
 		 			} 
 		 			//添加购物车
 					function addCart(gid,sid){
+						var num = $("#num").val();
 						$.ajax({
 							type:"GET",
 							url:"/MyShop/pre/cart/addcart/",
-							data:{"gid":gid,"sid":sid},
+							data:{"gid":gid,"sid":sid,"num":num},
 							dataType:"text",
 							success:function(dataresult){
 								if(dataresult=="true"){

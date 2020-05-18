@@ -15,7 +15,7 @@
 						</div>
 						
 						<div class="button">
-							<input type="submit" name="name" value="搜索" class="button_input" />
+							<input type="submit" name="name_search" value="搜索" class="button_input" />
 						</div>
 					</form> 
 				</div>

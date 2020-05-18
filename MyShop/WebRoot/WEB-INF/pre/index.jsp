@@ -88,6 +88,32 @@
 	      	
 	      </div> 
 		</div>
+		<!--大图开始-->
+		<div class="big_img">
+			<img src="${pageContext.request.contextPath }/static/img/mban_2.jpg" class="big_img" />
+		</div>
+		<!-- 才你想要 -->
+		<div class="hot">
+			<h1 class="hot_title "><img src="${pageContext.request.contextPath }/static/img/h_t.gif" /><span  style="font-size: 20px;" > 猜你想买</span></h1>
+			<ul class="info"> 
+				<c:forEach var="good" items="${likeList}" begin="0" end="5" > 
+					<li class="info_li">
+						<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }" class="info_a">
+							<div class="info_img ">
+								<img src="<c:if test="${fn:contains(good.picPath,'http:') }">${good.picPath }</c:if>
+										  <c:if test="${!fn:contains(good.picPath,'http:') }"><%=request.getContextPath() %>/statics/localimg/${good.picPath }</c:if>" width="170" height="170"/>
+							</div>
+							<div class="info_txt">
+								<h3>${fn:substring(good.name,0,12)}</h3>
+							<p class="p">${fn:substring(good.describe,0,12)}</p>
+							<span class="s20 bold orangle">￥${good.price }</span> <span class="p">卖出${good.buyCount }件</span>
+							</div>
+						</a> 
+					</li> 
+				</c:forEach> 
+				</ul>  
+		</div>
+		
 		<!--中部轮播图结束-->
 		<!--大图开始-->
 		<div class="big_img">
@@ -216,7 +242,7 @@
 		<div class="hot">
 			<h1 class="hot_title "><img src="${pageContext.request.contextPath }/static/img/h_t.gif" /><span  style="font-size: 20px;" > 猜你喜欢</span></h1>
 			<ul class="info"> 
-				<c:forEach var="good" items="${likeList}" begin="0" end="11" > 
+				<c:forEach var="good" items="${likeList}" begin="6" end="11" > 
 					<li class="info_li">
 						<a href="<%=request.getContextPath()%>/pre/goodinfo/${good.id}/${good.shop.id }" class="info_a">
 							<div class="info_img ">

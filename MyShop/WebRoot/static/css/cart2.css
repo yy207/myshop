@@ -30,5 +30,5 @@
 	 		
 	 		table.foot a{color: #000000;text-decoration: none;}
 	 		table.foot a:hover{color: #FF5000;}
-	 		table.foot input.final{display: inline-block;width: 130px;height: 40px;background: #FF5000;border: 1px solid #FF5000;color: #fff;font-size: 20px;font-weight: bolder;}
+	 		table.foot input.final{display: inline-block;width: 130px;height: 40px;background: #FF5000;border: 1px solid #ccc/* #FF5000 */;color: #fff;font-size: 20px;font-weight: bolder;}
 	 		table input[type*='checkbox']{display: inline-block;width: 20px;height: 20px;border: 1px solid #ccc ;background: #fff;}

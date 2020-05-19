@@ -27,15 +27,17 @@
 							$(pNode).css("background","#fff");
 						}
 						var chks = $(".good_chk");
-						var count = 0; 
+						var countN = 0; 
 						for (var i = 0; i < chks.length; i++) {
 							if(chks[i].checked){
-								 count++;
+								countN++;
+								//$("#final_buy").css({"background":"#ff5000","border":" 1px solid #ff5000"});
 							}
 						}
  
-						$("#total_chk").html(count); 
+						$("#total_chk").html(countN); 
 						count();
+						submitDis();
 		 			}  
 		 			//最小值限制
 		 			function minValue(num){
@@ -94,6 +96,7 @@
 							$(this).prop("checked",ch)  
 						}); 
 						count();
+						submitDis();
 					});
 					//设置集合的状态和复选框一致
 					$(".good_chk").click(function(){
@@ -109,6 +112,7 @@
 							return true;
 						});   
 						count();
+						submitDis();
 					});
 					
 										
@@ -214,7 +218,23 @@ $.ajax({
 });
 }			
 					
-					
+function submitDis(){ 
+	var chks = $(".good_chk");
+	var c=0;
+	for (var i = 0; i < chks.length; i++) {
+		if(chks[i].checked){ 
+			c++; 
+			 $("#final_buy").eq(0).disabled =false;
+			$("#final_buy").css({"background":"#ff5000","border":" 1px solid #ff5000"});
+		}
+		if (c==0){
+			 $("#final_buy").eq(0).disabled =true;
+			$("#final_buy").css({"background":"#ccc","border":" 1px solid #ccc"});
+		}
+		
+	}  
+}
+				
 					
 					
 					

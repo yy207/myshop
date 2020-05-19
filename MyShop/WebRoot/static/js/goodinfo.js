@@ -31,7 +31,7 @@
 									alert("添加成功!"); 
 									//location.href="/MyShop/pre/goodinfo/"+gid+"/"+sid;
 								} else{
-									alert("添加失败!");
+									alert("添加失败,请先登录!");
 								}  
 							},
 							error:function(dataresult){
@@ -39,3 +39,6 @@
 							} 
 						});
 					}
+					
+					
+					

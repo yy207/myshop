@@ -224,11 +224,13 @@ function submitDis(){
 	for (var i = 0; i < chks.length; i++) {
 		if(chks[i].checked){ 
 			c++; 
-			 $("#final_buy").eq(0).disabled =false;
+			 //$("#final_buy").eq(0).disabled =false;
+			 document.getElementById("final_buy").disabled = false;
 			$("#final_buy").css({"background":"#ff5000","border":" 1px solid #ff5000"});
 		}
 		if (c==0){
-			 $("#final_buy").eq(0).disabled =true;
+			 //$("#final_buy").eq(0).disabled =true;
+			 document.getElementById("final_buy").disabled = true;
 			$("#final_buy").css({"background":"#ccc","border":" 1px solid #ccc"});
 		}
 	}  

@@ -92,7 +92,8 @@
 		 		 <table border="0" width="1060" style="background: #E9E9E9;"height="40px" class="foot">
 		 			<tr> 
 		 				<td width="130">
-		 					<input type="checkbox" name="" id="all" value="" />
+		 					<input type="checkbox" name="" id="all" value=""
+		 					 />
 		 					<label for="all">全选</label >
 		 				</td>
 		 				<td width="130"><a href="javascript:dels()">删除 </a> </td>
@@ -100,7 +101,7 @@
 		 				<td width="130">已选<span id="total_chk">0</span> 件</td> 
 		 				<td width="180">合计(不含运费):&nbsp;&nbsp;<span class="price total" id="total_price">0</span> </td> 
 		 				<td width="130">
-		 					<input type="submit" id="final_buy" value="结算" class="final"  style="background: #ccc;border: 1px solid #ccc;"/>
+		 					<input type="submit" id="final_buy" value="结算" class="final"   style="background: #ccc;border: 1px solid #ccc;"/>
 		 				</td>
 		 			</tr>  
 		 		</table>

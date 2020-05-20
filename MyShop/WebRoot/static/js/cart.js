@@ -231,7 +231,6 @@ function submitDis(){
 			 $("#final_buy").eq(0).disabled =true;
 			$("#final_buy").css({"background":"#ccc","border":" 1px solid #ccc"});
 		}
-		
 	}  
 }
 				

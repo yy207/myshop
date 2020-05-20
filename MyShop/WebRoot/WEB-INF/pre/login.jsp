@@ -37,6 +37,8 @@
 									<span class="icon"><img src="${pageContext.request.contextPath }/static/img/lock.png" width="38" height="38" /> </span>
 									<input type="password" name="userPassword" id="userPassword" value="" placeholder="请输入密码"/>
 								</div>
+								
+						<p style="color:red; text-align: left;">&nbsp;${error}</p>
 								<div class="submit">
 									<input type="submit" value="登录"/>
 								</div>

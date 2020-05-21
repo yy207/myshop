@@ -24,7 +24,7 @@
 					<c:forEach var="cate" items="${cateList2}" begin="0" end="9">
 						<li class="cate_li">  
 							<img src="<%=request.getContextPath() %>/static/img/${cate.iconClass }" width="10" />
-							<span class="fl"> <a href="${pageContext.request.contextPath }/pre/index?cate=${cate.id}">${cate.name }</a> </span>
+							<span class="fl"> <a href="${pageContext.request.contextPath }/pre/index?cate2=${cate.id}">${cate.name }</a> </span>
 						</li>  
 					</c:forEach>
 				</ul>

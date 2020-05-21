@@ -67,6 +67,7 @@ public class MainController {
 	@RequestMapping("index")
 	public String index(HttpServletRequest request,Model model,HttpSession session,
 			@RequestParam(value="cate",required=false)Integer cate,
+			@RequestParam(value="cate2",required=false)Integer cate2,
 			@RequestParam(value="name",required=false)String name, 
 			@RequestParam(value="currentIndex",required=false)Integer currentIndex) {
 		try {
@@ -75,10 +76,7 @@ public class MainController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Page pages = new Page(8);// 分页 8 条
-		logger.debug(">========cate========" + cate);
-		logger.debug(">========name========" + name);
-		logger.debug(">========currentIndex========" + currentIndex);
+		Page pages = new Page(8);// 分页 8 条 
 		// 前台请求页面信息，包含 标题分类信息 ，
 		// title 获取所有一级分类、二级分类
 		List<Category> cateList1 = categoryService.getCategory(null,null, null, 1);
@@ -93,18 +91,19 @@ public class MainController {
 		List<Good> goodList = goodService.getGoodList(null, null, null, null,null,
 					null, 4, 0, 20);//state 4 已上架
 		
-		
+		boolean f = false;
+		boolean f2 = false;
 		//猜你喜欢
-		List<Good> likeList = goodService.getGoodList(null, null, name, null,null,
+		List<Good> likeList = goodService.getGoodList(null, null, name, cate,cate2,
 				null, 4, 0, 20);//state 4 已上架 
-		if (likeList.size() <= 20) {// 长度小于5,集合再次查询补充
-			likeList.addAll(goodService.getGoodList(null, null, null, null,
-					null, cate, null, 0, 20 - goodList.size()));
-		}
-		if (likeList.size() <= 20) {// 长度小于5,集合再次查询补充
-			likeList.addAll(goodService.getGoodList(null, null, null, null,
-					null, null, null, 0, 20 - goodList.size()));
-		}
+//		if (likeList.size() <= 20) {// 长度小于5,集合再次查询补充
+//			likeList = goodService.getGoodList(null, null, null, cate,
+//					null, null, 4, 0, 20 - goodList.size() );
+//		}
+//		if (likeList.size() <= 20) {// 长度小于5,集合再次查询补充
+//			likeList = goodService.getGoodList(null, null, null, null,
+//					null, null, 4, 0, 20 - goodList.size() );
+//		}
 		
 		
 		//进口生鲜
@@ -140,9 +139,14 @@ public class MainController {
 		model.addAttribute("goodList3", goodList3); 
 		model.addAttribute("goodList4", goodList4);
 		model.addAttribute("likeList", likeList); 
-		System.out.println(">>>>>>>>>"+likeList.size());
 		model.addAttribute("name", name);
-		 
+		logger.debug(">>>>>likeList.size>>>>"+likeList.size());
+		logger.debug(">========cate========" + cate);
+		logger.debug(">========cate2========" + cate2);
+		logger.debug(">========name========" + name);
+		logger.debug(">========currentIndex========" + currentIndex);
+		logger.debug(">========f========" + f);
+		logger.debug(">========f2========" + f2);
 		
 		return "index";
 	}

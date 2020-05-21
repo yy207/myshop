@@ -50,7 +50,7 @@
 																			${pageContext.request.contextPath }/static/img/${cart.good.picPath }
 																		</c:if>" width="58" height="58" /></a></div>
 					                    <div class="name"><a href="<%=request.getContextPath()%>/pre/goodinfo/${cart.good.id}/${cart.good.shop.id }">${cart.good.name }</a></div>
-					                    <div class="price"><font color="#ff4e00">￥${cart.good.price }</font> X1</div>
+					                    <div class="price"><font color="#ff4e00">￥${cart.good.price }</font> X${cart.number }</div>
 					                </li>
 				            	</c:forEach>  
 			            </ul>

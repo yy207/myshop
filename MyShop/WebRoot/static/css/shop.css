@@ -1,0 +1,41 @@
+
+			.tb.active{background: #fff;}
+			.msg{width: 500px;font-size: 10px;margin: 15px;}
+			.msg {display: inline-block; background: #FFFFE5;border: 1px solid #F8C163;padding:  3px ;text-indent:2em; }			
+			img,span{vertical-align: middle;}
+			.table table tr td:nth-of-type(1){text-align: right;padding-right: 10px;}
+			.table table tr td:nth-of-type(1) span{vertical-align: top;}
+			/*.info_tip{ display: block;/*float: left;*/border: 1px solid #f39a00;margin-left: 10px; padding: 2px 10px 2px 6px; background: #ffffe5;margin-top: 2px;}
+		*/
+			input[type*='file'] { display: block;width: 70px;    height: 30px;}
+		
+		form a{color: #0076CB; text-decoration: none; font-size: 9px;}
+		
+			.shop-information { width: 700px; margin-left: 13px; position: relative; }
+			ul, ol ,li{ list-style: none; }  
+			ul, menu, dir { display: block; list-style-type: disc;   -webkit-margin-before: 1em; -webkit-margin-after: 1em;  -webkit-margin-start: 0px; -webkit-margin-end: 0px; -webkit-padding-start: 40px; }
+			.form-info .ml {  width: 100%;  overflow: hidden; }
+			.form-info li { margin: 0 0 8px 0;    padding-top: 6px; } 
+			.form-info .item-name { width: 120px;  margin-right: 10px;  text-align: right; height: 22px; line-height: 22px; float: left;}
+			.form-info .sh-name { float: left;width: 200px;}
+
+			.form-info .text1 { width: 200px; height: 18px; line-height: 18px; }
+			input,textarea{ font: 12px/1.5 tahoma,arial,sans-serif;}			
+			.shop-information .info-muted {  margin-left: 85px; border-color: #ddd; background: #fafafa; }
+			
+			.shop-information .info-tip {  display: block; float: left;  border: 1px solid #f39a00; margin-left: 10px; padding: 2px 10px 2px 6px;background: #ffffe5; margin-top: 2px;}
+			.form-info .item-name em { color: #f00; font-style: normal;}
+			 
+			.form-info .shop-pic {    width: 80px;    height: 80px;    margin-bottom: 10px;    display: block;} 
+			.simulate_upload { left: 25px;  top: 14px; -moz-opacity: 0; filter: alpha(opacity=0); opacity: 0; width: 76px;height: 20px; position: absolute; left: 0;  top: 0; cursor: pointer; }
+			button, input, select, textarea {    font-size: 100%;}
+			 
+			.upload { position: absolute; top: 320px; left: 143px; cursor: pointer; width: 76px; height: 25px; overflow: hidden;}
+			.upload { width: 76px; height: 25px; margin: 10px auto;}
+			.upload .upload-btn em {width: 76px; height: 25px; line-height: 25px; display: block; text-align: center; cursor: pointer;}
+			.upload .upload-btn { display: block; border: 0;  float: left; width: 76px; height: 25px; background: url(//img.alicdn.com/tps/i2/T1tK49XiBDXXXXXXXX-76-110.png) 0 -46px no-repeat;    position: relative; overflow: hidden; cursor: pointer; }
+			.form-info .upload-con { display: block;  width: 100%; overflow: hidden;  margin-left:180px;	}
+			 input, textarea, select, button { text-rendering: auto; color: initial; letter-spacing: normal; word-spacing: normal;  text-transform: none;text-indent: 0px; text-shadow: none; display: inline-block; text-align: start; margin: 0em;  font: 400 13.3333px Arial;} 
+
+
+			

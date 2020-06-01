@@ -13,12 +13,10 @@
 			<a href="${pageContext.request.contextPath }/pre/index"> 
 				<img src="${pageContext.request.contextPath }/static/img/logoen.png" width="100" />
 			</a>
-		</div>
-		
-		<div class="bg" style="position: relative;">
+		</div>  
+		 <div class="bg" style="position: relative;">
 			<div class="img" style="background-image: url(${pageContext.request.contextPath }/static/img/download<%=(int)(Math.random()*10%3+1)%>.jpg);"></div>
-		</div> 
-		
+		</div>  
 		<div class="form-field"> 
 				<div class="right">
 					<div class="login">
@@ -187,18 +185,7 @@
 								}
 						})
 						return false;
-					}
-					
-					
-					
-					
-					
-					
-					
-					
-					
-					
-			
+					} 
 		</script>
 	</body>
 </html>

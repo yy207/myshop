@@ -42,12 +42,12 @@
 	 			<span>让天下没有难做的生意</span>
 	 		</div>
 	 		<div class="btn">
-	 			<a href="" class="c">
-	 				<span>企业店铺入住</span>
+	 			<a href="${pageContext.request.contextPath }/pre/shop/shop" class="c">
+	 				<span>企业店铺入驻</span>
 					<img src="${pageContext.request.contextPath }/static/img/s_r_right.png" width="9" height="14" />
 	 			</a>
-	 			<a href="" class="p">
-	 				<span>个人店铺入住</span>
+	 			<a href="${pageContext.request.contextPath }/pre/shop/shop" class="p">
+	 				<span>个人店铺入驻</span>
 					<img src="${pageContext.request.contextPath }/static/img/sp_right.png" width="9" height="14" />
 	 			</a>
 	 		</div>

@@ -1,0 +1,6 @@
+			*{padding: 0;margin: 0;box-sizing: border-box; border: 1px solid red;outline: none;list-style: none;}
+			.order_code,.order_name,.order_send{display: inline-block;width: 255px;}
+			.order_btn{display: inline-block;}
+			.table *{font-size: 12px;}
+			.order_btn input[type*='submit'] { background: #ff5000; color: #fff; width: 60px; height: 20px; border: 1px solid #FF5000;}
+	

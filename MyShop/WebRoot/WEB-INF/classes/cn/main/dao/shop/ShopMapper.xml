@@ -5,8 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="cn.main.dao.shop.ShopMapper">
 	 <select id="getShopById" resultType="Shop">
 		 SELECT  
-		 	`id`,`uid`,`name`,`describe`,`address`,`picPath`,`liker`,`level`,`type1`
-		 	,`type2`,`type3`,`state`,`createTime`
+		 	*
 		  FROM `shop`  
 		  <trim prefix="where" prefixOverrides="and | or">
 		  	<if test="id!=null">
@@ -30,15 +29,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 </select>
 	 <select id="getShopByName" resultType="Shop">
 	 	SELECT  
-		 	`id`,`uid`,`name`,`describe`,`address`,`picPath`,`liker`,`level`,`type1`
-		 	,`type2`,`type3`,`state`,`createTime`
+		 	*
 		  FROM `shop` where name = #{name}  
 	 </select>
 	 <select id="getShopList" resultType="Shop">
 	 	SELECT  
-		 	s.`id`,s.`uid`,s.`name`,s.`describe`,s.`address`,
-		 	s.`picPath`,s.`liker`,s.`level`,s.`type1`
-		 	,s.`type2`,s.`type3`,s.`state`,s.`createTime`
+		 	s.*
 		  FROM `shop` as s
 		  <trim prefix="where" prefixOverrides="and | or">
 		  		<if test="id != null">
@@ -88,9 +84,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	
 	 	INSERT INTO shop (`uid`,`name`,`describe`,`address`,
 					`picPath`,`liker`,`level`,`type1`,`type2`,
-					`type3`,`state`,`createTime`)
+					`type3`,`state`,`createTime`,shortInfo,city1,city2,city3)
  		VALUES(#{shop.uid},#{shop.name},#{shop.describe},#{shop.address},#{shop.picPath},
- 			0,0,#{shop.type1},#{shop.type2},#{shop.type3},1,#{shop.createTime});
+ 			0,0,#{shop.type1},#{shop.type2},#{shop.type3},1,#{shop.createTime},#{shop.shortInfo},
+ 			#{shop.city1},#{shop.city2*`2	qA},#{shop.city3});
 	 	
 	 </insert>
 	 

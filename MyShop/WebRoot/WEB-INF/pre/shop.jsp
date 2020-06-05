@@ -11,55 +11,13 @@
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/shop.css" />
 	</head>
 	<body> 
-		
-		<div class="bg">
-			<div class="mid">
-				<div class="sale">
-					卖家工作台
-				</div>
-				<div class="info">
-					<div class="img">
-						<img src="${pageContext.request.contextPath }/static/img/b1.png" width="35" height="35" />
-					</div>
-					<div class="name">
-						测试店铺001
-					</div>
-				</div>
-			</div>
-		</div>		
-					
+		<!-- 标题 -->
+		<%@ include file="common/shop_bg.jsp" %> 
 					
 		<div class="sec">
-			<div class="left_sec">
-				<div class="left_title">
-					全部分类
-				</div>
-				<div class="dl">
-					<dl>
-						<dt><a href="">店铺管理</a> </dt>
-						<dd><a href="">基本信息</a> </dd>
-						<dd><a href="">店铺留言</a> </dd>	 
-					</dl>
-				</div>  
-				<div class="dl">
-					<dl>
-						<dt><a href="">商品管理</a> </dt>
-						<dd><a href="">发布宝贝</a> </dd>
-						<dd><a href="">出售中的宝贝</a> </dd>	
-						<dd><a href="">已卖出的宝贝</a> </dd>
-						<dd><a href="">评价管理</a> </dd>
-					</dl>
-				</div>  
-				<div class="dl">
-					<dl>
-						<dt><a href="">订单管理</a> </dt>
-						<dd><a href="">发货</a> </dd> 
-						<dd><a href="">物流查看</a> </dd> 
-						<dd><a href="">已卖出的宝贝</a> </dd>
-						<dd><a href="">评价管理</a> </dd>
-					</dl>
-				</div>  
-			</div>
+			<!-- left -->
+			<%@ include file="common/shop_left.jsp" %>
+			<!-- right -->
 			<div class="right_sec">
 				<div class="right_title">
 					我的位置>我是买家>店铺管理
@@ -70,8 +28,7 @@
 					</div>	
 					<div class="tb">
 						<span>手机店铺</span>
-					</div>
-					
+					</div> 
 				</div> 
 				<h5>基础信息</h5>
 				<div class="table"> 
@@ -91,15 +48,16 @@
 				                    <li class="ml">
 				                        <label class="item-name" for="sh-name"><em>*</em>店铺名称：</label>
 			                            <div class="sh-name">                                           
-			                            	<input type="text" class="text1" id="sh-name" data-valid="{}" name="_fmw.upd._0.t" value="d[s240788090]">
+			                            	<input type="text" class="text1" id="sh-name" name="shopName" value="${sessionUser.shop.name }">
 			                            </div>                   
 			                        </li>
 			                        <li class="ml3">
 			                            <span class="item-name">店铺标志：</span>
 			                            <div class="shop-photo"> 
-			                                <img src="${pageContext.request.contextPath }/static/img/b3.png" alt="店铺标志" class="shop-pic" id="file-img">
+			                                <img src="${pageContext.request.contextPath }/static/img/${sessionUser.shop.picPath}" alt="店铺标志" class="shop-pic" id="file-img">
 			                                <input type="file" class="simulate_upload" name="_fmw.u._0.ph" style="left: 25px; top: 14px;">
 				                            <p class="upload-con">
+				                            	<span>msg${imageMsg }</span>
 				                            	<span class="info-tip img-erro"><i></i>文件格式GIF、JPG、JPEG、PNG文件大小80K以内，建议尺寸80PX*80PX</span>
 				                            </p>
 			                            </div>
@@ -107,7 +65,7 @@
 			                        <li class="ml">
 			                          <label class="item-name" for="sh-intro">店铺简介：</label>
 			                          <div class="sh-category" style="width: 500px;">
-			                                <textarea class="text1" id="sh-intro" name="_fmw.upd._0.k" style="width: 340px;height: 36px;"> 专注互联网IT技术，软件开发，项目设计，质量保证！ </textarea>
+			                                <textarea class="text1" id="sh-intro" name="_fmw.upd._0.k" style="width: 340px;height: 36px;">${sessionUser.shop.shortInfo}</textarea>
 			                              	 <span class="info-tip img-erro" style="margin-left: 130px;"><i></i>店铺简介会加入到店铺索引中！</span>
 			                                <a href="#" target="_blank">详细说明</a>
 			                          </div>
@@ -115,20 +73,44 @@
 			
 			                         <li class="ml">
 			                                <label class="item-name">
-			                                 <em>*</em>经营地址：
+			                                 <em>*</em>经营地址:
 			                                </label>
 			                                <div class="registered-addresss">
 											<div id="J_ContactAddresss" data-isuserselfdefine="">
-											 <select name="contactProvince" class="J_AddressCN" id="city1" data-level="province"><option value="">请选择省/直辖市</option> </select>
-											 <select name="contactCity" class="J_AddressCN" id="city2" data-level="city"><option value="">请选择区/县</option></select>
-											 <select name="contactDistrict" class="J_AddressCN" id="city3" data-level="area"><option value="">请选择区/县</option></select>
+											 <select name="contactProvince" class="J_AddressCN" id="city1" data-level="province">
+											 		<option value="">请选择省/直辖市</option> 
+											 		<c:forEach var="city" items="${cityList1 }">
+											 			<option value="${city.id }"
+											 				
+											 				<c:if test="${sessionUser.shop.city1 == city.id }">selected</c:if>
+											 			>${city.cityName }</option> 
+											 		</c:forEach>
+											 		
+											 </select>
+											 <select name="contactCity" class="J_AddressCN" id="city2" data-level="city">
+											 		<op	tion value="">请选择区/县</option>
+											 		<c:forEach var="city" items="${cityList2 }">
+											 			<option value="${city.id }"
+											 			
+											 				<c:if test="${sessionUser.shop.city2 == city.id }">selected</c:if>
+											 			>${city.cityName }</option> 
+											 		</c:forEach>
+											 </select>
+											 <select name="contactDistrict" class="J_AddressCN" id="city3" data-level="area">
+											 	<option value="">请选择区/县</option>
+											 		<c:forEach var="city" items="${cityList3 }">
+											 			<option value="${city.id }" 
+											 				<c:if test="${sessionUser.shop.city3 == city.id }">selected</c:if>
+											 			>${city.cityName }</option> 
+											 		</c:forEach>
+											 </select>
 											</div>
 										</div>
 			                         </li> 
 									 <li class="ml">
 			                            <label class="item-name"></label>
 										<div id="J_ContactAddresss" data-isuserselfdefine="">
-			                                <input type="text" class="text4" data-valid="{}" name="_fmw.upd._0.ex" value="nullnullnullnullnullnull">
+			                                <input type="text" class="text4" data-valid="{}" name="_fmw.upd._0.ex" value="${sessionUser.shop.address }">
 			                                <span class="info-tip img-erro" style="margin-left: 130px;">
 			                                <i></i>目前不支持设置海外国家、地区、港澳台地区的地址，建议您遵循声明要求填写国内地址。更多问题<a href="#" target="_blank">点此查看</a>
 			                                </span>
@@ -160,7 +142,7 @@
 			                             	<input type="hidden" name="_fmw.upd._0.p" value="464230">                                                                                                                                                                                                                                                                                                                                                                        <li class="ml">
 			                                <label class="item-name"><em>*</em>店铺介绍：</label> 
 			                    	</li>
-			                    <textarea id="TextArea1" cols="15" rows="2" class="ckeditor"></textarea>
+			                    <textarea id="TextArea1" cols="15" rows="2" class="ckeditor">${sessionUser.shop.describe }</textarea>
 			                    <li class="ml2">
 			                            <label id="J_agreement_check" style="background: #FFF3E0;padding: 10;">
 			                                <input type="checkbox" id="J_agreement">
@@ -176,40 +158,31 @@
 			                </ul>
 			
 			            </form>
-			            <div class="upload" style="top: 195px; left: 143px;">
-			                <a href="#" class="upload-btn"> 
-			                    <em>上传图标</em>
-			                    <form target="upload_iframe" enctype="multipart/form-data" method="POST" action="#" id="upload_form" style="cursor:pointer;">
-			                        <input name="_tb_token_" type="hidden" value="ebe8e38875eb7">
-			                        <input type="file" class="simulate_upload" name="_fmw.u._0.ph" style="left: 15px; top: 1px;" accept="image/jpeg,image/png" 		>
-			                        <input type="hidden" name="setType" value="basic">
-			                        <input type="hidden" name="_fmw.u._0.p" value="">
+			            <div class="upload upload-btn" style="top: 195px; left: 143px;">
+			                <a href="javascript:void(0)" class="upload-btn"> 
+			                   <em>上传图标</em>
+			                    <form target="upload_iframe" enctype="multipart/form-data" method="POST" action="${pageContext.request.contextPath }/pre/shop/upload" id="upload_form" style="cursor:pointer;">
+			                        <input name="id" type="hidden" value="${sessionUser.shop.id }">
+			                        <input type="file" <c:if test="${sessionUser.shop != null }">onchange="sub()"</c:if> class="simulate_upload" name="shopImage" style="left: 15px; top: 1px;" accept="image/jpeg,image/png" />
 			                    </form>
-			                </a> 
+			                    <script type="text/javascript">
+			                    	function sub(){
+			                    		document.forms[1].submit();
+			                    	
+			                    	}
+			                    </script>
+			                </a>  
 			            </div>
 			        </div>
-				</div>
-					
-			</div>
-				
-				
-				
-				
-				
-				
-			</div>
-			
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
+				</div> 
+			</div> 
+			</div> 
+		</div> 
 		
 		 <script type="text/javascript" src="${pageContext.request.contextPath }/static/ckeditor/ckeditor.js"></script> 
+		 <script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.12.4.js" ></script>
+		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/city.js" ></script>
+		
 
 		
 		

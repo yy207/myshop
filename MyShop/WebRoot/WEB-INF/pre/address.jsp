@@ -33,14 +33,17 @@
 							<tr>
 								<td width="100"><span>*</span>地址信息:</td>
 								<td colspan="2">
-									<select name="city1" id="city1" required>
-										<option value="">-------</option>
+									<select name="city1" id="city1" required> 
+										<option value="">请选择省/市</option> 
+										<c:forEach var="city" items="${cityList1 }">
+											<option value="${city.id }">${city.cityName }</option> 
+										</c:forEach>
 									</select>
 									<select name="city2" id="city2" required>
-										<option value="">-------</option>
+										<option value="">请选择区/县</option>
 									</select>
 									<select name="city3" id="city3" required>
-										<option value="">-------</option>
+										<option value="">请选择区/县</option>
 									</select>
 								 </td>
 								<td class="msg" width="300"><span></span> </td>

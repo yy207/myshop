@@ -30,6 +30,10 @@ public interface OrderService {
 				@Param(value="orderCode") String orderCode,  
 				@Param(value="state") Integer state );
 		//更新记录  
+		int updateOrderById(  
+				@Param(value="id") Integer id,@Param(value="logidtics") String logidtics, 
+				@Param(value="state") Integer state );
+		//更新记录  
 		int updateOrderAll(@Param(value="order")Order order);
 		
 		//删除记录  

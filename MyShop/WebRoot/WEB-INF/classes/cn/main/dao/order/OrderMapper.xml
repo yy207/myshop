@@ -54,6 +54,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="updateOrder"> 
 		UPDATE 	`order` SET state =#{state} WHERE orderCode = #{orderCode}	 
 	</update>
+	<update id="updateOrderById"> 
+		UPDATE 	`order` SET state =#{state},logidtics =#{logidtics}, WHERE id = #{id}	 
+	</update>
 	<update id="deleteOrder"> 
 		delete from `order` WHERE id = #{id}	 
 	</update>
@@ -70,7 +73,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="order.state!=null">
 				state =#{order.state},
 			</if>
-			
+			<if test="order.logidtics!=null">
+				logidtics =#{order.logidtics},
+			</if>
 		</trim>
 		
 	

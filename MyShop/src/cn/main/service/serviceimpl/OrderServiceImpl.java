@@ -63,6 +63,9 @@ public class OrderServiceImpl implements OrderService {
 		return orderMapper.deleteOrder(id);
 	}
 
-	 
-
+	@Override
+	public int updateOrderById(Integer id, String logidtics, Integer state) {
+		// TODO Auto-generated method stub
+		return orderMapper.updateOrderById(id, logidtics, state);
+	}
 }

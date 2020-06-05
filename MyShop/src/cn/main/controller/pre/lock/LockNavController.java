@@ -9,13 +9,16 @@ import javax.servlet.http.HttpSession;
 
 import org.apache.http.HttpRequest;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import cn.main.pojo.Address;
+import cn.main.pojo.City;
 import cn.main.pojo.Order;
 import cn.main.pojo.User;
 import cn.main.service.OrderService;
 import cn.main.service.address.AddressService;
+import cn.main.service.city.CityService;
 import cn.main.utils.Contains;
 import cn.main.utils.Page;
 
@@ -24,21 +27,26 @@ import cn.main.utils.Page;
 public class LockNavController {
 	@Resource
 	private  OrderService orderService;
-	
+
 	@Resource
 	private  AddressService addressService;
+	@Resource
+	private  CityService cityService;
 	
 	/**
 	 * 请求地址页
 	 * @return
 	 */
 	@RequestMapping("addresspage")
-	public String addressPage(HttpSession session,HttpServletRequest request){
+	public String addressPage(HttpSession session,HttpServletRequest request,Model model){
 		User user  = (User) session.getAttribute(Contains.SESSION_USER);
+
+		List<City> cityList1 = cityService.getCityList(null, null, null, 1); 
+		model.addAttribute("cityList1", cityList1);
 		
 		List<Address> addressList = addressService.getAddress(null, user.getId(), null, null);
-		
 		request.setAttribute("addressList", addressList);
+		
 		return "address";
 	}
 	/**
@@ -65,6 +73,7 @@ public class LockNavController {
 	@RequestMapping("accountpage")
 	public String accountPage(HttpSession session,HttpServletRequest request){
 		User user  = (User) session.getAttribute(Contains.SESSION_USER);
+		
 		return "account";
 	}
 	

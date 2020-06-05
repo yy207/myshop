@@ -22,6 +22,36 @@ public class Shop {
 	private Integer state;//状态
 	private String createTime;//创建时间 
 	
+	private String shortInfo;
+	private Integer city1;//一级分类
+	private Integer city2;//二级分类
+	private Integer city3;//三级分类
+	
+	
+	public Integer getCity1() {
+		return city1;
+	}
+	public void setCity1(Integer city1) {
+		this.city1 = city1;
+	}
+	public Integer getCity2() {
+		return city2;
+	}
+	public void setCity2(Integer city2) {
+		this.city2 = city2;
+	}
+	public Integer getCity3() {
+		return city3;
+	}
+	public void setCity3(Integer city3) {
+		this.city3 = city3;
+	}
+	public String getShortInfo() {
+		return shortInfo;
+	}
+	public void setShortInfo(String shortInfo) {
+		this.shortInfo = shortInfo;
+	}
 	private User user;//外键关联user
 	
 	private List<Good> goods;//商品集合

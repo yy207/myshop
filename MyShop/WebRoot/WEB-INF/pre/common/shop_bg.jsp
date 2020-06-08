@@ -6,10 +6,13 @@
 				</div>
 				<div class="info">
 					<div class="img">
-						<img src="${pageContext.request.contextPath }/static/img/b1.png" width="35" height="35" />
+						<c:if test="${sressionUserr.shop != null }">
+							<img src="${pageContext.request.contextPath }/static/img/${shop.picPath}" width="35" height="35" />
+						</c:if>
+						
 					</div>
 					<div class="name">
-						测试店铺001
+						<c:if test="${sressionUserr.shop != null  }">shop.shopName</c:if>
 					</div>
 				</div>
 			</div>

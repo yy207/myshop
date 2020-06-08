@@ -1,4 +1,4 @@
- var c = false;
+ var c = true;
 /**
  * 账户唯一验证
  * 
@@ -6,7 +6,7 @@
  */
 function fun_userCode(){
 	var code = $("#userCode").val();
-	if(code!=''){
+	if(code!=''){ 
 		$.ajax({
 			type:"GET",
 			url:"/MyShop/login/userCode",

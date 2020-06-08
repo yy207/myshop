@@ -68,7 +68,10 @@
 				<li class="li">
 					<div class="li_menu">
 						<a href="#">网址导航<img src="${pageContext.request.contextPath }/static/img/d_arrow.png" class="img_li" alt="↓" width="10" height="5"/></a>
-					</div>  
+					</div> 
+					<div class="li_menu_li">
+						<a href="${pageContext.request.contextPath }/login/login">后台管理</a> 
+					</div>   
 					<div class="li_menu_li">
 						<a href="${pageContext.request.contextPath }/pre/shop/index">免费开店</a> 
 					</div>   

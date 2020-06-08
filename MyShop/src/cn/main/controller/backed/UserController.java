@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import cn.main.pojo.User;
 import cn.main.service.UserService;
 import cn.main.utils.Contains;
+import cn.main.utils.Md5Util;
 import cn.main.utils.StringUtil;
 
 @Controller
@@ -31,28 +32,33 @@ public class UserController {
 		public String login(HttpServletRequest req){
 			
 			log.debug("===================login"+req.getRemoteUser()+":"+req.getRemoteHost()+":"+req.getRemotePort());
-			return "loginPage";
+			return "jsp/loginPage";
 		}
 		//登录
 		@RequestMapping(value="dologin",method=RequestMethod.POST)
 		public String doLogin(@RequestParam String userCode,@RequestParam String userPassword,
-								HttpServletRequest request,HttpSession session){
+								HttpServletRequest request,HttpSession session)  {
 			log.debug("===================dologin");
 			log.debug(userCode);
 			log.debug(userPassword); 
 			User user = service.getUserByUserCode(userCode);
 			if(null != user){
-				if(user.getUserPassword().equals(userPassword)){ 
-					session.setAttribute(Contains.SESSION_USER, user);
-					service.updateUserLastLoginTime(user.getId(),Contains.getDate(), 1);
-					return "redirect:/user/main";
-				}else{
-					request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERPWD);
+				try {
+					if(user.getUserPassword().equals(Md5Util.MD5(userPassword))){ 
+						session.setAttribute(Contains.SESSION_USER, user);
+						service.updateUserLastLoginTime(user.getId(),Contains.getDate(), 1);
+						return "redirect:/user/main";
+					}else{
+						request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERPWD);
+					}
+				} catch (Exception e) {
+					request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERCODE);
+					return "jsp/loginPage";
 				} 
 			}else{
 				request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERCODE);
 			} 
-			return "loginPage";
+			return "jsp/loginPage";
 		}
 		/**
 		 * 前台的ajax验证

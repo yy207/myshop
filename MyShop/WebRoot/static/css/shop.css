@@ -5,7 +5,7 @@
 			img,span{vertical-align: middle;}
 			.table table tr td:nth-of-type(1){text-align: right;padding-right: 10px;}
 			.table table tr td:nth-of-type(1) span{vertical-align: top;}
-			/*.info_tip{ display: block;/*float: left;*/border: 1px solid #f39a00;margin-left: 10px; padding: 2px 10px 2px 6px; background: #ffffe5;margin-top: 2px;}
+			/*float: left;*//*.info_tip{ display: block;border: 1px solid #f39a00;margin-left: 10px; padding: 2px 10px 2px 6px; background: #ffffe5;margin-top: 2px;}
 		*/
 			input[type*='file'] { display: block;width: 70px;    height: 30px;}
 		
@@ -36,6 +36,20 @@
 			.upload .upload-btn { display: block; border: 0;  float: left; width: 76px; height: 25px; background: url(//img.alicdn.com/tps/i2/T1tK49XiBDXXXXXXXX-76-110.png) 0 -46px no-repeat;    position: relative; overflow: hidden; cursor: pointer; }
 			.form-info .upload-con { display: block;  width: 100%; overflow: hidden;  margin-left:180px;	}
 			 input, textarea, select, button { text-rendering: auto; color: initial; letter-spacing: normal; word-spacing: normal;  text-transform: none;text-indent: 0px; text-shadow: none; display: inline-block; text-align: start; margin: 0em;  font: 400 13.3333px Arial;} 
-
-
+			
+			.btn{display: inline-block;width: 60px ;height: 25px;padding: 3px 8px;background-color: #ddd;color: #333;border: 0px;}
+			.btnOk{background:#ff5000;color: #fff; border: 1px solid #FF5000;}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			

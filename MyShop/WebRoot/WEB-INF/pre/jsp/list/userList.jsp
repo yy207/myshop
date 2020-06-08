@@ -116,7 +116,7 @@
 										<ul class="dropdown-menu" role="menu" style="min-width:110px;">
 											<li><a href="#">查看详细信息</a>
 											</li>
-											<li><a href="#">修改用户信息</a>
+											<li><a href="${pageContext.request.contextPath }/user/update?id=${u.id}">修改用户信息</a>
 											</li>
 											<li><a href="#">删除用户</a>
 											</li>

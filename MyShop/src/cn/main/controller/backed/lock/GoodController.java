@@ -53,7 +53,7 @@ public class GoodController {
 		if(goodList.size()<=0){
 			model.addAttribute("msg", "当前条件下暂无记录！");
 		}
-		return "list/goodList";
+		return "jsp/list/goodList";
 	}
 	
 	

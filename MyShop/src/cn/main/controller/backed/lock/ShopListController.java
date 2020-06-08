@@ -64,7 +64,7 @@ public class ShopListController {
 		if(shopList.size()<=0){
 			model.addAttribute("msg", "褰撳墠鏉′欢涓嬫殏鏃犺褰曪紒");
 		}
-		return "list/shopList";
+		return "jsp/list/shopList";
 	}
 	
 	@RequestMapping(value="/add",method = RequestMethod.POST)
@@ -103,7 +103,7 @@ public class ShopListController {
 		model.addAttribute("cate1", cList1);
 		model.addAttribute("cate2", cList2);
 		model.addAttribute("cate3", cList3); 
-		return "add/shopadd";
+		return "jsp/add/shopadd";
 	}
 	/**
 	 * ajax瀹炵幇鍒嗙被涓夌骇鑱斿姩

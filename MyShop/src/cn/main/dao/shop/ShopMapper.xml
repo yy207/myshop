@@ -87,7 +87,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 					`type3`,`state`,`createTime`,shortInfo,city1,city2,city3)
  		VALUES(#{shop.uid},#{shop.name},#{shop.describe},#{shop.address},#{shop.picPath},
  			0,0,#{shop.type1},#{shop.type2},#{shop.type3},1,#{shop.createTime},#{shop.shortInfo},
- 			#{shop.city1},#{shop.city2*`2	qA},#{shop.city3});
+ 			#{shop.city1},#{shop.city2},#{shop.city3});
 	 	
 	 </insert>
 	 

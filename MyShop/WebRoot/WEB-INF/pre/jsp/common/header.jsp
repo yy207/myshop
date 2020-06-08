@@ -7,8 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
+<meta name="viewport" content="width=device-width,initial-scale=1"> 
 
 <title>欢迎登录:${sessionUser.userName }</title>
 <%@ include file="css.jsp"%>
@@ -18,8 +17,8 @@
 		<div class="main_container">
 			<div class="col-md-3 left_col menu_fixed">
 				<div class="left_col scroll-view">
-					<div class="navbar nav_title" style="border: 0;">
-						<a href="index.html" class="site_title"><i class="fa fa-paw"></i>
+					<div class="navbar nav_title" style="border: 0px ;">
+						<a href="javascript:void(0);" class="site_title"><i class="fa fa-paw"></i>
 							<span> My Shop </span>
 						</a>
 					</div>
@@ -52,9 +51,9 @@
 										class="fa fa-chevron-down"></span>
 								</a>
 									<ul class="nav child_menu">
-										<li><a href="../user/userlist">用户查询</a>
+										<li><a href="${pageContext.request.contextPath }/user/userlist">用户查询</a>
 										</li>
-										<li><a href="../user/add">新用户注册</a>
+										<li><a href="${pageContext.request.contextPath }/user/add">新用户注册</a>
 										</li>
 									</ul></li>
 								<li><a><i class="fa fa-edit"></i> 商店管理 <span
@@ -120,7 +119,7 @@
 						<a href="${pageContext.request.contextPath }/user/loginout" data-toggle="tooltip"
 							data-placement="top" title="Logout"> <span
 							class="glyphicon glyphicon-off" aria-hidden="true"></span> </a> 
-						<a href="${pageContext.request.contextPath }/main/index"> <span
+						<a href="${pageContext.request.contextPath }/user/main"> <span
 							class="glyphicon glyphicon-home" aria-hidden="true"></span> </a>
 
 					</div>

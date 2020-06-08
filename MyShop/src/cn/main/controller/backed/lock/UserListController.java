@@ -88,7 +88,7 @@ public class UserListController {
 		model.addAttribute("dataList", dataList);
 		model.addAttribute("userList", list);
 
-		return "list/userList";
+		return "jsp/list/userList";
 	}
 
 	// ajax加载用户角色
@@ -124,11 +124,22 @@ public class UserListController {
 		List<DataDictionary> dataList = dataService.getDataDictionaryList(
 				"userRole", null);
 		model.addAttribute("dataList", dataList);
-		return "add/useradd";
+		return "jsp/add/useradd";
 	}
-
+	@RequestMapping(value = "update", method = RequestMethod.GET)
+	public String update(@RequestParam(value = "id", required = true) Integer id,Model  model) {
+		User user = service.getUserByUserId(id);
+				
+				// load userRole
+		List<DataDictionary> dataList = dataService.getDataDictionaryList("userRole", null);
+		model.addAttribute("user", user);
+		model.addAttribute("dataList", dataList);
+		model.addAttribute("action", "保存");
+		return "jsp/add/useradd";
+	}
 	@RequestMapping(value = "registe", method = RequestMethod.POST)
 	public String registe(
+			String action,
 			User user,
 			Model model,
 			HttpSession session,
@@ -143,68 +154,83 @@ public class UserListController {
 		log.debug("======================getPhone" + user.getPhone());
 		log.debug(user.getUserPassword());
 		log.debug(file.getName() + "" + file.getOriginalFilename() + " ");
-		int i;
-		try {
-			i = new SimpleDateFormat("yyyy-mm-dd").parse(user.getBirthday())
-					.compareTo(new Date());
-			log.debug(i);
-			if (i > 0) {
-				request.setAttribute("birthday", "出生日期输入时间错误");
-				return "add/useradd";
-			}
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			request.setAttribute("birthday", "出生日期输入格式错误");
-			return "add/useradd";
-		}
-		log.warn("================================upload file");
-		if (!file.isEmpty()) {// 上传文件不为空
+		//注册
+		if("add".equals(action)) {
+			int i;
 			try {
-				String name = file.getOriginalFilename();
-				String type = FilenameUtils.getExtension(name);// 文件类型
-				int k = 500000;
-				if (!Contains.IMG_TYPE.contains(type)) {
-					request.setAttribute("file",
-							"文件类型错误,文件类型后缀只能为(jpg;jpeg;png;)");
-					model.addAttribute(user);
+				i = new SimpleDateFormat("yyyy-mm-dd").parse(user.getBirthday())
+						.compareTo(new Date());
+				log.debug(i);
+				if (i > 0) {
+					request.setAttribute("birthday", "出生日期输入时间错误");
 					return "add/useradd";
 				}
-				if (file.getSize() > k) {
-					request.setAttribute("file", "文件大小超过限制（500KB）");
-					model.addAttribute(user);
-					return "add/useradd";
-				}
-				String path = request.getSession().getServletContext()
-						.getRealPath("statics" + File.separator + "images");
-				log.debug(path);
-
-				File f = new File(path, user.getUserCode() + "." + type);
-				if (!f.exists()) {
-					f.mkdirs();
-				}
-				file.transferTo(f);
-				user.setUserPic(user.getUserCode() + "." + type);
-			} catch (Exception e) {
-				request.setAttribute("file", "文件上传失败");
-				model.addAttribute(user);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				request.setAttribute("birthday", "出生日期输入格式错误");
 				return "add/useradd";
 			}
-		} else if (file.isEmpty()) {
-			user.setUserPic("default.jpg");
-		}
+			log.warn("================================upload file");
+			if (!file.isEmpty()) {// 上传文件不为空
+				try {
+					String name = file.getOriginalFilename();
+					String type = FilenameUtils.getExtension(name);// 文件类型
+					int k = 500000;
+					if (!Contains.IMG_TYPE.contains(type)) {
+						request.setAttribute("file",
+								"文件类型错误,文件类型后缀只能为(jpg;jpeg;png;)");
+						model.addAttribute(user);
+						return "add/useradd";
+					}
+					if (file.getSize() > k) {
+						request.setAttribute("file", "文件大小超过限制（500KB）");
+						model.addAttribute(user);
+						return "jsp/add/useradd";
+					}
+					String path = request.getSession().getServletContext()
+							.getRealPath("statics" + File.separator + "images");
+					log.debug(path);
 
-		user.setCreateTime(Contains.getDate());// new
-												// SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new
-												// Date()).toString()
-		user.setCreateBy(((User) session.getAttribute(Contains.SESSION_USER))
-				.getId());
+					File f = new File(path, user.getUserCode() + "." + type);
+					if (!f.exists()) {
+						f.mkdirs();
+					}
+					file.transferTo(f);
+					user.setUserPic(user.getUserCode() + "." + type);
+				} catch (Exception e) {
+					request.setAttribute("file", "文件上传失败");
+					model.addAttribute(user);
+					return "jsp/add/useradd";
+				}
+			} else if (file.isEmpty()) {
+				user.setUserPic("default.jpg");
+			}
 
-		if (service.addUser(user)) {
-			return "redirect:/list/userlist";
-		} else {
-			model.addAttribute(user);
-			return "add/useradd";
+			user.setCreateTime(Contains.getDate());// new
+													// SimpleDateFormat("yyyy-MM-dd hh:mm:ss").format(new
+													// Date()).toString()
+			user.setCreateBy(((User) session.getAttribute(Contains.SESSION_USER))
+					.getId());
+
+			if (service.addUser(user)) {
+				return "redirect:/list/userlist";
+			} else {
+				model.addAttribute(user);
+				return "jsp/add/useradd";
+			}
+		}else {
+			
+			
+			if (service.upateUserInfo(user.getId(), user.getUserName(), user.getEmail(), user.getPhone(), user.getUserPassword(), null)>0) {
+				return "jsp/add/useradd";
+			} else {
+				model.addAttribute(user);
+				return "jsp/add/useradd";
+			}
+			
+			
 		}
+		
 	}
 
 	// 登出
@@ -222,7 +248,7 @@ public class UserListController {
 	@RequestMapping(value = "main", method = RequestMethod.GET)
 	public String main() {
 
-		return "index";
+		return "jsp/index";
 	}
 
 }

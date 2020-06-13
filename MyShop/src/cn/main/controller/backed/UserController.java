@@ -44,12 +44,16 @@ public class UserController {
 			User user = service.getUserByUserCode(userCode);
 			if(null != user){
 				try {
-					if(user.getUserPassword().equals(Md5Util.MD5(userPassword))){ 
+					if(user.getUserPassword().equals(Md5Util.MD5(userPassword))&& user.getUserRole()==1){ 
 						session.setAttribute(Contains.SESSION_USER, user);
 						service.updateUserLastLoginTime(user.getId(),Contains.getDate(), 1);
 						return "redirect:/user/main";
 					}else{
-						request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERPWD);
+						if(user.getUserRole()!=1) {
+							request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERROLE);
+						}else {
+							request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERPWD);
+						} 
 					}
 				} catch (Exception e) {
 					request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERCODE);

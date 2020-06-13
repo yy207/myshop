@@ -91,6 +91,37 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	 	
 	 </insert>
 	 
-	 
-	 
+	 <delete id="deleteById">
+	 	delete from `shop` where id = #{id}
+	 </delete>
+	 <update id="modifyByShop" parameterType="Shop">
+	 	update shop 
+	 	<trim prefix="SET" suffixOverrides="," suffix="where id = #{shop.id}">
+	 		<if test="shop.name != null ">
+	 			`name` = #{shop.name},
+	 		</if> 
+	 		<if test="shop.picPath != null ">
+	 			picPath = #{shop.picPath},
+	 		</if> 
+	 		<if test="shop.address != null ">
+	 			address = #{shop.address},
+	 		</if> 
+	 		<if test="shop.describe != null ">
+	 			`describe` = #{shop.describe},
+	 		</if> 
+	 		<if test="shop.shortInfo != null ">
+	 			shortInfo = #{shop.shortInfo},
+	 		</if> 
+	 		<if test="shop.city2 != null ">
+	 			city2 = #{shop.city2},
+	 		</if>
+	 		<if test="shop.city1 != null ">
+	 			city1 = #{shop.city1},
+	 		</if>
+	 		<if test="shop.city3 != null ">
+	 			city3 = #{shop.city3}
+	 		</if>  
+	 	</trim>
+	 	
+	 </update>
 </mapper>

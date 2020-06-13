@@ -11,8 +11,10 @@ function dis(){
 	if(chk.prop("checked")==true){
 		$(".btn").addClass("btnOk");
 		$(".btn").prop("disabled",false)
+	}else{
+		$(".btn").removeClass("btnOk");
+		$(".btn").prop("disabled",true)
 	}
-	
 }
 
 function fun_name(){

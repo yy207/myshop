@@ -1,6 +1,7 @@
 package cn.main.controller.pre.lock;
 
 import java.io.File;
+import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -12,6 +13,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -103,11 +105,12 @@ public class LockShopController {
 	
 	//发货  
 	@RequestMapping("update") 
-	public String update(@Param("id")Integer id,@Param("logidtics") String logidtics) {
+	@ResponseBody
+	public boolean update(@Param("id")Integer id,@Param("logidtics") String logidtics) {
 		 logger.debug(">>>>>>>>>>>>>>>>>>>id"+id);
 		 logger.debug(">>>>>>>>>>>>>>>>>>>order"+logidtics);
-		 orderService.updateOrderById(id, logidtics,2);
-		 return "redirect:/pre/shop/sendshop"; 
+		 orderService.updateOrderById(id, logidtics,2); 
+		 return true;
 	}
 	/**
 	 *  修改商店信息   
@@ -177,16 +180,30 @@ public class LockShopController {
 	
 		//店铺注册 
 		@RequestMapping("regist") 
-		public String regist(HttpSession session,@Param("id")Integer id,@Param("shop") Shop shop,Model model) {
-			User user = (User) session.getAttribute(Contains.SESSION_USER);
-			shop.setUid(  user.getId());
-			shop.setCreateTime(Contains.SHORT_DATE_FORMAT_24); 
+		public String regist(HttpServletRequest request,HttpSession session,@Param("id")Integer id,@Param("shop") Shop shop,Model model,@Param("btn")String btn) {
 			
-			if(shopService.addByShop(shop)>0) {
-				return "redirect:/pre/shop/shop";
+			//String describe = request.getParameter("describeMsg");
+			//logger.debug(">>>>>>>>>>>>> describe =="+describe);
+			//shop.setDescribe(describe);
+			if("注册".equals(btn)) {
+				User user = (User) session.getAttribute(Contains.SESSION_USER);
+				shop.setUid(  user.getId());
+				shop.setCreateTime(Contains.SHORT_DATE_FORMAT_24); 
+				
+				if(shopService.addByShop(shop)>0) {
+					return "redirect:/pre/shop/shop";
+				}else {
+					model.addAttribute("msg", "注册失败！请检查输入输入的信息是否正确");
+					return "shop";
+				} 
 			}else {
-				model.addAttribute("msg", "注册失败！请检查输入输入的信息是否正确");
-				return "shop";
+				if(shopService.modifyByShop(shop)>0) {
+					model.addAttribute("msg", "true");
+					return "redirect:/pre/shop/shop";
+				}else {
+					model.addAttribute("msg", "false");
+					return "redirect:/pre/shop/shop";
+				} 
 			} 
 		}
 	

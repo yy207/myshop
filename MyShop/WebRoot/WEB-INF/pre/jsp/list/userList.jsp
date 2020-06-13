@@ -108,17 +108,17 @@
 								<td class="a-right">${u.createTime }</td>
 								<td>
 									<div class="btn-group">
-										<button type="button" class="btn btn-dark">操作</button>
+										<button type="button" class="btn btn-dark" data-toggle="dropdown">操作</button>
 										<button type="button" class="btn btn-dark dropdown-toggle"
 											data-toggle="dropdown" aria-expanded="false">
 											<span class="caret"></span>
 										</button>
 										<ul class="dropdown-menu" role="menu" style="min-width:110px;">
-											<li><a href="#">查看详细信息</a>
+											<li><a href="${pageContext.request.contextPath }/user/update?id=${u.id}">查看详细信息</a>
 											</li>
 											<li><a href="${pageContext.request.contextPath }/user/update?id=${u.id}">修改用户信息</a>
 											</li>
-											<li><a href="#">删除用户</a>
+											<li><a href="javascript:del_user(${u.id});">删除用户</a>
 											</li>
 										</ul>
 									</div></td>
@@ -170,9 +170,7 @@
 						<!-- <button class="btn btn-dark  paginate_button "><a href="#"
 								aria-controls="datatable-responsive" data-dt-idx="1"
 								tabindex="0">1</a>
-							</button> -->
-
-
+							</button> --> 
 					</ul>
 				</div>
 			</div>
@@ -182,3 +180,29 @@
 </div>
 </div>
 <%@ include file="../common/footer.jsp"%>
+<script>
+	function del_user(uid){
+		var o = confirm("确定要删除该用户吗？这将会清除该用户的所有信息！");
+		if(o){
+			$.ajax({
+				type:"GET",
+				url:"del?id="+uid,
+				data:null,
+				success:function(result){
+					if(result=="true"){
+						alert("删除成功！");
+						location.reload();
+					}else{
+						alert("删除失败");
+					} 
+				},
+				error:function(dataresult){
+					alert("后台数据请求错误,请联系管理员解决！");
+				} 
+		
+			});
+		}
+		
+	}
+
+</script>

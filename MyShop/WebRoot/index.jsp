@@ -9,10 +9,8 @@
 <title>index</title> 
 </head> 
 <body> 
-       
  <h2>  <a href="<%=request.getContextPath()%>/main/index">前台</a> </h2> 
  <h2>  <a href="<%=request.getContextPath()%>/login/login">后台</a> </h2> 
-            
 </body> 
 </html>
 

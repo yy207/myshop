@@ -1,4 +1,4 @@
- var c = false;
+ var c = true;
 /**
  * 账户唯一验证
  * 
@@ -229,7 +229,30 @@ function fun_register(){
 	} 
 	return r;
 }
-
+function fun_update(){
+	var r = true;
+	if(!c){ 
+		r=false;
+	} 
+	if(!fun_userName()){
+		r=false;
+	}
+	if(!fun_userPassword()){
+		r=false;
+	}  
+	if(!fun_reUserPassword()){
+		r=false;		
+	}   
+	if(!fun_phone()){
+		r=false;
+	}
+	if($("#email").val()!=''){
+		if(!fun_email()){ 
+			r=false;
+		}
+	} 
+	return r;
+}
 
 
 /**

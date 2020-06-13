@@ -21,6 +21,7 @@ public class Contains {
 	public static final String SESSION_USER = "sessionUser";//当前会话用户信息
 	public static final String USER_LOGIN_ERROR_USERCODE=" * 用户名不存在！";
 	public static final String USER_LOGIN_ERROR_USERPWD=" * 密码错误！"; 
+	public static final String USER_LOGIN_ERROR_USERROLE=" * 权限不足！"; 
 	public static final String LOGN_DATE_FORMAT_24 = "yyyy-MM-dd HH:mm:ss";
 	public static final String SHORT_DATE_FORMAT_24 = "yyyy-MM-dd";
 	public static final List<String> IMG_TYPE  =new ArrayList<String>(){{add("jpg");add("gif");add("png");add("jpeg");}};

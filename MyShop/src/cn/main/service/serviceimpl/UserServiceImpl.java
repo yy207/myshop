@@ -65,6 +65,11 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		return mapper.getUserByUserId(Id);
 	}
+	@Override
+	public int deleteUser(int id) {
+		// TODO Auto-generated method stub
+		return mapper.deleteUser(id);
+	}
 
 	
 	

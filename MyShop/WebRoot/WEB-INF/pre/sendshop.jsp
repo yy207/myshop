@@ -60,7 +60,7 @@
 										 	<c:forEach var="order" items="${orderList2 }" varStatus="i">
 										 	<li> 
 										 		<div class="order" style=""> 
-										 			<form action="${pageContext.request.contextPath }/pre/shop/update" method="get">
+										 			<form action="#" method="get">
 										 				
 										 				<div class="order_code">
 										 					<span class="no">${i.index }</span>
@@ -71,10 +71,10 @@
 											 				${fn:substring(order.createTime,0,19)}
 											 			</div>
 											 			<div class="order_send">
-											 				<input type="text" name="logidtics" id="logidtics" pattern="\d{16,20}" required value="" placeholder="请输入物流单号"/>
+											 				<input type="text" name="logidtics" pattern="\d{16,20}" required value="" placeholder="请输入物流单号"/>
 											 			</div>
 											 			<div class="order_btn">
-											 				<input type="submit" name="" id="" value="确认发货" />
+											 				<input type="button" name="send" id="" onclick="sendShop(${order.id},this)" value="确认发货" />
 											 			</div>
 										 			</form>
 										 		</div> 
@@ -133,27 +133,40 @@
 			        </div>
 				</div>
 					
-			</div>
+			</div> 
 				
-				
-				
-				
-				
-				
-			</div>
-			
-			
-			
-		</div>
-		
-		
-		
-		
-		
-		
-		
+			</div> 
+		</div> 
 		 <script type="text/javascript" src="${pageContext.request.contextPath }/static/ckeditor/ckeditor.js"></script> 
-
+		<script type="text/javascript">
+			function sendShop(oid,btn){
+					 
+					var input =btn.parentNode.previousElementSibling.firstElementChild;
+					//var  logidtics = input.getAttribute("value");
+					var  logidtics = input.value;
+					alert(logidtics);
+					if(logidtics != null&& logidtics != ''){
+						$.ajax({
+						type:"GET",
+						url:"/MyShop/pre/shop/update?id="+oid+"&logidtics="+logidtics,
+						data:null,
+						dataType:"text",
+						success:function(dataresult){
+							if(dataresult=="true"){
+								alert("操作成功！");
+								location.reload();
+							}else{
+								alert("操作失败！");
+							}  
+						},
+						error:function(dataresult){
+							alert("后台数据请求错误,请联系管理员解决！");
+						} 
+					});
+					} 
+					
+			}
+		</script>
 		
 		
 		

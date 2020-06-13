@@ -48,5 +48,5 @@ public interface UserService {
 								@Param(value="phone")String phone,
 								@Param(value="userPassword")String userPassword,
 								@Param(value="userPic")String userPic);
-	
+	public int deleteUser(@Param(value="id")int id);
 }

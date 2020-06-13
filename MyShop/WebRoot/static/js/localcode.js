@@ -1,4 +1,4 @@
- var c = true;
+ var c = false;
 /**
  * 账户唯一验证
  * 

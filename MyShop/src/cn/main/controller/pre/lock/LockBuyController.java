@@ -92,7 +92,7 @@ public class LockBuyController {
 		User user = (User)session.getAttribute(Contains.SESSION_USER);
 		List<Order> orderList = new ArrayList<Order>();
 		List<Address> addressList = addressService.getAddress(null, user.getId(), null, null);
-		
+		logger.debug("???????????cids"+cids.length);
 		
 		Double totalPrice = 0.0;
 		for (int i = 0; i < gids.length; i++) {

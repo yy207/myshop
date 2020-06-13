@@ -80,13 +80,12 @@
     <!-- 配置interceptors -->
 	  <mvc:interceptors>
 	  	<!-- backed拦截 -->
-		<!-- <mvc:interceptor>
+		<mvc:interceptor>
 			<mvc:mapping path="/user/**"/> 
 			<mvc:mapping path="/shop/**"/> 
-			<mvc:mapping path="/good/**"/> 
-			<mvc:mapping path="/pay/**"/> 支付操作 
+			<mvc:mapping path="/good/**"/>  
 			<bean class="cn.main.interceptors.interceptor"/>
-		</mvc:interceptor>  -->
+		</mvc:interceptor>  
 		<!-- pre拦截 -->
 		<mvc:interceptor>
 			 <mvc:mapping path="/pre/nav/**"/>

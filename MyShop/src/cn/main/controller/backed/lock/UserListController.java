@@ -25,10 +25,16 @@ import org.springframework.web.multipart.MultipartFile;
 import com.alibaba.fastjson.JSON;
 
 import cn.main.controller.backed.UserController;
+import cn.main.pojo.Address;
 import cn.main.pojo.DataDictionary;
+import cn.main.pojo.Order;
+import cn.main.pojo.Shop;
 import cn.main.pojo.User;
 import cn.main.service.DataDictionaryService;
+import cn.main.service.OrderService;
+import cn.main.service.ShopService;
 import cn.main.service.UserService;
+import cn.main.service.address.AddressService;
 import cn.main.utils.Contains;
 import cn.main.utils.Page;
 import cn.main.utils.StringUtil;
@@ -42,7 +48,13 @@ public class UserListController {
 	private UserService service;
 	@Resource
 	private DataDictionaryService dataService;
-
+	@Resource
+	private ShopService shopService;
+	@Resource
+	private AddressService addressService;
+	@Resource
+	private OrderService orderService;
+	
 	// 用户列表
 	@RequestMapping(value = "/userlist")
 	public String userList(
@@ -126,6 +138,35 @@ public class UserListController {
 		model.addAttribute("dataList", dataList);
 		return "jsp/add/useradd";
 	}
+	/**
+	 * 删除
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping(value = "del", method = RequestMethod.GET)
+	@ResponseBody
+	public boolean del(Model model,Integer id) {
+		//店铺清除
+		Shop shop = shopService.getShopById(null, id, null);
+		if(shop!=null) {
+			shopService.deleteById(shop.getId());
+		}
+		//删除订单
+		List<Order> order = orderService.getOrderList(null, id, null, null, null, null, null, null, null, null, null, null, null, null) ;
+		for (Order order2 : order) {
+			orderService.deleteOrder(order2.getId());
+		}
+		//
+		List<Address> address = addressService.getAddress(null, id, null, null); 
+		for (Address address2 : address) {
+			addressService.deleteAddress(address2.getId(), id);
+		} 
+		if(service.deleteUser(id)>0) {
+			return true;
+		}else {
+			return false;
+		}
+	} 
 	@RequestMapping(value = "update", method = RequestMethod.GET)
 	public String update(@RequestParam(value = "id", required = true) Integer id,Model  model) {
 		User user = service.getUserByUserId(id);
@@ -213,19 +254,18 @@ public class UserListController {
 					.getId());
 
 			if (service.addUser(user)) {
-				return "redirect:/list/userlist";
+				return "redirect:/user/userlist";
 			} else {
 				model.addAttribute(user);
 				return "jsp/add/useradd";
 			}
-		}else {
-			
+		}else { 
 			
 			if (service.upateUserInfo(user.getId(), user.getUserName(), user.getEmail(), user.getPhone(), user.getUserPassword(), null)>0) {
-				return "jsp/add/useradd";
+				return "redirect:/user/userlist";
 			} else {
 				model.addAttribute(user);
-				return "jsp/add/useradd";
+				return "redirect:/user/update?id="+user.getId();
 			}
 			
 			

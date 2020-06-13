@@ -28,7 +28,7 @@
 					<div class="profile">
 						<div class="profile_pic">
 							<img
-								src="${pageContext.request.contextPath }/statics/images/${sessionUser.userPic}"
+								src="${pageContext.request.contextPath }/static/img/${sessionUser.userPic}"
 								alt="..." class="img-circle profile_img">
 						</div>
 						<div class="profile_info">

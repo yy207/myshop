@@ -22,8 +22,8 @@
 				<div class="dl">
 					<dl>
 						<dt><a href=" 
-							<c:if test="${sressionUserr.shop != null  }"></c:if>
-							<c:if test="${sressionUserr.shop == null  }">javascript:emp();</c:if>
+							<c:if test="${sessionUser.shop != null  }">${pageContext.request.contextPath }/pre/shop/sendshop</c:if>
+							<c:if test="${sessionUser.shop == null  }">javascript:emp();</c:if>
 						">订单管理</a> </dt>
 						<dd><a href="">发货</a> </dd> 
 						<dd><a href="">物流查看</a> </dd> 

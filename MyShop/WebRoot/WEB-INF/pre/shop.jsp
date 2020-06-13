@@ -10,7 +10,7 @@
 		 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/static/css/leftcommon.css"/>
 		<link rel="stylesheet" href="${pageContext.request.contextPath }/static/css/shop.css" />
 	</head>
-	<body> 
+	<body onload="param()"> 
 		<!-- 标题 -->
 		<%@ include file="common/shop_bg.jsp" %> 
 					
@@ -48,6 +48,7 @@
 				                    <li class="ml">
 				                        <label class="item-name" for="sh-name"><em>*</em>店铺名称：</label>
 			                            <div class="sh-name">                                           
+			                            	<input type="hidden" name="id" value="${shop.id }">
 			                            	<input type="text" class="text1" id="name" name="name" value="${shop.name }" required onblur="fun_name()"><span id="nameMsg"></span>
 			                            </div>                   
 			                        </li>
@@ -60,7 +61,7 @@
 			                                alt="店铺标志" class="shop-pic" id="file-img">
 			                                <input type="file" class="simulate_upload" name="_fmw.u._0.ph" style="left: 25px; top: 14px;">
 				                            <p class="upload-con">
-				                            	<span style="">msg${imageMsg }</span>
+				                            	<span style="color:red;">${msg}${imageMsg }</span>
 				                            	<span class="info-tip img-erro"><i></i>文件格式GIF、JPG、JPEG、PNG文件大小80K以内，建议尺寸80PX*80PX</span>
 				                            </p>
 			                            </div>
@@ -116,14 +117,12 @@
 			                                <i></i>目前不支持设置海外国家、地区、港澳台地区的地址，建议您遵循声明要求填写国内地址。更多问题<a href="#" target="_blank">点此查看</a>
 			                                </span>
 			                            </div> 
-			                        </li>
-									 
-									 
+			                        </li> 
 			                        <li class="ml">
 			                            <span class="item-name"><em>*</em>主要货源：</span>
 			                            <div class="source-item"> 
 			                                <p>
-			                                    <input type="radio" name="mainSource" id="off-line" value="1" checked="true"><label for="off-line">线下批发市场</label>
+			                                    <input type="radio" name="mainSource" id="off-line" value="1" checked="true" /><label for="off-line">线下批发市场</label>
 			                                    <input type="radio" name="mainSource" id="store" value="5"><label for="store">实体店拿货</label>
 			                                    <input type="radio" name="mainSource" id="alibaba" value="3"><label for="alibaba">阿里巴巴批发</label>
 			                                    <input type="radio" name="mainSource" id="distribution" value="4"><label for="distribution">分销/代销</label>
@@ -138,12 +137,13 @@
 			                            </div>
 			                        </li>
 			
-			                     <li class="ml"> 
-
-			                             	<input type="hidden" name="_fmw.upd._0.p" value="464230">                                                                                                                                                                                                                                                                                                                                                                        <li class="ml">
-			                                <label class="item-name"><em>*</em>店铺介绍：</label> 
-			                    	</li>
-			                    <textarea id="TextArea1" name="describe" cols="15" rows="2" class="ckeditor">${shop.describe }</textarea>
+			                     <li class="ml">                                                                                                                                                                                                                                                                                                                       <li class="ml">
+			                          <label class="item-name"><em>*</em>店铺介绍：</label> 
+			                     </li>
+			                   	<p>
+								 <textarea id="describeMsg" name="describeMsg" cols="15" rows="2" class="ckeditor">${shop.describe }</textarea>
+			                   
+								</p>
 			                    <li class="ml2">
 			                            <label id="J_agreement_check" style="background: #FFF3E0;padding: 10;">
 			                                <input type="checkbox" id="J_agreement" onchange="dis()">
@@ -153,8 +153,8 @@
 										
 			                    <li class="ml2">
 			                        <div id="J_saveAction">
-			                            <span class="btn" style="display: inline-block;padding: 3px 8px;background-color: #ddd;color: #333">${btn }</span> 
-			                             <button class="btn" disabled>${btn }</button> 
+			                            <%-- <span class="btn" style="display: inline-block;padding: 3px 8px;background-color: #ddd;color: #333">${btn }</span>  --%>
+			                             <button class="btn" disabled name="btn" value="${btn }">${btn }</button> 
 			                        </div>
 			                    </li>
 			                </ul>
@@ -165,7 +165,8 @@
 			                   <em>上传图标</em>
 			                    <form target="upload_iframe" enctype="multipart/form-data" method="POST" action="${pageContext.request.contextPath }/pre/shop/upload" id="upload_form" style="cursor:pointer;">
 			                        <input name="id" type="hidden" value="${shop.id }">
-			                        <input type="file" <c:if test="${sessionUser.shop != null }">onchange="sub()"</c:if> class="simulate_upload" name="shopImage" style="left: 15px; top: 1px;" accept="image/jpeg,image/png" />
+			                        <input type="file" <c:if test="${sessionUser.shop != null }">onchange="sub()"</c:if> 
+			                        	class="simulate_upload" name="shopImage" style="left: 15px; top: 1px;" accept="image/jpeg,image/png" />
 			                    </form>
 			                    <script type="text/javascript">
 			                    	
@@ -182,7 +183,72 @@
 		 <script type="text/javascript" src="${pageContext.request.contextPath }/static/js/jquery-1.12.4.js" ></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/city.js" ></script>
 		<script type="text/javascript" src="${pageContext.request.contextPath }/static/js/shop.js" ></script>
-		
+		<script type="text/javascript">
+			function param(){
+				var str = location.href;  
+				var arr = getAllUrlParams(str);
+				
+				if(arr["msg"]!=undefined){
+					if(arr["msg"]=="true"){
+					alert("修改成功!");
+				}else{
+					alert("修改失败！");
+				}
+				}
+			} 
+			function getAllUrlParams(url) { 
+			 
+			  var queryString = url ? url.split('?')[1] : window.location.search.slice(1); 
+			  // 我们把参数保存在这里 
+			  var obj = {}; 
+			  // 如果查询字符串存在 
+			  if (queryString) { 
+			    // 查询字符串不包含#后面的部分，因此去掉它 
+			    queryString = queryString.split('#')[0];  
+			    // 把查询字符串分割成各部分 
+			    var arr = queryString.split('&');  
+			    for (var i=0; i<arr.length; i++) { 
+			      // 分离出key和value 
+			      var a = arr[i].split('=');   
+			      // 设置参数值（如果为空则设置为true） 
+			      console.log(a);
+						       // 考虑到这样的参数：list[]=thing1&list[]=thing2
+			      var paramNum = undefined;
+			      var paramName = a[0].replace(/\[\d*\]/, function(v) {
+			        paramNum = v.slice(1,-1);
+			        return '';
+			      });
+			      var paramValue = typeof(a[1])==='undefined' ? true : a[1]; 
+			      // （可选）保持大小写一致 
+			      paramName = paramName.toLowerCase(); 
+			      paramValue = paramValue.toLowerCase();
+			      // 如果参数名已经存在 
+			      if (obj[paramName]) { 
+			        // 将值转成数组（如果还是字符串） 
+			        if (typeof obj[paramName] === 'string') { 
+			          obj[paramName] = [obj[paramName]]; 
+			        }
+			        // 如果没有指定数组索引
+			        if (typeof paramNum === 'undefined') {
+			          // 将值放到数组的末尾
+			          obj[paramName].push(paramValue);
+			        }
+			        // 如果指定了数组索引
+			        else {
+			          // 将值放在索引位置
+			          obj[paramName][paramNum] = paramValue;
+			        }
+			      }
+			      // 如果参数名不存在则设置它
+			      else {
+			        obj[paramName] = paramValue;
+			      }
+			    }
+			  }
+			  return obj;
+			}
+						
+		</script>
 
 		
 		

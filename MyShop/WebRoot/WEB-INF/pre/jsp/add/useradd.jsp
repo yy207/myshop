@@ -10,7 +10,10 @@
 		<div class="clearfix"></div>
 	</div>
 	<form id="register" name="register" action="registe" method="post"
-		enctype="multipart/form-data" onsubmit="return fun_register()"
+		enctype="multipart/form-data" 
+		<c:if test="${action==null }">onsubmit="return fun_register()"</c:if>
+		<c:if test="${action!=null }">onsubmit="return fun_update()"</c:if>
+		
 		class="form-horizontal form-label-left">
 		<c:if test="${action==null }">
 		<div class="form-group">
@@ -160,18 +163,17 @@
 					class="form-control col-md-7 col-xs-12" value="${user.email }">
 			</div>
 			<span id="emailMsg"></span>
-		</div>
-
-		<div class="form-group">
-			<label for="userImage"
-				class="control-label col-md-3 col-sm-3 col-xs-12">上传头像</label>
-			<div class="col-md-6 col-sm-6 col-xs-12">
-				<input type="file" id="userImage" name="userImage"
-					class=" col-md-7 col-xs-12">
-			</div>
-			<span id="imageMsg">${file }</span>
-		</div>
-		<div class="ln_solid"></div>
+		</div>  
+			<div class="form-group">
+				<label for="userImage"	class="control-label col-md-3 col-sm-3 col-xs-12">上传头像</label>
+				<div class="col-md-6 col-sm-6 col-xs-12">
+					<input type="file" id="userImage" name="userImage"
+						class=" col-md-7 col-xs-12">
+				</div>
+				<span id="imageMsg">${file }</span>
+			</div> 
+			<div class="ln_solid"></div> 
+		
 		<div class="form-group">
 			<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3"> 
 				<c:if test="${action==null }">
@@ -181,7 +183,7 @@
 				</c:if> 
 				<c:if test="${action!=null }">
 					<button type="submit" class="btn btn-success">保存</button>
-					<input type="hidden" name="action" value="update">${action}
+					<input type="hidden" name="action" value="update"><%-- ${action} --%>
 				</c:if>
 				<!-- onclick="this.form.onsubmit()" -->
 			</div>

@@ -109,7 +109,7 @@ public class LockShopController {
 	public boolean update(@Param("id")Integer id,@Param("logidtics") String logidtics) {
 		 logger.debug(">>>>>>>>>>>>>>>>>>>id"+id);
 		 logger.debug(">>>>>>>>>>>>>>>>>>>order"+logidtics);
-		 orderService.updateOrderById(id, logidtics,2); 
+		 orderService.updateOrderById(id, logidtics,3); 
 		 return true;
 	}
 	/**

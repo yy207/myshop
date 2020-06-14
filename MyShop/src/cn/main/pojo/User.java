@@ -1,4 +1,11 @@
-package cn.main.pojo; 
+package cn.main.pojo;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import cn.main.utils.AgeUtils;
+
 /**
  * 用户实体类
  * @author sff
@@ -66,7 +73,8 @@ public class User {
 	private int age;
 	
 	
-	 public int getAge() { 
+	 public int getAge() {  
+		 age = AgeUtils.getAgeFromBirthTime(birthday);
 		return  age;
 	}
 	public void setAge(int age) {

@@ -36,6 +36,7 @@ import cn.main.service.ShopService;
 import cn.main.service.UserService;
 import cn.main.service.address.AddressService;
 import cn.main.utils.Contains;
+import cn.main.utils.Md5Util;
 import cn.main.utils.Page;
 import cn.main.utils.StringUtil;
 
@@ -99,7 +100,6 @@ public class UserListController {
 		model.addAttribute("pages", page);
 		model.addAttribute("dataList", dataList);
 		model.addAttribute("userList", list);
-
 		return "jsp/list/userList";
 	}
 
@@ -185,12 +185,12 @@ public class UserListController {
 			Model model,
 			HttpSession session,
 			HttpServletRequest request,
-			@RequestParam(value = "userImage", required = false) MultipartFile file) {
+			@RequestParam(value = "userImage", required = false) MultipartFile file) throws Exception {
 		log.debug("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		log.debug(user.getBirthday());
 		log.debug(user.getUserCode());
 		log.debug(user.getUserName());
-		log.debug(user.getUserPassword());
+		log.debug(Md5Util.MD5(user.getUserPassword()));
 		log.debug(user.getRealName());
 		log.debug("======================getPhone" + user.getPhone());
 		log.debug(user.getUserPassword());
@@ -261,7 +261,7 @@ public class UserListController {
 			}
 		}else { 
 			
-			if (service.upateUserInfo(user.getId(), user.getUserName(), user.getEmail(), user.getPhone(), user.getUserPassword(), null)>0) {
+			if (service.upateUserInfo(user.getId(), user.getUserName(), user.getEmail(), user.getPhone(), user.getUserPassword(), null,user.getSex())>0) {
 				return "redirect:/user/userlist";
 			} else {
 				model.addAttribute(user);

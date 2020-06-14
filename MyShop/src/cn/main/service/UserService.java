@@ -47,6 +47,7 @@ public interface UserService {
 								@Param(value="email")String email,
 								@Param(value="phone")String phone,
 								@Param(value="userPassword")String userPassword,
-								@Param(value="userPic")String userPic);
+								@Param(value="userPic")String userPic,
+								@Param(value="sex")String sex);
 	public int deleteUser(@Param(value="id")int id);
 }

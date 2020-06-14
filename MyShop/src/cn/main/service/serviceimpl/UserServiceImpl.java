@@ -56,9 +56,9 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
-	public int upateUserInfo(int id, String userName, String email, String phone, String userPassword, String userPic) {
+	public int upateUserInfo(int id, String userName, String email, String phone, String userPassword, String userPic,String sex) {
 		// TODO Auto-generated method stub
-		return mapper.upateUserInfo(id, userName, email, phone, userPassword, userPic);
+		return mapper.upateUserInfo(id, userName, email, phone, userPassword, userPic,sex);
 	}
 	@Override
 	public User getUserByUserId(Integer Id) {

@@ -46,8 +46,8 @@
 							<h3 style="display:block;" id="time">NOW:</h3>
 							<ul class="nav side-menu">
 								<!-- 管理员账户的权限操作功能======================================= 1 -->
-								<c:if test="${sessionUser.userRole == 1 }"></c:if>
-								<li><a><i class="fa fa-home"></i> 用户管理 <span
+								<c:if test="${sessionUser.userRole == 1 }">
+									<li><a><i class="fa fa-home"></i> 用户管理 <span
 										class="fa fa-chevron-down"></span>
 								</a>
 									<ul class="nav child_menu">
@@ -79,16 +79,21 @@
 										<li><a href="general_elements.html">订单查询</a>
 										</li>
 									</ul></li>
-								<li><a><i class="fa fa-desktop"></i>审核管理<span
-										class="fa fa-chevron-down"></span>
-								</a>
-									<ul class="nav child_menu">
-										<li><a href="tables.html">审核记录</a>
-										</li>
-										<li><a href="tables_dynamic.html">待审核信息</a>
-										</li>
-									</ul></li>
-								<li><a><i class="fa fa-bar-chart-o"></i> 代办信息 <span
+								</c:if>
+								<c:if test="${sessionUser.userRole <= 1 }">
+									<li><a><i class="fa fa-desktop"></i>审核管理<span
+											class="fa fa-chevron-down"></span>
+									</a>
+										<ul class="nav child_menu">
+											<li><a href="tables.html">审核记录</a>
+											</li>
+											<li><a href="tables_dynamic.html">待审核信息</a>
+											</li>
+										</ul></li>
+								</c:if>
+								
+								
+								<!-- <li><a><i class="fa fa-bar-chart-o"></i> 代办信息 <span
 										class="fa fa-chevron-down"></span>
 								</a>
 									<ul class="nav child_menu">
@@ -108,7 +113,7 @@
 												<li><a href="#level2_1">Level Two</a></li>
 												<li><a href="#level2_2">Level Two</a></li>
 											</ul></li>
-									</ul></li>
+									</ul></li> -->
 							</ul>
 						</div>
 					</div>
@@ -144,7 +149,7 @@
 									alt="">${sessionUser.userName } <span
 									class=" fa fa-angle-down"></span> </a>
 								<ul class="dropdown-menu dropdown-usermenu pull-right">
-									<li><a href="${pageContext.request.contextPath }/main/index"> Go Shopping</a></li>
+									<li><a href="${pageContext.request.contextPath }"> Go Shopping</a></li>
 									<li><a href="javascript:;"> <span
 											class="badge bg-red pull-right">50%</span> <span>Settings</span>
 									</a></li>

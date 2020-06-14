@@ -191,6 +191,7 @@
 				if(arr["msg"]!=undefined){
 					if(arr["msg"]=="true"){
 					alert("修改成功!");
+					location.href="http://localhost:8080/MyShop/pre/shop/shop#";
 				}else{
 					alert("修改失败！");
 				}

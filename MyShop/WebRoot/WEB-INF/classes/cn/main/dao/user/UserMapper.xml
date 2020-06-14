@@ -158,6 +158,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			<if test="userPic != null and userPic !=''">
 				`userPic`=#{userPic},
 			</if>
+			<if test="sex != null and sex !=''">
+				`sex`=#{sex}
+			</if>
 		</trim> 	
 	</update>
 	

@@ -1,4 +1,4 @@
-<%@ page language="java"  pageEncoding="UTF-8"%>
+ <%@ page language="java"  pageEncoding="UTF-8"%>
 <%@ include file="../common/header.jsp"%>
 <style type="text/css">
 		span[id$='Msg']{color:red;}
@@ -9,12 +9,13 @@
 		<h2>新用户注册</h2>
 		<div class="clearfix"></div>
 	</div>
-	<form id="register" name="register" action="registe" method="post"
-		enctype="multipart/form-data" 
-		<c:if test="${action==null }">onsubmit="return fun_register()"</c:if>
-		<c:if test="${action!=null }">onsubmit="return fun_update()"</c:if>
-		
+	<form id="register" name="register" action="registe" method="post" enctype="multipart/form-data" 
+			<c:if test="${action==null }">onsubmit="return fun_register()"</c:if>
+			<c:if test="${action!=null }">onsubmit="return fun_update()"</c:if>
 		class="form-horizontal form-label-left">
+		<c:if test="${action!=null }">
+			<input type="hidden" name="id" value="${user.id }"/> 
+		</c:if>
 		<c:if test="${action==null }">
 		<div class="form-group">
 			<label for="userCode"
@@ -113,10 +114,12 @@
 			<label class="control-label col-md-3 col-sm-3 col-xs-12">性别</label>
 			<div class="col-md-6 col-sm-6 col-xs-12">
 				<div id="sex" class="btn-group" data-toggle="buttons">
-					<label class="btn btn-default active"> <input id="male"
-						type="radio" name="sex" value="男"  <c:if test="${action!=null }">readonly</c:if>> 男 </label> <label
-						class="btn  btn-default"> <input id="female" type="radio"
-						name="sex" value="女" <c:if test="${action!=null }">readonly</c:if>> 女 </label>
+					<label class="btn btn-default <c:if test="${user.sex eq '男'  }">active</c:if>"> 
+					    <input id="male" type="radio" name="sex" value="男" 
+					     <c:if test="${action!=null }">readonly</c:if>> 男 </label> 
+					<label class="btn  btn-default <c:if test="${user.sex eq '女' }">active</c:if>"> 
+					    <input id="female" type="radio"	name="sex" value="女"  
+					    <c:if test="${action!=null }">readonly</c:if>> 女 </label>
 				</div>
 			</div>
 		</div>

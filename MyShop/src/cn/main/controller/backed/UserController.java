@@ -49,7 +49,7 @@ public class UserController {
 						service.updateUserLastLoginTime(user.getId(),Contains.getDate(), 1);
 						return "redirect:/user/main";
 					}else{
-						if(user.getUserRole()!=1) {
+						if(user.getUserRole()>1) {
 							request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERROLE);
 						}else {
 							request.setAttribute(Contains.ERROR, Contains.USER_LOGIN_ERROR_USERPWD);

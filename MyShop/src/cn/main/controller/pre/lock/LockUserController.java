@@ -37,7 +37,7 @@ public class LockUserController {
 			@RequestParam(required=true,value="userName")String userName) {
 		User user = (User) session.getAttribute(Contains.SESSION_USER);//获取当前用户
 		if(userName!=null && userName.length()>0) {
-			if(userService.upateUserInfo(user.getId(), userName , null, null, null, null)==0) {
+			if(userService.upateUserInfo(user.getId(), userName , null, null, null, null,null)==0) {
 				request.setAttribute("userNameMsg", "* 昵称修改失败!");
 			}else {
 				session.setAttribute(Contains.SESSION_USER, userService.getUserByUserCode(user.getUserCode()));
@@ -52,7 +52,7 @@ public class LockUserController {
 			@RequestParam(required=true,value="userPassword")String userPassword) throws Exception {
 		User user = (User) session.getAttribute(Contains.SESSION_USER);//获取当前用户
 		if(userPassword!=null && userPassword.length()>0) {
-			if(userService.upateUserInfo(user.getId(), null, null, null, Md5Util.MD5(userPassword), null)==0) {
+			if(userService.upateUserInfo(user.getId(), null, null, null, Md5Util.MD5(userPassword), null,null)==0) {
 				request.setAttribute("userPasswordMsg", "* 密码修改失败!");
 			}else {
 				session.setAttribute(Contains.SESSION_USER, userService.getUserByUserCode(user.getUserCode()));
@@ -67,7 +67,7 @@ public class LockUserController {
 			@RequestParam(required=true,value="email")String email) {
 		User user = (User) session.getAttribute(Contains.SESSION_USER);//获取当前用户
 		if(email!=null && email.length()>0) {
-			if(userService.upateUserInfo(user.getId(), null, email, null, null, null)==0) {
+			if(userService.upateUserInfo(user.getId(), null, email, null, null, null,null)==0) {
 				request.setAttribute("emailMsg", "* 邮箱修改失败!");
 			}else {
 				session.setAttribute(Contains.SESSION_USER, userService.getUserByUserCode(user.getUserCode()));
@@ -82,7 +82,7 @@ public class LockUserController {
 			@RequestParam(required=true,value="phone")String phone) {
 		User user = (User) session.getAttribute(Contains.SESSION_USER);//获取当前用户
 		if(phone!=null && phone.length()>0) {
-			if(userService.upateUserInfo(user.getId(), null, null, phone, null, null)==0) {
+			if(userService.upateUserInfo(user.getId(), null, null, phone, null, null,null)==0) {
 				request.setAttribute("phoneMsg", "* 手机号码修改失败!");
 			}else {
 				session.setAttribute(Contains.SESSION_USER, userService.getUserByUserCode(user.getUserCode()));
@@ -119,7 +119,7 @@ public class LockUserController {
 				}
 				file.transferTo(f);
 				user.setUserPic(user.getUserCode() + "." + type);
-				if(userService.upateUserInfo(user.getId(), null, null, null, null,user.getUserPic())==0) {
+				if(userService.upateUserInfo(user.getId(), null, null, null, null,user.getUserPic(),null)==0) {
 					request.setAttribute("imageMsg", "* 用户头像修改失败!");
 				}
 				

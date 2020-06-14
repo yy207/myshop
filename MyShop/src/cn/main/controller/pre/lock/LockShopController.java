@@ -112,6 +112,15 @@ public class LockShopController {
 		 orderService.updateOrderById(id, logidtics,3); 
 		 return true;
 	}
+	//收货  
+		@RequestMapping("receipt") 
+		@ResponseBody
+		public boolean receipt(@Param("id")Integer id,@Param("logidtics") String logidtics) {
+			 logger.debug(">>>>>>>>>>>>>>>>>>>id"+id);
+			 logger.debug(">>>>>>>>>>>>>>>>>>>order"+logidtics);
+			 orderService.updateOrderById(id, logidtics,4); 
+			 return true;
+		}
 	/**
 	 *  修改商店信息   
 	 * @param id

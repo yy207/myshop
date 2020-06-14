@@ -65,7 +65,7 @@
 												<span><a href="">取消订单</a> </span>
 										</c:if>
 										<c:if test="${order.state ==3 }"> 
-												<span><a href="#">确认收货</a> </span> 
+												<span><a href="javascript:sendShop(${order.id },${order.logidtics });">确认收货</a> </span> 
 												<span><a href="">联系退货</a> </span>
 										</c:if>
 										<c:if test="${order.state ==4 }"> 
@@ -197,7 +197,7 @@
 												<span><a href="">订单详情</a> </span>	
 											</td>
 											<td width="90px">
-												<span><a href="#">确认收货</a> </span> 
+												<span><a href="javascript:sendShop(${order.id },${order.logidtics });">确认收货</a> </span> 
 												<span><a href="">联系退货</a> </span>
 												</td>
 										</tr> 
@@ -252,5 +252,30 @@
 		</div>
 		<!-- footer -->
 		<%@ include file="common/btm.jsp" %>
+		<script type="text/javascript">
+			function sendShop(oid,logidtics){ 
+				 
+					if(oid!=null){
+						$.ajax({
+						type:"GET",
+						url:"/MyShop/pre/shop/receipt?id="+oid+"&logidtics="+logidtics,
+						data:null,
+						dataType:"text",
+						success:function(dataresult){
+							if(dataresult=="true"){
+								alert("操作成功！");
+								location.reload();
+							}else{
+								alert("操作失败！");
+							}  
+						},
+						error:function(dataresult){
+							alert("后台数据请求错误,请联系管理员解决！");
+						} 
+					});
+					} 
+					
+			}
+		</script>
 	</body>
 </html>

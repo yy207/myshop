@@ -84,7 +84,7 @@ public class LockBuyController {
 	public String buyPage(HttpSession session,
 						HttpServletRequest request,
 						@RequestParam(value="gid")Integer[] gids,
-						@RequestParam(value="cid")Integer[] cids,
+						@RequestParam(value="cid",required=false)Integer[] cids,
 						@RequestParam(value="sid")Integer[] sids,
 						@RequestParam(value="number")Integer[] numbers,
 						@RequestParam(value="price")Double[] prices) {

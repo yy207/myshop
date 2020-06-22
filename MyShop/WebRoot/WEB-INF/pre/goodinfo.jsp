@@ -148,6 +148,7 @@
 							<td  colspan="2" style="text-align: center;">
 								<input type="hidden" name="gid" value="${good.id }"/>
 								<input type="hidden" name="sid" value="${shop.id }"> 
+								<input type="hidden" name="cid" value="${shop.id }"> 
 								<input type="hidden" name="price" value="${good.price }"/> 
 								<input type="submit" value="立即购买" style="width: 180px; height: 45px; font-size: 18px;color: #ffffff; background: #FFAB3F;" />
 							</td>

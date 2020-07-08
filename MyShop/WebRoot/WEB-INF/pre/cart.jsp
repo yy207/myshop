@@ -71,7 +71,7 @@
 								<span>颜色:蓝色 </span> -->
 							</td>
 							<td class="price" width="130">
-								$<span id="price" class="single_price">${cart.good.price }</span>
+								￥<span id="price" class="single_price">${cart.good.price }</span>
 							</td>
 							<td class="num" width="130" >
 								<input type="button" value=" - " class="jian" onclick="jian(this)" />
@@ -79,7 +79,7 @@
 								<input type="button" value="+" class="add" onclick="add(this)"/>
 							</td>
 							<td class="total" width="130" >
-								$<span id="total" class="total_price">${cart.price }</span>										
+								￥<span id="total" class="total_price">${cart.price }</span>										
 							</td>
 							<td class="action property" width="130">
 								<span><a href="javascript:addheart(${cart.id });">移入收藏</a> </span>

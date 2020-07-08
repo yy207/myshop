@@ -129,7 +129,7 @@
 									<span class="property">颜色：黑色</span>
 								</td>
 								<td width="100">
-									 $<span class="property singlePrice single_price" style="display:inline;" id="singlePrice">${order.good.price }</span>								
+									 ￥<span class="property singlePrice single_price" style="display:inline;" id="singlePrice">${order.good.price }</span>								
 								</td>
 								<td width="100" class="num">
 									<input type="button" value=" - " class="jian" onclick="jian(this)" />

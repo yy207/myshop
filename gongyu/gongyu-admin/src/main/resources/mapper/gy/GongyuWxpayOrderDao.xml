@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.gongyu.modules.gy.dao.GongyuWxpayOrderDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.gongyu.modules.gy.entity.GongyuWxpayOrderEntity" id="gongyuWxpayOrderMap">
+        <result property="id" column="id"/>
+        <result property="transactionId" column="transaction_id"/>
+        <result property="totalFee" column="total_fee"/>
+        <result property="outTradeNo" column="out_trade_no"/>
+        <result property="resultCode" column="result_code"/>
+        <result property="payType" column="pay_type"/>
+        <result property="userId" column="user_id"/>
+        <result property="mobile" column="mobile"/>
+        <result property="timeEnd" column="time_end"/>
+    </resultMap>
+
+
+</mapper>

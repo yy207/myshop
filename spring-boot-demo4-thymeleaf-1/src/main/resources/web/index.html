@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	hello !---------------------
+	<p>${name}</p>
+	
+<span th:text="${name}"></span>
+	
+	<span th:each="li : ${list}">
+		${li}
+		<span th:text="${li}"></span>
+	</span>
+	
+</body>
+</html>

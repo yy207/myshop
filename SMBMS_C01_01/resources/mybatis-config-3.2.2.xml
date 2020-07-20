@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 引入DTDwenjian  -->
+<!-- 节点的位子有顺序   -->
+<configuration>
+	<!-- 引入配置文件的目录  -->
+	<properties resource="database.properties"/>
+	<settings>
+		<setting name="logImpl" value="LOJ4G"/> 
+	</settings> 
+	 <!-- 指定开发环境  --> 
+	 <environments default="development">
+	 	 <!-- 运行环境的id 具有唯一性-->
+		 <environment id="development"> 
+		    <!-- 事务管理 类型 JDBC -->
+		 	<transactionManager type="JDBC"> </transactionManager>
+		 	<!-- 数据源 类型POOLED:mbatis 自带的  JDNI:tomcat自带的数据源-->
+		 	<dataSource type="POOLED">
+		 		<!-- 属性  驱动 路径 用户 密码-->
+		 		<property name="driver" value="${driver}"/>
+		 		<property name="url" value="${url}"/>
+		 		<property name="username" value="${user}"/>
+		 		<property name="password" value="${password}"/>   
+		 	</dataSource> 
+		</environment>
+	 </environments> 
+	 <mappers>
+	 	<mapper resource="cn.smbms.dao.user.UserMapper.xml"/>
+	 </mappers>
+</configuration>
+
+
+
+
+
+
+

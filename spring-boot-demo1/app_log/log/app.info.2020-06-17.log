@@ -1,0 +1,52 @@
+2020-06-17 10:43:39.029 INFO [restartedMain]com.example.demo.SpringBootDemo1Application.logStarting:55 -Starting SpringBootDemo1Application on DESKTOP-JM6IDBQ with PID 15560 (E:\MyEclipse\spring-\spring-boot-demo1\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo1)
+2020-06-17 10:43:39.031 INFO [restartedMain]com.example.demo.SpringBootDemo1Application.logStartupProfileInfo:655 -The following profiles are active: test
+2020-06-17 10:43:39.101 INFO [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-17 10:43:39.101 INFO [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-17 10:43:39.890 INFO [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8088 (http)
+2020-06-17 10:43:39.898 INFO [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8088"]
+2020-06-17 10:43:39.898 INFO [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-06-17 10:43:39.899 INFO [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-17 10:43:39.965 INFO [restartedMain]o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ss].log:173 -Initializing Spring embedded WebApplicationContext
+2020-06-17 10:43:39.966 INFO [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 864 ms
+2020-06-17 10:43:40.134 INFO [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-17 10:43:40.258 INFO [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-06-17 10:43:40.272 INFO [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8088"]
+2020-06-17 10:43:40.292 INFO [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8088 (http) with context path '/ss'
+2020-06-17 10:43:40.301 INFO [restartedMain]com.example.demo.SpringBootDemo1Application.logStarted:61 -Started SpringBootDemo1Application in 1.722 seconds (JVM running for 2.742)
+2020-06-17 10:43:55.183 INFO [http-nio-8088-exec-1]o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ss].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-17 10:43:55.183 INFO [http-nio-8088-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-06-17 10:43:55.192 INFO [http-nio-8088-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 9 ms
+2020-06-17 10:44:45.196 INFO [restartedMain]com.example.demo.SpringBootDemo1Application.logStarting:55 -Starting SpringBootDemo1Application on DESKTOP-JM6IDBQ with PID 9324 (E:\MyEclipse\spring-\spring-boot-demo1\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo1)
+2020-06-17 10:44:45.199 INFO [restartedMain]com.example.demo.SpringBootDemo1Application.logStartupProfileInfo:655 -The following profiles are active: test
+2020-06-17 10:44:45.256 INFO [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-17 10:44:45.256 INFO [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-17 10:44:46.080 INFO [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8088 (http)
+2020-06-17 10:44:46.087 INFO [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8088"]
+2020-06-17 10:44:46.088 INFO [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-06-17 10:44:46.089 INFO [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-17 10:44:46.162 INFO [restartedMain]o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ss].log:173 -Initializing Spring embedded WebApplicationContext
+2020-06-17 10:44:46.162 INFO [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 906 ms
+2020-06-17 10:44:46.351 INFO [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-17 10:44:46.476 INFO [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-06-17 10:44:46.490 INFO [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8088"]
+2020-06-17 10:44:46.510 INFO [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8088 (http) with context path '/ss'
+2020-06-17 10:44:46.519 INFO [restartedMain]com.example.demo.SpringBootDemo1Application.logStarted:61 -Started SpringBootDemo1Application in 1.719 seconds (JVM running for 2.499)
+2020-06-17 10:54:17.829 INFO [restartedMain]com.example.demo.SpringBootDemo1Application.logStarting:55 -Starting SpringBootDemo1Application on DESKTOP-JM6IDBQ with PID 1204 (E:\MyEclipse\spring-\spring-boot-demo1\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo1)
+2020-06-17 10:54:17.833 INFO [restartedMain]com.example.demo.SpringBootDemo1Application.logStartupProfileInfo:655 -The following profiles are active: test
+2020-06-17 10:54:17.901 INFO [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-17 10:54:17.902 INFO [restartedMain]o.s.b.devtools.env.DevToolsPropertyDefaultsPostProcessor.logTo:225 -For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-17 10:54:18.797 INFO [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.initialize:108 -Tomcat initialized with port(s): 8088 (http)
+2020-06-17 10:54:18.805 INFO [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Initializing ProtocolHandler ["http-nio-8088"]
+2020-06-17 10:54:18.805 INFO [restartedMain]org.apache.catalina.core.StandardService.log:173 -Starting service [Tomcat]
+2020-06-17 10:54:18.805 INFO [restartedMain]org.apache.catalina.core.StandardEngine.log:173 -Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-06-17 10:54:18.876 INFO [restartedMain]o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ss].log:173 -Initializing Spring embedded WebApplicationContext
+2020-06-17 10:54:18.876 INFO [restartedMain]o.s.b.w.s.context.ServletWebServerApplicationContext.prepareWebApplicationContext:285 -Root WebApplicationContext: initialization completed in 974 ms
+2020-06-17 10:54:19.048 INFO [restartedMain]o.s.scheduling.concurrent.ThreadPoolTaskExecutor.initialize:181 -Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-17 10:54:19.177 INFO [restartedMain]o.s.boot.devtools.autoconfigure.OptionalLiveReloadServer.startServer:58 -LiveReload server is running on port 35729
+2020-06-17 10:54:19.189 INFO [restartedMain]org.apache.coyote.http11.Http11NioProtocol.log:173 -Starting ProtocolHandler ["http-nio-8088"]
+2020-06-17 10:54:19.212 INFO [restartedMain]o.s.boot.web.embedded.tomcat.TomcatWebServer.start:220 -Tomcat started on port(s): 8088 (http) with context path '/ss'
+2020-06-17 10:54:19.221 INFO [restartedMain]com.example.demo.SpringBootDemo1Application.logStarted:61 -Started SpringBootDemo1Application in 1.802 seconds (JVM running for 2.818)
+2020-06-17 10:54:41.060 INFO [http-nio-8088-exec-1]o.a.c.core.ContainerBase.[Tomcat].[localhost].[/ss].log:173 -Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-17 10:54:41.061 INFO [http-nio-8088-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:525 -Initializing Servlet 'dispatcherServlet'
+2020-06-17 10:54:41.069 INFO [http-nio-8088-exec-1]org.springframework.web.servlet.DispatcherServlet.initServletBean:547 -Completed initialization in 8 ms
+2020-06-17 10:54:41.084 INFO [http-nio-8088-exec-1]com.example.demo.controller.IndexController.index:30 -this is a log==========

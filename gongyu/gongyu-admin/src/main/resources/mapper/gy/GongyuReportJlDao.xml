@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.gongyu.modules.gy.dao.GongyuReportJlDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.gongyu.modules.gy.entity.GongyuReportJlEntity" id="gongyuReportJlMap">
+        <result property="id" column="id"/>
+        <result property="userId" column="user_id"/>
+        <result property="reportName" column="report_name"/>
+        <result property="description" column="description"/>
+        <result property="imger" column="imger"/>
+        <result property="creationTime" column="creation_time"/>
+    </resultMap>
+
+
+</mapper>

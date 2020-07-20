@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.gongyu.modules.gy.dao.GongyuHouseDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.gongyu.modules.gy.entity.GongyuHouseEntity" id="gongyuHouseMap">
+        <result property="houseId" column="house_id"/>
+        <result property="houseName" column="house_name"/>
+        <result property="houseArea" column="house_area"/>
+        <result property="houseMetro" column="house_metro"/>
+        <result property="houseCounselor" column="house_counselor"/>
+        <result property="housePrice" column="house_price"/>
+        <result property="houseDesc" column="house_desc"/>
+        <result property="houseImg" column="house_img"/>
+        <result property="houseTime" column="house_time"/>
+        <result property="houseType" column="house_type"/>
+    </resultMap>
+	<select id="listType" resultType="io.gongyu.modules.gy.entity.HouseTypeEntity">
+		select * from gongyu_house_type;
+	</select>
+	<select id="listPrice" resultType="io.gongyu.modules.gy.entity.PriceEntity">
+		select * from gongyu_price;
+	</select>
+
+</mapper>

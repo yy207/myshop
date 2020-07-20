@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+E:\MyEclipse\HTTP\.metadata\.plugins\org.eclipse.jdt.core
+2062559989.index

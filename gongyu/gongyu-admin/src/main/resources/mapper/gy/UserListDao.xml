@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.gongyu.modules.gy.dao.UseListDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="io.gongyu.modules.gy.entity.UserListEntity" id="tbUserMap">
+        <result property="userId" column="user_id"/>
+        <result property="userImg" column="user_img"/>
+        <result property="username" column="username"/>
+        <result property="mobile" column="mobile"/>
+        <result property="password" column="password"/>
+        <result property="sqStatus" column="sq_status"/>
+        <result property="position" column="position"/>
+        <result property="wechatUsername" column="wechat_username"/>
+        <result property="wechatImg" column="wechat_img"/>
+        <result property="gwName" column="gw_name"/>
+        <result property="identityCardNum" column="identity_card_num"/>
+        <result property="identityCardImgFront" column="identity_card_img_front"/>
+        <result property="identityCardImgReverse" column="identity_card_img_reverse"/>
+        <result property="directorOfRegional" column="director_of_regional"/>
+        <result property="subsidyMoney" column="subsidy_money"/>
+        <result property="installment" column="installment"/>
+        <result property="guaranteeMoney" column="guarantee_money"/>
+        <result property="myInvitationCode" column="my_invitation_code"/>
+        <result property="otherInvitationCode" column="other_invitation_code"/>
+        <result property="status" column="status"/>
+        <result property="cashDeposit" column="cash_deposit"/>
+        <result property="createTime" column="create_time"/>
+    </resultMap>
+
+
+</mapper>

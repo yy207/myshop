@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 路径名 -->
+<mapper namespace="cn.smbms.dao.user.UserMapper2">
+	<!-- 查询用户表的记录数 -->
+	<select id="count" resultType="int">
+		select count(*) as count from smbms_user
+	</select> 
+</mapper>
+
+
+
+

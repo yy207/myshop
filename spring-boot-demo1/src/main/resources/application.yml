@@ -1,0 +1,22 @@
+server:
+  port: 8088
+  servlet: 
+    context-path: /ss
+my: 
+  name: 张三
+  num: ${random.value}
+ 
+spring: 
+  profiles: 
+    active: test
+---
+spring:
+  profiles: dev
+server:
+  port: 8080
+---
+spring:
+  profiles: test
+server:
+  port: 8088
+      

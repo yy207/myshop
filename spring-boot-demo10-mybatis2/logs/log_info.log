@@ -1,0 +1,353 @@
+2020-07-08 08:48:28.615 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 16184 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 08:48:28.616 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 08:48:29.015 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 08:48:29.016 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 08:48:29.018 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 08:48:29.035 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 08:48:29.035 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 416 ms
+2020-07-08 08:48:29.176 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:48:29.202 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 08:48:29.323 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 08:48:29.342 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 08:48:29.348 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.85 seconds (JVM running for 117.631)
+2020-07-08 08:48:29.351 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 08:48:35.867 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2020-07-08 08:48:36.100 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:48:50.450 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 11720 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 08:48:50.453 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 08:48:50.513 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-08 08:48:50.513 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-08 08:48:51.588 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 08:48:51.595 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:48:51.596 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 08:48:51.596 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 08:48:51.657 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 08:48:51.657 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1144 ms
+2020-07-08 08:48:52.064 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:48:52.135 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 08:48:52.375 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 08:48:52.398 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:48:52.419 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 08:48:52.429 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 2.423 seconds (JVM running for 3.159)
+2020-07-08 08:49:08.090 [Thread-165] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:49:08.176 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 11720 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 08:49:08.177 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 08:49:08.491 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 08:49:08.492 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:49:08.492 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 08:49:08.492 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 08:49:08.501 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 08:49:08.501 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 321 ms
+2020-07-08 08:49:08.593 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:49:08.610 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 08:49:08.679 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 08:49:08.689 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:49:08.692 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 08:49:08.697 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.562 seconds (JVM running for 19.427)
+2020-07-08 08:49:08.700 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 08:50:11.465 [Thread-168] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:50:11.539 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 11720 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 08:50:11.539 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 08:50:11.800 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 08:50:11.800 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:50:11.801 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 08:50:11.801 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 08:50:11.820 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 08:50:11.820 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 278 ms
+2020-07-08 08:50:11.916 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:50:11.932 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 08:50:11.993 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 08:50:11.999 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:50:12.003 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 08:50:12.005 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.501 seconds (JVM running for 82.735)
+2020-07-08 08:50:12.006 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 08:50:42.691 [Thread-332] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:50:42.758 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 11720 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 08:50:42.758 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 08:50:43.062 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 08:50:43.062 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:50:43.063 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 08:50:43.063 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 08:50:43.072 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 08:50:43.072 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 311 ms
+2020-07-08 08:50:43.163 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:50:43.177 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 08:50:43.244 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 08:50:43.252 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:50:43.257 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 08:50:43.260 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.537 seconds (JVM running for 113.99)
+2020-07-08 08:50:43.261 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 08:50:51.864 [Thread-496] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:50:52.772 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 11720 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 08:50:52.772 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 08:50:53.017 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 08:50:53.018 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:50:53.018 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 08:50:53.018 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 08:50:53.027 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 08:50:53.027 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 253 ms
+2020-07-08 08:50:53.103 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:50:53.116 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 08:50:53.168 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 08:50:53.179 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:50:53.183 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 08:50:53.186 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 1.283 seconds (JVM running for 123.915)
+2020-07-08 08:50:53.187 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 08:51:08.817 [Thread-660] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:51:08.887 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 11720 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 08:51:08.888 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 08:51:09.158 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 08:51:09.158 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:51:09.158 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 08:51:09.159 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 08:51:09.170 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 08:51:09.170 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 280 ms
+2020-07-08 08:51:09.250 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:51:09.263 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 08:51:09.323 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 08:51:09.329 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:51:09.332 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 08:51:09.337 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.479 seconds (JVM running for 140.067)
+2020-07-08 08:51:09.338 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 08:51:13.948 [Thread-824] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:51:14.032 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 11720 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 08:51:14.033 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 08:51:14.346 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 08:51:14.347 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:51:14.347 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 08:51:14.347 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 08:51:14.358 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 08:51:14.358 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 323 ms
+2020-07-08 08:51:14.461 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 08:51:14.479 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 08:51:14.546 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 08:51:14.554 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 08:51:14.557 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 08:51:14.560 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.573 seconds (JVM running for 145.29)
+2020-07-08 08:51:14.561 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 08:51:21.971 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-08 08:51:21.972 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-08 08:51:21.978 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-07-08 08:51:22.028 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-07-08 08:51:22.141 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-07-08 09:36:17.732 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2020-07-08 09:36:17.937 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 09:36:17.938 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-07-08 09:36:17.942 [RMI TCP Connection(2)-127.0.0.1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-07-08 14:03:58.309 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:03:58.325 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:03:58.381 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-08 14:03:58.382 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-08 14:03:59.338 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:03:59.344 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:03:59.345 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:03:59.345 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:03:59.396 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:03:59.397 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1015 ms
+2020-07-08 14:03:59.727 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:03:59.776 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 14:03:59.949 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:03:59.962 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:03:59.985 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:03:59.993 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 2.064 seconds (JVM running for 3.207)
+2020-07-08 14:04:54.043 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12284 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:04:54.046 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:04:54.092 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-07-08 14:04:54.092 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-07-08 14:04:55.067 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:04:55.073 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:04:55.074 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:04:55.074 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:04:55.131 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:04:55.131 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1039 ms
+2020-07-08 14:04:55.491 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:04:55.541 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2020-07-08 14:04:55.735 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:04:55.746 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:04:55.749 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:04:55.749 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2020-07-08 14:04:55.753 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:04:55.753 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Destroying ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:04:55.759 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-07-08 14:05:38.296 [http-nio-8080-exec-2] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-08 14:05:38.297 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-08 14:05:38.305 [http-nio-8080-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-07-08 14:05:41.719 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-07-08 14:05:41.880 [http-nio-8080-exec-4] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-07-08 14:09:20.458 [Thread-165] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:09:20.459 [Thread-165] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-07-08 14:09:20.465 [Thread-165] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-07-08 14:09:20.551 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:09:20.551 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:09:20.872 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:09:20.872 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:09:20.872 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:09:20.872 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:09:20.881 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:09:20.881 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 327 ms
+2020-07-08 14:09:20.980 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:09:21.071 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:09:21.079 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:09:21.082 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:09:21.085 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.576 seconds (JVM running for 324.298)
+2020-07-08 14:09:21.087 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:09:22.671 [Thread-168] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:09:22.740 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:09:22.741 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:09:23.007 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:09:23.007 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:09:23.007 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:09:23.007 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:09:23.015 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:09:23.015 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 271 ms
+2020-07-08 14:09:23.099 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:09:23.180 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:09:23.188 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:09:23.191 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:09:23.194 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.483 seconds (JVM running for 326.408)
+2020-07-08 14:09:23.195 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:09:27.798 [Thread-332] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:09:27.867 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:09:27.867 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:09:28.129 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:09:28.130 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:09:28.130 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:09:28.130 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:09:28.138 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:09:28.139 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 270 ms
+2020-07-08 14:09:28.218 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:09:28.296 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:09:28.304 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:09:28.308 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:09:28.311 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.474 seconds (JVM running for 331.525)
+2020-07-08 14:09:28.313 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:10:02.996 [Thread-496] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:10:03.062 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:10:03.062 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:10:03.311 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:10:03.311 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:10:03.312 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:10:03.312 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:10:03.320 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:10:03.320 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 256 ms
+2020-07-08 14:10:03.431 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:10:03.546 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:10:03.557 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:10:03.561 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:10:03.566 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.532 seconds (JVM running for 366.78)
+2020-07-08 14:10:03.568 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:10:14.177 [Thread-660] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:10:14.246 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:10:14.247 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:10:14.501 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:10:14.501 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:10:14.501 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:10:14.502 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:10:14.510 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:10:14.510 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 261 ms
+2020-07-08 14:10:14.597 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:10:14.664 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:10:14.671 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:10:14.674 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:10:14.677 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.459 seconds (JVM running for 377.892)
+2020-07-08 14:10:14.679 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:10:34.354 [Thread-824] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:10:34.426 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:10:34.427 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:10:34.703 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:10:34.704 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:10:34.704 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:10:34.704 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:10:34.712 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:10:34.712 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 283 ms
+2020-07-08 14:10:34.800 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:10:34.871 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:10:34.878 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:10:34.881 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:10:34.884 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.486 seconds (JVM running for 398.098)
+2020-07-08 14:10:34.885 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:10:40.876 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-08 14:10:40.877 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-08 14:10:40.882 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-07-08 14:12:02.782 [Thread-988] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:12:02.886 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:12:02.887 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:12:03.416 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:12:03.416 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:12:03.417 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:12:03.417 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:12:03.425 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:12:03.425 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 533 ms
+2020-07-08 14:12:03.544 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:12:03.679 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:12:03.687 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:12:03.690 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:12:03.693 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.852 seconds (JVM running for 486.906)
+2020-07-08 14:12:03.694 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:12:39.374 [Thread-1152] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:12:39.440 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:12:39.440 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:12:39.697 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:12:39.698 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:12:39.698 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:12:39.698 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:12:39.712 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:12:39.713 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 271 ms
+2020-07-08 14:12:39.792 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:12:39.860 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:12:39.867 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:12:39.870 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:12:39.872 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.459 seconds (JVM running for 523.086)
+2020-07-08 14:12:39.874 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:12:54.508 [Thread-1316] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:12:54.577 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:12:54.577 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:12:54.822 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:12:54.822 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:12:54.823 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:12:54.823 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:12:54.831 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:12:54.831 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 250 ms
+2020-07-08 14:12:54.901 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:12:54.975 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:12:54.981 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:12:54.984 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:12:54.987 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.44 seconds (JVM running for 538.201)
+2020-07-08 14:12:54.988 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:12:59.631 [Thread-1480] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:12:59.728 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:12:59.729 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:13:00.074 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:13:00.074 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:13:00.074 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:13:00.075 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:13:00.086 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:13:00.086 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 355 ms
+2020-07-08 14:13:00.167 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:13:00.258 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:13:00.265 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:13:00.268 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:13:00.271 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.585 seconds (JVM running for 543.484)
+2020-07-08 14:13:00.273 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:13:00.888 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-08 14:13:00.889 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-08 14:13:00.891 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-07-08 14:53:10.651 [Thread-1644] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:53:10.726 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Starting SpringBootDemo10MybatisApplication on DESKTOP-JM6IDBQ with PID 12988 (E:\MyEclipse\spring-\spring-boot-demo10-mybatis2\target\classes started by sff in E:\MyEclipse\spring-\spring-boot-demo10-mybatis2)
+2020-07-08 14:53:10.726 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - No active profile set, falling back to default profiles: default
+2020-07-08 14:53:11.072 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-08 14:53:11.073 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:53:11.073 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-08 14:53:11.073 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-08 14:53:11.083 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/demo] - Initializing Spring embedded WebApplicationContext
+2020-07-08 14:53:11.083 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 353 ms
+2020-07-08 14:53:11.199 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-07-08 14:53:11.298 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-07-08 14:53:11.314 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-08 14:53:11.317 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/demo'
+2020-07-08 14:53:11.322 [restartedMain] INFO  c.example.demo.SpringBootDemo10MybatisApplication - Started SpringBootDemo10MybatisApplication in 0.633 seconds (JVM running for 2954.535)
+2020-07-08 14:53:11.323 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-07-08 14:53:12.293 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2020-07-08 14:53:12.550 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

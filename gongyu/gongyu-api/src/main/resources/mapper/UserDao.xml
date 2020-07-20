@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.gongyu.login.dao.UserDao">
+
+	<select id="selectUser" parameterType="java.util.List" resultType="io.gongyu.login.entity.UserEntity">
+		select * from tb_user where  mobile =#{mobile}
+	</select>
+	<update id="updatePwd"  parameterType="java.util.List">
+		update tb_user set password =#{password} where mobile =#{mobile}
+	</update>
+	<update id="updateUserbyPwd"  parameterType="java.util.List">
+		update tb_user set password =#{passwordTwo} where mobile =#{mobile}
+	</update>
+</mapper>

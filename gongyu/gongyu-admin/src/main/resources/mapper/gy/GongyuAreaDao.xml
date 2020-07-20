@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.gongyu.modules.gy.dao.GongyuAreaDao">
+
+	<select id="listMetro" resultType="io.gongyu.modules.gy.entity.GongyuMetroEntity">
+		select * from gongyu_metro where area_id = #{areaId}
+	</select>
+	
+	<select id="listMetroStation" resultType="io.gongyu.modules.gy.entity.GongyuAreaMetroEntity">
+		select * from gongyu_metro_area where area_id = #{areaId} and metro_id =#{metroId}
+	</select>
+</mapper>

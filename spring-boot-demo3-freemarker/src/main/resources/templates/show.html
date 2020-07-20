@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+ show: ${str} 
+ show: ${stu} 
+ <#list list as l>
+ 	name:${l.name}<br>
+ 	age:${l.age}<br>
+ </#list>
+ <#if stu??>
+ 	null
+ 	<#if stu.id??>
+ 		${stu.id}
+ 	</#if>
+ 	<#if stu.name??>
+ 		${stu.name}
+ 	</#if>
+ 	<#if stu.age??>
+ 		${stu.age}
+ 		<#else>
+ 			---  	</#if>
+ 	
+ </#if>
+ 
+</body>
+</html>

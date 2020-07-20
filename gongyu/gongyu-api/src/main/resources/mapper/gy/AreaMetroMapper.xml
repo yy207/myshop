@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.gongyu.gy.dao.AreaMetroDao">
+
+	<!-- 区县级查询 -->
+	<select id="listPrefecture" resultType="io.gongyu.gy.entity.responseParam.CityAddressTwoEntity">
+		SELECT 
+		area_id areaId,parent_id parentId,area_code areaCode,area_name areaName,city_code cityCode,center center,initial initial 
+		 FROM gongyu_city_area WHERE parent_id =#{areaId};
+	</select>
+	<!-- 市级查询 -->
+	<select id="listCity" resultType="io.gongyu.gy.entity.responseParam.CityAddressOneEntity">
+		SELECT
+		area_id areaId,parent_id parentId,area_code areaCode,area_name areaName,city_code cityCode,center center,initial initial 
+		FROM gongyu_city_area WHERE parent_id =#{areaId};
+	</select>
+	<!-- 省级查询 -->
+	<select id="listAddress" resultType="io.gongyu.gy.entity.responseParam.CityAddressEntity">
+		SELECT 
+			area_id areaId,parent_id parentId,area_code areaCode,area_name areaName,city_code cityCode,center center,initial initial 
+		FROM gongyu_city_area WHERE parent_id = -1;
+	</select>
+	
+	<select id="listAreaMetro" resultType="io.gongyu.gy.entity.responseParam.AreaMetroEntity">
+		select * from gongyu_area;
+	</select>
+	<select id="listMetro" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.responseParam.MetroEntity">
+		select * from gongyu_metro where area_id=#{areaId};
+	</select>
+	<select id="listStationName" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.responseParam.MetroSunEntity">
+		select * from gongyu_metro_area where area_id=#{areaId} and metro_id =#{metroId};
+	</select>
+</mapper>

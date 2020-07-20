@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration><!-- 配置文件 -->
+	<!-- <properties resource="database.properties"/> --> <!-- 引入数据库的文件 -->
+	<properties>
+		<property name="driver" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value=""/>
+		<property name="name" value=""/>
+		<property name="pwd" value=""/> 
+	</properties>
+	
+	<settings><!-- 设置集合 -->
+		<setting name="logImpl" value="LOG4J"/><!-- 设置的对象 log4j -->
+	</settings>
+	<environments default="developer"><!-- 选中环境 -->
+		<environment id="developer"> <!-- 自定义开发环境 -->
+			<transactionManager type="JDBC"/><!-- 事务管理类型 JDBC -->
+			<dataSource type="POOLED"><!-- 数据源类型 MyBatis:POOLED  Tomcat:JDNI -->
+				<property name="driver" value="${driver}"/><!-- 链接驱动 -->
+				<property name="url" value="${url}"/><!-- 路径 -->
+				<property name="user" value="${user}"/><!-- 用户 -->
+				<property name="password" value="${password}"/><!-- 密码 -->
+			</dataSource> 
+		</environment> 
+	</environments>
+	<mappers><!-- 映射文件的引入 -->
+		<mapper url="cn/smbms/dao/user/Usermapper3.xml"/> <!-- 具体映射文件的路径 -->
+	</mappers>
+</configuration>

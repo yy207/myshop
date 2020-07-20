@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>房源-房子信息</title>
+		<#include "/header.html">
+</head>
+<body>
+<div id="rrapp" v-cloak>
+    <div v-show="showList">
+        <div class="grid-btn">
+			<#if shiro.hasPermission("gy:gongyuhouse:save")>
+            <a class="btn btn-primary" @click="add"><i class="fa fa-plus"></i>&nbsp;新增</a>
+			</#if>
+			<#if shiro.hasPermission("gy:gongyuhouse:update")>
+            <a class="btn btn-primary" @click="update"><i class="fa fa-pencil-square-o"></i>&nbsp;修改</a>
+			</#if>
+			<#if shiro.hasPermission("gy:gongyuhouse:delete")>
+            <a class="btn btn-primary" @click="del"><i class="fa fa-trash-o"></i>&nbsp;删除</a>
+			</#if>
+        </div>
+        <table id="jqGrid"></table>
+        <div id="jqGridPager"></div>
+    </div>
+
+    <div v-show="!showList" class="panel panel-default">
+        <div class="panel-heading">{{title}}</div>
+        <form class="form-horizontal">
+					<div class="form-group">
+                        <div class="col-sm-2 control-label">房子名称</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="gongyuHouse.houseName" placeholder="房子名称"/>
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <div class="col-sm-2 control-label">房子区域</div>
+                        <div class="col-sm-10">
+                            <select class="form-control" @change="getAreaMetro(gongyuHouse.areaId)" v-model="gongyuHouse.areaId" id="areaId">
+								<option v-for="(item , index) in houseAreaList" :value="item.areaId">{{item.areaName}}</option>
+							</select>
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <div class="col-sm-2 control-label">房子附近地铁</div>
+                        <div class="col-sm-10">
+                            <select class="form-control" v-model="gongyuHouse.metroId" @change="getMetroStation(gongyuHouse.areaId,gongyuHouse.metroId)" name="metroId" id="metroId">
+								<option v-for="(item , index) in houseMetroList" :value="item.metroId">{{item.metroName}}</option>
+							</select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 control-label">地铁站站名</div>
+                        <div class="col-sm-10">
+                            <select class="form-control" @change="getAreaMetro(gongyuHouse.areaId)" v-model="gongyuHouse.stationName" name="metroId" id="metroId">
+								<option v-for="(item , index) in stationList" :value="item.subwayStation">{{item.subwayStation}}</option>
+							</select>
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <div class="col-sm-2 control-label">房子顾问</div>
+                        <div class="col-sm-10">
+                            <select class="form-control" v-model="gongyuHouse.counselorId" name="counselorId" id="counselorId">
+								<option v-for="(item , index) in counselorList" :value="item.userId">{{item.username}}</option>
+							</select>
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <div class="col-sm-2 control-label">房子价格</div>
+                        <div class="col-sm-10">
+                            <select class="form-control" v-model="gongyuHouse.housePrice" name="housePrice" id="housePrice">
+								<option v-for="(item , index) in housePriceList" :value="item.priceName">{{item.priceName}}</option>
+							</select>
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <div class="col-sm-2 control-label">房子介绍</div>
+                        <div class="col-sm-10">
+                            <textarea rows="5" cols="50" v-model="gongyuHouse.houseDesc" placeholder="房子介绍">
+                            </textarea>
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <div class="col-sm-2 control-label">房子图片</div>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" v-model="gongyuHouse.houseImg" placeholder="房子图片"/>
+                        </div>
+                    </div>
+					<div class="form-group">
+                        <div class="col-sm-2 control-label">房子户型</div>
+                        <div class="col-sm-10">
+	                        <select class="form-control" v-model="gongyuHouse.houseType" name="houseType" id="houseType">
+								<option v-for="(item , index) in houseTypeList" :value="item.houseType">{{item.houseType}}</option>
+							</select>
+                        </div>
+                    </div>
+							            <div class="form-group">
+                <div class="col-sm-2 control-label"></div>
+                <input type="button" class="btn btn-primary" id="btnSaveOrUpdate" data-loading-text="保存中..." @click="saveOrUpdate" value="确定"/>
+                &nbsp;&nbsp;<input type="button" class="btn btn-warning" @click="reload" value="返回"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="${request.contextPath}/statics/js/modules/gy/gongyuhouse.js?_${.now?long}"></script>
+</body>
+</html>

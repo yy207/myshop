@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="io.gongyu.gy.dao.UserAllDao">
+
+	<update id="updateUserPerfectInformation" parameterType="io.gongyu.gy.entity.requestParam.PerfectInformationEntity">
+		update tb_user
+		<set>
+			<if test="gwArea != null and gwArea !=''">
+				director_of_regional =#{gwArea},
+			</if>
+		</set>
+		where mobile =#{mobile}
+	</update>
+	<!-- 微信支付记录 -->
+	<insert id="insertWxOrder" parameterType="io.gongyu.wechat.pay.entity.PaySuccessEntity">
+		 insert into gongyu_wxpay_order(
+			 transaction_id,
+			 total_fee,
+			 out_trade_no,
+			 result_code,
+			 pay_type,
+			 user_id,
+			 mobile,
+			 time_end)
+		  values(
+		   #{transactionId},
+		   #{totalFee},
+		   #{outTradeNo},
+		   #{resultCode},
+		   #{payType},
+		   #{userId},
+		   #{mobile},
+		   #{timeEnd})
+	</insert>
+	<!--查看顾问信息是否完善-->
+	<select id="selectUserCompleteInformation" parameterType="io.gongyu.gy.entity.requestParam.UserIdAndMobileEntity" resultType="io.gongyu.gy.entity.responseParam.UserMsgEntity">
+		select * from tb_user where user_id =#{userId} and mobile = #{mobile};
+	</select>
+	<!--查询保证金-->
+	<select id="listMoneyRecord" parameterType="io.gongyu.gy.entity.requestParam.UserIdAndMobileEntity" resultType="io.gongyu.gy.entity.requestParam.GuaranteeMoneyEntity">
+		select * from gongyu_money_record where user_id =#{userId} and mobile = #{mobile} order by creation_time desc;
+	</select>
+	<select id="userListBrowseRecord" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.responseParam.SearchRecordEntity">
+		select * from tb_user where user_id =#{gwId};
+	</select>
+	<select id="listGwById" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.responseParam.GwZhIdEntity">
+		select * from gongyu_user_browse_record where zh_id =#{userId};
+	</select>
+	<!-- 查看记录 -->
+	<select id="selectWhoSeeMe" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.responseParam.GwZhIdEntity">
+		select * from gongyu_see_me where gw_id=#{gwId} AND zh_id =#{zhId};
+	</select>
+	<!-- 咨询记录 -->
+	<select id="selectBrowseRecord" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.responseParam.GwZhIdEntity">
+		select * from gongyu_user_browse_record where zh_id =#{zhId} and gw_id=#{gwId};
+	</select>
+	<!-- 添加咨询记录 -->
+	<insert id="saveBrowseRecord" parameterType="java.util.List">
+		 insert into gongyu_user_browse_record(
+			 zh_id,
+			 gw_id)
+		  values(
+		   #{zhId},
+		   #{gwId})
+	</insert>
+	<!-- 添加看过记录 -->
+	<insert id="saveWSM" parameterType="io.gongyu.gy.entity.requestParam.WhoSeeMeEntity">
+		 insert into gongyu_see_me(
+			 gw_id,
+			 zh_id,
+			 zh_img,
+			 zh_mobile)
+		  values(
+		   #{gwId},
+		   #{zhId},
+		   #{zhImg},
+		   #{zhMobile})
+	</insert>
+	<!-- 谁看过我 -->
+	<select id="selectwsmMsg" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.requestParam.WhoSeeMeEntity">
+		select * from gongyu_see_me where gw_id =#{userId} AND zh_id =#{zhId}
+	</select>
+	<select id="listGwWhoSeeMe" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.requestParam.WhoSeeMeEntity">
+		select * from gongyu_see_me where gw_id =#{userId}
+	</select>
+	<!-- 查看顾问联系方式 -->
+	<select id="getGWRelationMsg" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.responseParam.UserGwMsgEntity">
+		select * from tb_user where user_id =#{gwId}
+	</select>
+	<!-- 申请顾问 -->
+	<update id="updateGwMsgById" parameterType="io.gongyu.gy.entity.requestParam.ApplicationGwEntity">
+		update tb_user 
+		<set>
+			sq_status = 2,
+			<if test="gwName != null and gwName !=''">
+				gw_name =#{gwName},
+			</if>
+			<if test="identityCardNum != null and identityCardNum !=''">
+				identity_card_num =#{identityCardNum},
+			</if>
+			<if test="identityCardImgFront != null and identityCardImgFront !=''">
+				identity_card_img_front =#{identityCardImgFront},
+			</if>
+			<if test="identityCardImgReverse != null and identityCardImgReverse !=''">
+				identity_card_img_reverse =#{identityCardImgReverse},
+			</if>
+			
+		</set>
+		where user_id =#{userId} and mobile =#{mobile}
+	</update>
+	<!-- 用户详情信息 -->
+	<select id="getUserById" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.responseParam.UserMsgEntity">
+		select * from tb_user 
+		<trim prefix="where" prefixOverrides="and|or">
+            <if test="userId != null and userId != ''">
+                user_id =#{userId}
+            </if>
+            <if test="mobile != null and mobile != ''">
+                and mobile =#{mobile}
+            </if>
+             <!-- <if test="housePrice != null and housePrice != ''">
+                house_price like concat(concat("%",#{housePrice}),"%")
+            </if> -->
+		</trim>
+	</select>
+	<!-- 保证金记录-->
+	<insert id="saveGuaranteeMoneyRecord" parameterType="io.gongyu.gy.entity.requestParam.GuaranteeMoneyEntity">
+		 insert into gongyu_money_record(
+			 user_id,
+			 mobile,
+			 money,
+			 operation_type,
+			 creation_time)
+		  values(
+		   #{userId},
+		   #{mobile},
+		   #{money},
+		   #{operationType},
+		   #{creationTime})
+	</insert>
+	<!-- 保证金 -激纳 -->
+	<update id="updateGuaranteeMoney" parameterType="io.gongyu.gy.entity.requestParam.GuaranteeMoneyEntity">
+		update tb_user 
+		<set>
+			<if test="money != null and money !=''">
+				guarantee_money =#{money},
+			</if>
+		</set>
+		where user_id =#{userId}
+	</update>
+	<!-- 保证金 -体现 -->
+	<update id="updateGuaranteeMoneyEmbody" parameterType="io.gongyu.gy.entity.requestParam.GuaranteeMoneyEntity">
+		update tb_user 
+		<set>
+			<if test="money != null and money !=''">
+				guarantee_money =#{money},
+			</if>
+		</set>
+		where user_id =#{userId}
+	</update>
+	<!-- 补贴设置 -->
+	<update id="updateSubsidy" parameterType="io.gongyu.gy.entity.requestParam.UserSubsidyEntity">
+		update tb_user 
+		<set>
+			<if test="subsidyMoney != null and subsidyMoney !=''">
+				subsidy_money =#{subsidyMoney},
+			</if>
+			<if test="installment != null and installment !=''">
+				installment =#{installment},
+			</if>
+		</set>
+		where mobile =#{mobile}
+	</update>
+	<select id="listUserGwAll" parameterType="java.util.List"  resultType="io.gongyu.gy.entity.responseParam.UserAllEntity">
+		select * from tb_user
+		<trim prefix="where" prefixOverrides="and|or">
+			<if test="areaParam != null and areaParam != ''">
+				director_of_regional like concat(concat("%",#{areaParam}),"%")
+			</if>
+			AND position='2' AND `status`= 1 ORDER BY RAND() LIMIT 10
+		</trim>
+	</select>
+	<!-- 信息完善 -->
+	<update id="updateUserPerfectInformation" parameterType="io.gongyu.gy.entity.requestParam.PerfectInformationEntity">
+		update tb_user 
+		<set>
+			<if test="userImg != null and userImg !=''">
+				user_img =#{userImg},
+			</if>
+			<if test="username != null and username !=''">
+				username =#{username},
+			</if>
+			<if test="wechatUsername != null and wechatUsername !=''">
+				wechat_username =#{wechatUsername},
+			</if>
+			<if test="wechatImg != null and wechatImg !=''">
+				wechat_img =#{wechatImg},
+			</if>
+		</set>
+		where mobile =#{mobile}
+	</update>
+</mapper>

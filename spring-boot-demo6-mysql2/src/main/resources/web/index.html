@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body><script type="text/javascript">
+	function cli(v){
+		alert(v); 
+	}	
+	
+	</script>
+	<h4>
+		info<br/>
+		id: ${info.id}<br/>
+		name:${info.name}--
+		${list[0].name}--
+	</h4>
+	<span ></span>
+	<#list list as li>
+		<p>
+			${li.id}--------${li.name}
+		</p>
+	</#list>
+	<button onclick="cli('${info.name}');">点击我看看</button>
+</body>
+	
+
+
+</html>

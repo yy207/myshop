@@ -1,0 +1,20 @@
+2020-07-05 15:40:34.974 [main] INFO  c.c.s.bdqn.SpringbootExampleBdqnApplication - Starting SpringbootExampleBdqnApplication on DESKTOP-JM6IDBQ with PID 6780 (C:\Users\sff\Desktop\springboot-example-bdqn-master\target\classes started by sff in C:\Users\sff\Desktop\springboot-example-bdqn-master)
+2020-07-05 15:40:34.976 [main] INFO  c.c.s.bdqn.SpringbootExampleBdqnApplication - The following profiles are active: dev
+2020-07-05 15:40:36.983 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-07-05 15:40:36.995 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-07-05 15:40:36.996 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-07-05 15:40:37.003 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.36]
+2020-07-05 15:40:37.108 [main] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-07-05 15:40:37.109 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2068 ms
+2020-07-05 15:40:37.418 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-07-05 15:40:37.669 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-07-05 15:40:38.128 [main] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-07-05 15:40:38.367 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-07-05 15:40:38.390 [main] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-07-05 15:40:38.392 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2020-07-05 15:40:38.413 [main] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2020-07-05 15:40:38.440 [main] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2020-07-05 15:40:38.569 [main] INFO  c.c.s.bdqn.SpringbootExampleBdqnApplication - Started SpringbootExampleBdqnApplication in 4.241 seconds (JVM running for 5.518)
+2020-07-05 15:43:17.119 [http-nio-8080-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-07-05 15:43:17.119 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-07-05 15:43:17.127 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms

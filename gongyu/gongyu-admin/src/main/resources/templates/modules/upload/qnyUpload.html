@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>文件上传</title>
+<#include "/header.html">
+</head>
+<body>
+<div id="rrapp" v-cloak>
+	<input type="file" class="file" @change="getFile($event)">
+</div>
+<script src="${request.contextPath}/statics/js/modules/upload/axios.min.js"></script>
+<script src="${request.contextPath}/statics/js/modules/upload/qnyUpload.js?_${.now?long}"></script>
+</body>
+</html>

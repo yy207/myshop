@@ -1,0 +1,14 @@
+version: '2'
+services:
+  gongyu-admin:
+    image: gongyu/admin
+    ports:
+      - "8080:8080"
+    environment:
+      - spring.profiles.active=dev
+  gongyu-api:
+    image: gongyu/api
+    ports:
+      - "8081:8081"
+    environment:
+      - spring.profiles.active=dev

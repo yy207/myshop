@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.cps.springbootexample.bdqn.dao.UserMapper">
+
+    <select id="getUserList" resultType="cn.cps.springbootexample.bdqn.entity.user.vo.UserInfoVO">
+        select u.id as userId, u.username, u.gender, u.create_time, u.update_time, r.id as role_id,r.role_name
+        from `user` u
+        inner join `user_role` ur on u.id = ur.user_id
+        inner join `role` r on ur.role_id = r.id
+        <where>
+            <if test="userInfoTO.username != null and userInfoTO.username != ''">
+                u.username like CONCAT('%',#{userInfoTO.username},'%')
+            </if>
+        </where>
+    </select>
+
+</mapper>

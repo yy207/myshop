@@ -1,0 +1,17 @@
+
+server:
+  port: 8091
+  servlet: 
+    context-path: /ss
+my: 
+  name: 张三
+  num: ${random.value}
+ #多环境配置
+spring: 
+  profiles: 
+    active: dev
+ ---
+ spring:
+  profiles: test   
+server: 
+  port: 8080
